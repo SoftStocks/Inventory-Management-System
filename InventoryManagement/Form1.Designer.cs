@@ -35,6 +35,7 @@ namespace InventoryManagement
             // 
             this.ClientSize = new System.Drawing.Size(829, 327);
             this.Name = "Form1";
+            this.Text = "SoftStocks";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
