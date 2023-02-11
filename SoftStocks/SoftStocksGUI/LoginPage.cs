@@ -16,5 +16,10 @@ namespace SoftStocksGUI
         {
             InitializeComponent();
         }
+
+        private void btnSubmitLogin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

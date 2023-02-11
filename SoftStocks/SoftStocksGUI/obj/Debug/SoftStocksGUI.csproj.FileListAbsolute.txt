@@ -1,0 +1,11 @@
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\bin\Debug\SoftStocksGUI.exe.config
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\bin\Debug\SoftStocksGUI.exe
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\bin\Debug\SoftStocksGUI.pdb
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\SoftStocksGUI.csproj.AssemblyReference.cache
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\SoftStocksGUI.csproj.SuggestedBindingRedirects.cache
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\SoftStocksGUI.LoginPage.resources
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\SoftStocksGUI.Properties.Resources.resources
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\SoftStocksGUI.csproj.GenerateResource.cache
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\SoftStocksGUI.csproj.CoreCompileInputs.cache
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\SoftStocksGUI.exe
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\SoftStocksGUI.pdb
