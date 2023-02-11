@@ -34,6 +34,7 @@
             this.btnSubmitLogin = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblInvalidMessage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -90,11 +91,23 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Password";
             // 
+            // lblInvalidMessage
+            // 
+            this.lblInvalidMessage.AutoSize = true;
+            this.lblInvalidMessage.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblInvalidMessage.Location = new System.Drawing.Point(116, 451);
+            this.lblInvalidMessage.Name = "lblInvalidMessage";
+            this.lblInvalidMessage.Size = new System.Drawing.Size(782, 32);
+            this.lblInvalidMessage.TabIndex = 6;
+            this.lblInvalidMessage.Text = "Invalid username or password. Please check your credentials";
+            this.lblInvalidMessage.Visible = false;
+            // 
             // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(992, 680);
+            this.Controls.Add(this.lblInvalidMessage);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSubmitLogin);
@@ -116,6 +129,7 @@
         private System.Windows.Forms.Button btnSubmitLogin;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblInvalidMessage;
     }
 }
 
