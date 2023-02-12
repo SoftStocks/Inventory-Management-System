@@ -29,7 +29,7 @@ namespace SoftStocksGUI
                 mp.Show();
 
                 // close current instance
-                this.Hide();
+                this.Close();
             }
             else
             {
@@ -67,6 +67,7 @@ namespace SoftStocksGUI
             {
                 lblInvalidMessage.Text = "Invalid username or password. Please check your credentials";
                 lblInvalidMessage.Visible = true;
+                txtPassword.Text = string.Empty;
                 return false;
             }
         }
