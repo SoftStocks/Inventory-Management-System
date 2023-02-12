@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblInvalidMessage = new System.Windows.Forms.Label();
+            this.cbShowPassword = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -65,7 +66,7 @@
             // btnSubmitLogin
             // 
             this.btnSubmitLogin.AutoSize = true;
-            this.btnSubmitLogin.Location = new System.Drawing.Point(843, 513);
+            this.btnSubmitLogin.Location = new System.Drawing.Point(843, 608);
             this.btnSubmitLogin.Name = "btnSubmitLogin";
             this.btnSubmitLogin.Size = new System.Drawing.Size(95, 42);
             this.btnSubmitLogin.TabIndex = 3;
@@ -95,18 +96,30 @@
             // 
             this.lblInvalidMessage.AutoSize = true;
             this.lblInvalidMessage.ForeColor = System.Drawing.Color.IndianRed;
-            this.lblInvalidMessage.Location = new System.Drawing.Point(116, 451);
+            this.lblInvalidMessage.Location = new System.Drawing.Point(116, 551);
             this.lblInvalidMessage.Name = "lblInvalidMessage";
             this.lblInvalidMessage.Size = new System.Drawing.Size(782, 32);
             this.lblInvalidMessage.TabIndex = 6;
             this.lblInvalidMessage.Text = "Invalid username or password. Please check your credentials";
             this.lblInvalidMessage.Visible = false;
             // 
+            // cbShowPassword
+            // 
+            this.cbShowPassword.AutoSize = true;
+            this.cbShowPassword.Location = new System.Drawing.Point(686, 439);
+            this.cbShowPassword.Name = "cbShowPassword";
+            this.cbShowPassword.Size = new System.Drawing.Size(251, 36);
+            this.cbShowPassword.TabIndex = 7;
+            this.cbShowPassword.Text = "Show password";
+            this.cbShowPassword.UseVisualStyleBackColor = true;
+            this.cbShowPassword.CheckedChanged += new System.EventHandler(this.cbShowPassword_CheckedChanged);
+            // 
             // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(992, 680);
+            this.Controls.Add(this.cbShowPassword);
             this.Controls.Add(this.lblInvalidMessage);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -130,6 +143,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblInvalidMessage;
+        private System.Windows.Forms.CheckBox cbShowPassword;
     }
 }
 
