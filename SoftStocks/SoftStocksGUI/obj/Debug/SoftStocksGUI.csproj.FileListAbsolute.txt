@@ -9,3 +9,4 @@ C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\So
 C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\SoftStocksGUI.csproj.CoreCompileInputs.cache
 C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\SoftStocksGUI.exe
 C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\SoftStocksGUI.pdb
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\SoftStocksGUI.MainPage.resources

@@ -25,8 +25,11 @@ namespace SoftStocksGUI
             if(authenticate())
             {
                 // create new main page form instance
+                var mp = new MainPage();
+                mp.Show();
+
                 // close current instance
-                this.Close();
+                this.Hide();
             }
             else
             {
@@ -39,8 +42,8 @@ namespace SoftStocksGUI
             userName = txtUsername.Text;
             password = txtPassword.Text;
 
-            bool validUserName = true; // create method to check that username is in database
-            string correctPassword = "testPassword"; //create method to get password from database given a username
+            bool validUserName = true; // TODO: create method to check that username is in database
+            string correctPassword = "testPassword"; // TODO: create method to get password from database given a username
 
             if (userName == string.Empty)
             {
@@ -71,8 +74,7 @@ namespace SoftStocksGUI
         private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             if (cbShowPassword.Checked)
-            {
-                
+            { 
                 txtPassword.PasswordChar = '\0';
             }
             else
