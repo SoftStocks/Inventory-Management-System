@@ -127,6 +127,8 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "LoginPage";
             this.Text = "SoftStocks Inventory Management System";
             this.ResumeLayout(false);
