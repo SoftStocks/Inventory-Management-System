@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnSubmitLogin = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblInvalidMessage = new System.Windows.Forms.Label();
+            this.cbShowPassword = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -46,29 +48,31 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "SoftStocks";
             // 
-            // textBox1
+            // txtUsername
             // 
-            this.textBox1.Location = new System.Drawing.Point(294, 255);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(644, 38);
-            this.textBox1.TabIndex = 1;
+            this.txtUsername.Location = new System.Drawing.Point(294, 255);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(644, 38);
+            this.txtUsername.TabIndex = 1;
             // 
-            // textBox2
+            // txtPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(294, 370);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(643, 38);
-            this.textBox2.TabIndex = 2;
+            this.txtPassword.Location = new System.Drawing.Point(294, 370);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(643, 38);
+            this.txtPassword.TabIndex = 2;
             // 
             // btnSubmitLogin
             // 
             this.btnSubmitLogin.AutoSize = true;
-            this.btnSubmitLogin.Location = new System.Drawing.Point(843, 513);
+            this.btnSubmitLogin.Location = new System.Drawing.Point(843, 608);
             this.btnSubmitLogin.Name = "btnSubmitLogin";
             this.btnSubmitLogin.Size = new System.Drawing.Size(95, 42);
             this.btnSubmitLogin.TabIndex = 3;
             this.btnSubmitLogin.Text = "Login";
             this.btnSubmitLogin.UseVisualStyleBackColor = true;
+            this.btnSubmitLogin.Click += new System.EventHandler(this.btnSubmitLogin_Click);
             // 
             // label2
             // 
@@ -88,17 +92,43 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Password";
             // 
+            // lblInvalidMessage
+            // 
+            this.lblInvalidMessage.AutoSize = true;
+            this.lblInvalidMessage.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblInvalidMessage.Location = new System.Drawing.Point(116, 551);
+            this.lblInvalidMessage.Name = "lblInvalidMessage";
+            this.lblInvalidMessage.Size = new System.Drawing.Size(782, 32);
+            this.lblInvalidMessage.TabIndex = 6;
+            this.lblInvalidMessage.Text = "Invalid username or password. Please check your credentials";
+            this.lblInvalidMessage.Visible = false;
+            // 
+            // cbShowPassword
+            // 
+            this.cbShowPassword.AutoSize = true;
+            this.cbShowPassword.Location = new System.Drawing.Point(686, 439);
+            this.cbShowPassword.Name = "cbShowPassword";
+            this.cbShowPassword.Size = new System.Drawing.Size(251, 36);
+            this.cbShowPassword.TabIndex = 7;
+            this.cbShowPassword.Text = "Show password";
+            this.cbShowPassword.UseVisualStyleBackColor = true;
+            this.cbShowPassword.CheckedChanged += new System.EventHandler(this.cbShowPassword_CheckedChanged);
+            // 
             // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(992, 680);
+            this.Controls.Add(this.cbShowPassword);
+            this.Controls.Add(this.lblInvalidMessage);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSubmitLogin);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "LoginPage";
             this.Text = "SoftStocks Inventory Management System";
             this.ResumeLayout(false);
@@ -109,11 +139,13 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnSubmitLogin;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblInvalidMessage;
+        private System.Windows.Forms.CheckBox cbShowPassword;
     }
 }
 
