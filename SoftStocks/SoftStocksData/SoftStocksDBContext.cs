@@ -14,7 +14,7 @@ public class SoftStocksDBContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlServer(
-            @"Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True");
+            @"Server=(localdb)\mssqllocaldb;Database=SoftStocksDB;Trusted_Connection=True");
     }
 }
 
