@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -42,6 +43,8 @@ namespace SoftStocksGUI
             userName = txtUsername.Text;
             password = txtPassword.Text;
 
+            
+            
             bool validUserName = true; // TODO: create method to check that username is in database
             string correctPassword = "testPassword"; // TODO: create method to get password from database given a username
 
