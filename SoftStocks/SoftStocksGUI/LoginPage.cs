@@ -86,5 +86,20 @@ namespace SoftStocksGUI
                 txtPassword.PasswordChar = '*';
             }
         }
+
+        private void credentialsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.credentialsBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.softStocksDBCredentials);
+
+        }
+
+        private void LoginPage_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'softStocksDBCredentials.Credentials' table. You can move, or remove it, as needed.
+            this.credentialsTableAdapter.Fill(this.softStocksDBCredentials.Credentials);
+
+        }
     }
 }
