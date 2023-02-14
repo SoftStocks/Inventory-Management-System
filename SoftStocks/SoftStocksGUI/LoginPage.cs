@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using SoftStocksData;
 
 namespace SoftStocksGUI
 {
@@ -40,13 +33,22 @@ namespace SoftStocksGUI
 
         private bool authenticate()
         {
-            userName = txtUsername.Text;
-            password = txtPassword.Text;
+            
+            string UserName = txtUsername.Text;
+            string Password = txtPassword.Text;
+            
+            string correctUserName;
+            string correctPassword;
+            
+            using(var db = new SoftStocksDBContext())
+            {
+                var credentials = db.Credentials
+                    .Where(c => c.UserName == txtUsername.Text);
 
+                correctUserName = credentials.UserName;
+                correctPassword = credentials.Password;
+            }
             
-            
-            bool validUserName = true; // TODO: create method to check that username is in database
-            string correctPassword = "testPassword"; // TODO: create method to get password from database given a username
 
             if (userName == string.Empty)
             {
@@ -62,7 +64,7 @@ namespace SoftStocksGUI
                 return false;
             }
 
-            if ((password == correctPassword) && validUserName)
+            if ((password == correctPassword) && (userName == correctUserName))
             {
                 return true;
             }
