@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Threading;
 using System.Windows.Forms;
-using SoftStocksData;
 
 namespace SoftStocksGUI
 {
@@ -19,8 +19,8 @@ namespace SoftStocksGUI
             if(authenticate())
             {
                 // create new main page form instance
-                var mp = new MainPage();
-                mp.Show();
+                var t = new Thread(() => Application.Run(new MainPage()));
+                t.Start();
 
                 // close current instance
                 this.Close();
@@ -34,20 +34,20 @@ namespace SoftStocksGUI
         private bool authenticate()
         {
             
-            string UserName = txtUsername.Text;
-            string Password = txtPassword.Text;
+            userName = txtUsername.Text;
+            password = txtPassword.Text;
             
-            string correctUserName;
-            string correctPassword;
+            string correctUserName = "andy";
+            string correctPassword = "testPassword";
             
-            using(var db = new SoftStocksDBContext())
-            {
-                var credentials = db.Credentials
-                    .Where(c => c.UserName == txtUsername.Text);
+            //using(var db = new SoftStocksDBContext())
+            //{
+            //    var credentials = db.Credentials
+            //        .Where(c => c.UserName == txtUsername.Text);
 
-                correctUserName = credentials.UserName;
-                correctPassword = credentials.Password;
-            }
+            //    correctUserName = credentials.UserName;
+            //    correctPassword = credentials.Password;
+            //}
             
 
             if (userName == string.Empty)
