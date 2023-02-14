@@ -1,0 +1,12 @@
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksData\obj\Debug\net48\SoftStocksData.csproj.AssemblyReference.cache
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksData\obj\Debug\net48\SoftStocksData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksData\obj\Debug\net48\SoftStocksData.AssemblyInfoInputs.cache
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksData\obj\Debug\net48\SoftStocksData.AssemblyInfo.cs
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksData\obj\Debug\net48\SoftStocksData.csproj.CoreCompileInputs.cache
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksData\bin\Debug\net48\SoftStocksData.dll
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksData\bin\Debug\net48\SoftStocksData.pdb
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksData\bin\Debug\net48\EntityFramework.SqlServer.dll
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksData\bin\Debug\net48\EntityFramework.dll
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksData\obj\Debug\net48\SoftStocksData.csproj.CopyComplete
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksData\obj\Debug\net48\SoftStocksData.dll
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksData\obj\Debug\net48\SoftStocksData.pdb

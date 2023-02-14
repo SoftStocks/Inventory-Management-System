@@ -38,20 +38,6 @@ namespace SoftStocksGUI
             
             userName = txtUsername.Text;
             password = txtPassword.Text;
-            
-            string correctUserName = "andy";
-            string correctPassword = "testPassword";
-            
-            using(var db = new SoftStocksDBContext())
-            {
-                var credentials = db.Credentials
-                    .Where(c => c.UserName == txtUsername.Text);
-
-                //correctUserName = credentials;
-                //correctPassword = credentials.Password;
-                Console.WriteLine($"######### Credentials: {credentials}");
-            }
-            
 
             if (userName == string.Empty)
             {
@@ -66,6 +52,38 @@ namespace SoftStocksGUI
                 lblInvalidMessage.Visible = true;
                 return false;
             }
+
+            string correctUserName;
+            string correctPassword;
+            
+            using(var db = new SoftStocksDBContext())
+            {
+                var credentials = db.Credentials
+                    .Where(c => c.Username == userName).ToList();
+
+                if(credentials == null|| credentials.Count == 0)
+                {
+                    MessageBox.Show("Could not find any credentials");
+                }
+
+                //if(credentials.Count() == 1)
+                //{
+                correctUserName = credentials[0].Username;
+                correctPassword = credentials[0].Password;
+
+                MessageBox.Show($"Correct username: {correctUserName} Correct password: {correctPassword}");
+                //}
+                //else
+                //{
+                //    lblInvalidMessage.Text = "More than one record being fetched!? Please check your credentials";
+                //    lblInvalidMessage.Visible = true;
+                //    txtPassword.Text = string.Empty;
+                //    return false;
+                //}
+            }
+            
+
+            
 
             if ((password == correctPassword) && (userName == correctUserName))
             {
