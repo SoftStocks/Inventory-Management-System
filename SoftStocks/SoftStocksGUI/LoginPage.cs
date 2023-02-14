@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SoftStocksData;
+using System;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -40,14 +42,15 @@ namespace SoftStocksGUI
             string correctUserName = "andy";
             string correctPassword = "testPassword";
             
-            //using(var db = new SoftStocksDBContext())
-            //{
-            //    var credentials = db.Credentials
-            //        .Where(c => c.UserName == txtUsername.Text);
+            using(var db = new SoftStocksDBContext())
+            {
+                var credentials = db.Credentials
+                    .Where(c => c.UserName == txtUsername.Text);
 
-            //    correctUserName = credentials.UserName;
-            //    correctPassword = credentials.Password;
-            //}
+                //correctUserName = credentials;
+                //correctPassword = credentials.Password;
+                Console.WriteLine($"######### Credentials: {credentials}");
+            }
             
 
             if (userName == string.Empty)

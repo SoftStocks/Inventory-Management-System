@@ -10,3 +10,10 @@ C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\So
 C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\SoftStocksGUI.exe
 C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\SoftStocksGUI.pdb
 C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\SoftStocksGUI.MainPage.resources
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\bin\Debug\EntityFramework.dll
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\bin\Debug\SoftStocksData.dll
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\bin\Debug\SoftStocksData.pdb
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\bin\Debug\EntityFramework.xml
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\SoftStocksGUI.csproj.CopyComplete
