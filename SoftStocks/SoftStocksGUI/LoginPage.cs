@@ -59,31 +59,36 @@ namespace SoftStocksGUI
             
             using(var db = new SoftStocksDBContext())
             {
-                var credentials = db.Credentials
-                    .Where(c => c.Username == userName).ToList();
+                var credentials = db.Credentials.ToList();
+                MessageBox.Show($"Credentials: {credentials}");
+
+                foreach (var c in credentials)
+                {
+                    MessageBox.Show($"Credential: {c}");
+                }
 
                 //var credentials = from c in db.Credentials where c.Username == userName select c;
 
-                if (credentials == null || credentials.Count == 0)
-                {
-                    MessageBox.Show("Could not find any credentials");
-                }
+                //if (credentials == null || credentials.Count == 0)
+                //{
+                //    MessageBox.Show("Could not find any credentials");
+                //}
 
-                if (credentials.Count() == 1)
-                {
-                    correctUserName = credentials[0].Username;
-                    correctPassword = credentials[0].Password;
+                //if (credentials.Count() == 1)
+                //{
+                //    correctUserName = credentials[0].Username;
+                //    correctPassword = credentials[0].Password;
 
-                    MessageBox.Show($"Credentials: {credentials}");
+                //    MessageBox.Show($"Credentials: {credentials}");
+                //}
+                //else
+                //{
+                //lblInvalidMessage.Text = "More than one record being fetched!? Please check your credentials";
+                //lblInvalidMessage.Visible = true;
+                //txtPassword.Text = string.Empty;
+                //return false;
+                //}
             }
-                else
-            {
-                lblInvalidMessage.Text = "More than one record being fetched!? Please check your credentials";
-                lblInvalidMessage.Visible = true;
-                txtPassword.Text = string.Empty;
-                return false;
-            }
-        }
             
 
             
