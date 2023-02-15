@@ -23,7 +23,7 @@ namespace SoftStocksData
     public class SoftStocksDBContext : DbContext
     {
         public DbSet<Staff> Staff { get; set; }
-        public DbSet<Credentials> Credentials { get; set; }
+        public DbSet<Credential> Credentials { get; set; }
         public DbSet<Keyboard> Keyboards { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
 
@@ -43,7 +43,7 @@ namespace SoftStocksData
         public float Salary { get; set; }
     }
 
-    public class Credentials
+    public class Credential
     {
         [Key]
         public string Username { get; set; }
