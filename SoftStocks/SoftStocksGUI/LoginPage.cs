@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
+using System.Data.Entity.Migrations;
 
 namespace SoftStocksGUI
 {
@@ -53,34 +54,36 @@ namespace SoftStocksGUI
                 return false;
             }
 
-            string correctUserName;
-            string correctPassword;
+            string correctUserName = "andy";
+            string correctPassword = "testPassword";
             
             using(var db = new SoftStocksDBContext())
             {
                 var credentials = db.Credentials
                     .Where(c => c.Username == userName).ToList();
 
-                if(credentials == null|| credentials.Count == 0)
+                //var credentials = from c in db.Credentials where c.Username == userName select c;
+
+                if (credentials == null || credentials.Count == 0)
                 {
                     MessageBox.Show("Could not find any credentials");
                 }
 
-                //if(credentials.Count() == 1)
-                //{
-                correctUserName = credentials[0].Username;
-                correctPassword = credentials[0].Password;
+                if (credentials.Count() == 1)
+                {
+                    correctUserName = credentials[0].Username;
+                    correctPassword = credentials[0].Password;
 
-                MessageBox.Show($"Correct username: {correctUserName} Correct password: {correctPassword}");
-                //}
-                //else
-                //{
-                //    lblInvalidMessage.Text = "More than one record being fetched!? Please check your credentials";
-                //    lblInvalidMessage.Visible = true;
-                //    txtPassword.Text = string.Empty;
-                //    return false;
-                //}
+                    MessageBox.Show($"Credentials: {credentials}");
             }
+                else
+            {
+                lblInvalidMessage.Text = "More than one record being fetched!? Please check your credentials";
+                lblInvalidMessage.Visible = true;
+                txtPassword.Text = string.Empty;
+                return false;
+            }
+        }
             
 
             

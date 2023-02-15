@@ -10,3 +10,5 @@ C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksData\bin\Debug\n
 C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksData\obj\Debug\net48\SoftStocksData.csproj.CopyComplete
 C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksData\obj\Debug\net48\SoftStocksData.dll
 C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksData\obj\Debug\net48\SoftStocksData.pdb
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksData\obj\Debug\net48\SoftStocksData.Migrations.202302141610313_InitialCreate.resources
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksData\obj\Debug\net48\SoftStocksData.csproj.GenerateResource.cache
