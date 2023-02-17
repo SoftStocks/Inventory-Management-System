@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 using System.Data.Entity.Migrations;
+using System.Runtime.Remoting.Contexts;
 
 namespace SoftStocksGUI
 {
@@ -11,6 +12,11 @@ namespace SoftStocksGUI
     {
         private string userName;
         private string password;
+
+        // Error messages
+        private string INVALID_CREDENTIALS = "Invalid username or password. Please check your credentials";
+        private string NO_USERNAME = "Please enter a username";
+        private string NO_PASSWORD = "Please enter a password";
 
         public LoginPage()
         {
@@ -42,56 +48,40 @@ namespace SoftStocksGUI
 
             if (userName == string.Empty)
             {
-                lblInvalidMessage.Text = "Please enter a username";
+                lblInvalidMessage.Text = NO_USERNAME;
                 lblInvalidMessage.Visible = true;
                 return false;
             }
 
             if (password == string.Empty)
             {
-                lblInvalidMessage.Text = "Please enter a password";
+                lblInvalidMessage.Text = NO_PASSWORD;
                 lblInvalidMessage.Visible = true;
                 return false;
             }
 
-            string correctUserName = "andy";
-            string correctPassword = "testPassword";
-            
-            using(var db = new SoftStocksDBContext())
+            string correctUserName;
+            string correctPassword;
+
+
+            using (var db = new SoftStocksDBContext())
             {
                 var credentials = db.Credentials.ToList();
-                MessageBox.Show($"Credentials: {credentials}");
 
-                foreach (var c in credentials)
+                if (credentials.Count() != 1)
                 {
-                    MessageBox.Show($"Credential: {c}");
+                    lblInvalidMessage.Visible = true;
+                    lblInvalidMessage.Text = INVALID_CREDENTIALS;
+                    return false;
+                }
+                else
+                {
+                    correctUserName = credentials[0].Username; 
+                    correctPassword = credentials[0].Password;
                 }
 
-                //var credentials = from c in db.Credentials where c.Username == userName select c;
 
-                //if (credentials == null || credentials.Count == 0)
-                //{
-                //    MessageBox.Show("Could not find any credentials");
-                //}
-
-                //if (credentials.Count() == 1)
-                //{
-                //    correctUserName = credentials[0].Username;
-                //    correctPassword = credentials[0].Password;
-
-                //    MessageBox.Show($"Credentials: {credentials}");
-                //}
-                //else
-                //{
-                //lblInvalidMessage.Text = "More than one record being fetched!? Please check your credentials";
-                //lblInvalidMessage.Visible = true;
-                //txtPassword.Text = string.Empty;
-                //return false;
-                //}
-            }
-            
-
-            
+            } 
 
             if ((password == correctPassword) && (userName == correctUserName))
             {
@@ -99,7 +89,7 @@ namespace SoftStocksGUI
             }
             else
             {
-                lblInvalidMessage.Text = "Invalid username or password. Please check your credentials";
+                lblInvalidMessage.Text = INVALID_CREDENTIALS;
                 lblInvalidMessage.Visible = true;
                 txtPassword.Text = string.Empty;
                 return false;
