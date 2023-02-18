@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Data.SqlTypes;
 
 namespace SoftStocksData
@@ -10,14 +11,13 @@ namespace SoftStocksData
     {
         public SoftStocksDBConfiguration()
         {
-            this.SetDefaultConnectionFactory(new System.Data.Entity.Infrastructure.SqlConnectionFactory("Data Source=(LocalDB)\\MSSQLLocalDB"));
+            this.SetDefaultConnectionFactory(new SqlConnectionFactory("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programming\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\SoftStocksDB.mdf;Integrated Security=True"));
             this.SetProviderServices("System.Data.SqlClient", System.Data.Entity.SqlServer.SqlProviderServices.Instance);
-            // SetExecutionStrategy("System.Data.SqlClient", () => new SqlAzureExecutionStrategy());
-            // SetDefaultConnectionFactory(new LocalDbConnectionFactory("C:\\Programming\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\SoftStocksDB.mdf"));
         }
 
-        
     }
+        
+    
 
     [DbConfigurationType(typeof(SoftStocksDBConfiguration))]
     public class SoftStocksDBContext : DbContext
@@ -48,7 +48,7 @@ namespace SoftStocksData
         [Key]
         public string Username { get; set; }
         [Required]
-        public string StaffId { get; set; }
+        public int StaffId { get; set; }
         [Required]
         public string Password { get; set; }
     }

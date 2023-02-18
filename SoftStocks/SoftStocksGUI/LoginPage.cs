@@ -5,6 +5,7 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Data.Entity.Migrations;
 using System.Runtime.Remoting.Contexts;
+using System.Data.Entity;
 
 namespace SoftStocksGUI
 {
@@ -25,7 +26,7 @@ namespace SoftStocksGUI
 
         private void btnSubmitLogin_Click(object sender, EventArgs e)
         {
-            if(authenticate())
+            if(Authenticate())
             {
                 // create new main page form instance
                 var t = new Thread(() => Application.Run(new MainPage()));
@@ -40,7 +41,7 @@ namespace SoftStocksGUI
             }
         }
 
-        private bool authenticate()
+        private bool Authenticate()
         {
             
             userName = txtUsername.Text;
@@ -60,40 +61,26 @@ namespace SoftStocksGUI
                 return false;
             }
 
-            string correctUserName;
-            string correctPassword;
-
-
             using (var db = new SoftStocksDBContext())
             {
-                var credentials = db.Credentials.ToList();
 
-                if (credentials.Count() != 1)
+
+                var credential = db.Credentials.FirstOrDefault(c => c.Username == userName && c.Password == password);
+
+                if (credential != null)
                 {
-                    lblInvalidMessage.Visible = true;
-                    lblInvalidMessage.Text = INVALID_CREDENTIALS;
-                    return false;
+                    return true;
                 }
                 else
                 {
-                    correctUserName = credentials[0].Username; 
-                    correctPassword = credentials[0].Password;
+                    lblInvalidMessage.Text = INVALID_CREDENTIALS;
+                    lblInvalidMessage.Visible = true;
+                    txtPassword.Text = string.Empty;
+                    return false;
                 }
 
-
-            } 
-
-            if ((password == correctPassword) && (userName == correctUserName))
-            {
-                return true;
             }
-            else
-            {
-                lblInvalidMessage.Text = INVALID_CREDENTIALS;
-                lblInvalidMessage.Visible = true;
-                txtPassword.Text = string.Empty;
-                return false;
-            }
+
         }
 
         private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
@@ -118,8 +105,7 @@ namespace SoftStocksGUI
 
         private void LoginPage_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'softStocksDBCredentials.Credentials' table. You can move, or remove it, as needed.
-            this.credentialsTableAdapter.Fill(this.softStocksDBCredentials.Credentials);
+            credentialsTableAdapter.Fill(this.softStocksDBCredentials.Credentials);
 
         }
     }
