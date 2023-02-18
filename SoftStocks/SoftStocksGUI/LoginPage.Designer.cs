@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -36,6 +37,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblInvalidMessage = new System.Windows.Forms.Label();
             this.cbShowPassword = new System.Windows.Forms.CheckBox();
+            this.softStocksDBCredentials = new SoftStocksGUI.SoftStocksDBCredentials();
+            this.credentialsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.credentialsTableAdapter = new SoftStocksGUI.SoftStocksDBCredentialsTableAdapters.CredentialsTableAdapter();
+            this.tableAdapterManager = new SoftStocksGUI.SoftStocksDBCredentialsTableAdapters.TableAdapterManager();
+            ((System.ComponentModel.ISupportInitialize)(this.softStocksDBCredentials)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.credentialsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -114,11 +121,31 @@
             this.cbShowPassword.UseVisualStyleBackColor = true;
             this.cbShowPassword.CheckedChanged += new System.EventHandler(this.cbShowPassword_CheckedChanged);
             // 
+            // softStocksDBCredentials
+            // 
+            this.softStocksDBCredentials.DataSetName = "SoftStocksDBCredentials";
+            this.softStocksDBCredentials.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // credentialsBindingSource
+            // 
+            this.credentialsBindingSource.DataMember = "Credentials";
+            this.credentialsBindingSource.DataSource = this.softStocksDBCredentials;
+            // 
+            // credentialsTableAdapter
+            // 
+            this.credentialsTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CredentialsTableAdapter = this.credentialsTableAdapter;
+            this.tableAdapterManager.UpdateOrder = SoftStocksGUI.SoftStocksDBCredentialsTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(992, 680);
+            this.ClientSize = new System.Drawing.Size(1092, 680);
             this.Controls.Add(this.cbShowPassword);
             this.Controls.Add(this.lblInvalidMessage);
             this.Controls.Add(this.label3);
@@ -130,7 +157,11 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoginPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SoftStocks Inventory Management System";
+            this.Load += new System.EventHandler(this.LoginPage_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.softStocksDBCredentials)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.credentialsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,6 +177,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblInvalidMessage;
         private System.Windows.Forms.CheckBox cbShowPassword;
+        private SoftStocksDBCredentials softStocksDBCredentials;
+        private System.Windows.Forms.BindingSource credentialsBindingSource;
+        private SoftStocksDBCredentialsTableAdapters.CredentialsTableAdapter credentialsTableAdapter;
+        private SoftStocksDBCredentialsTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }
 
