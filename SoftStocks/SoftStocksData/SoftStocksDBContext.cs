@@ -83,5 +83,10 @@ namespace SoftStocksData
         public int StaffId { get; set; }
     }
 
-
+    public class PurchaseTransaction
+    {
+        [Key]
+        public int Id { get; set; }
+        public int PurchaseRequestId { get; set; }
+    }
 }
