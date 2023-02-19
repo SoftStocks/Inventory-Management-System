@@ -47,6 +47,8 @@ namespace SoftStocksGUI
             userName = txtUsername.Text;
             password = txtPassword.Text;
 
+            Credential credential;
+
             if (userName == string.Empty)
             {
                 lblInvalidMessage.Text = NO_USERNAME;
@@ -61,11 +63,12 @@ namespace SoftStocksGUI
                 return false;
             }
 
+            
             using (var db = new SoftStocksDBContext())
             {
-
-
-                var credential = db.Credentials.FirstOrDefault(c => c.Username == userName && c.Password == password);
+                db.Credentials.Load();
+                credential = db.Credentials.FirstOrDefault(c => c.Username == userName && c.Password == password);
+            }
 
                 if (credential != null)
                 {
@@ -81,7 +84,6 @@ namespace SoftStocksGUI
 
             }
 
-        }
 
         private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
         {

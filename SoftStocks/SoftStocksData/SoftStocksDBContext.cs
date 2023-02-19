@@ -63,6 +63,14 @@ namespace SoftStocksData
         public SqlMoney Price { get; set; }
     }
 
+    public class KeyboardRequest
+    {
+        [Key]
+        public int Id { get; set; }
+        public string ModelNumber { get; set; }
+        public string PurchaseRequestId { get; set; }
+    }
+
     public class Supplier
     {
         [Key]
@@ -72,5 +80,21 @@ namespace SoftStocksData
         public string PrimaryContact { get; set; }
         public string BusinessAddress { get; set; }
         public int NumberOfPurchases { get; set; }
+    }
+
+    public class PurchaseRequest
+    {
+        [Key]
+        public int Id { get; set; }
+        public int KeyboardRequestId { get; set; }
+        public int Quantity { get; set; }
+        public int StaffId { get; set; }
+    }
+
+    public class PurchaseTransaction
+    {
+        [Key]
+        public int Id { get; set; }
+        public int PurchaseRequestId { get; set; }
     }
 }
