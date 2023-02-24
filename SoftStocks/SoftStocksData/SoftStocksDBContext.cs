@@ -1,24 +1,12 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Data.SqlTypes;
+using System.Net;
 
 namespace SoftStocksData
 {
-
-    public class SoftStocksDBConfiguration : DbConfiguration
-    {
-        public SoftStocksDBConfiguration()
-        {
-            this.SetDefaultConnectionFactory(new SqlConnectionFactory("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programming\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\SoftStocksDB.mdf;Integrated Security=True"));
-            this.SetProviderServices("System.Data.SqlClient", System.Data.Entity.SqlServer.SqlProviderServices.Instance);
-        }
-
-    }
-        
-    
-
     [DbConfigurationType(typeof(SoftStocksDBConfiguration))]
     public class SoftStocksDBContext : DbContext
     {
@@ -29,16 +17,28 @@ namespace SoftStocksData
 
     }
 
+    public class SoftStocksDBConfiguration : DbConfiguration
+    {
+        public SoftStocksDBConfiguration()
+        {
+            this.SetDefaultConnectionFactory(new SqlConnectionFactory("Data Source=(LocalDB)\\MSSQLLocalDB;Integrated Security=True")); //Data Source=(LocalDB)\\MSSQLLocalDB
+            this.SetProviderServices("System.Data.SqlClient", System.Data.Entity.SqlServer.SqlProviderServices.Instance);
+        }
+
+    }
+
     public class Staff
     {
         [Key]
         public int Id { get; set; }
+        [Required]
         public int Title { get; set; }
         [Required]
         public string FirstName { get; set; }
         public string LastName { get; set; }
         [Required]
         public string Role { get; set; }
+        [Required]
         public DateTime DateOfBirth { get; set; }
         public float Salary { get; set; }
     }

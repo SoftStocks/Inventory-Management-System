@@ -9,7 +9,7 @@
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true; // original: false
+            AutomaticMigrationsEnabled = false;
             ContextKey = "SoftStocksData.SoftStocksDBContext";
         }
 
@@ -20,6 +20,5 @@
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
         }
-
     }
 }
