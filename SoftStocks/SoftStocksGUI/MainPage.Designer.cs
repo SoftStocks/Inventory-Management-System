@@ -28,18 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
+            SuspendLayout();
             // 
             // MainPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(992, 680);
-            this.Name = "MainPage";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainPage";
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(17F, 41F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(992, 680);
+            Name = "MainPage";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "SoftStocks Inventory Management System";
+            ResumeLayout(false);
         }
 
         #endregion
