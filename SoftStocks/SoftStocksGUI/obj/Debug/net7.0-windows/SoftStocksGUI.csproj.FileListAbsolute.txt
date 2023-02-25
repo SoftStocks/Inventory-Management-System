@@ -76,3 +76,4 @@ C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\ne
 C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.pdb
 C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.genruntimeconfig.cache
 C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\ref\SoftStocksGUI.dll
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.AddCredential.resources
