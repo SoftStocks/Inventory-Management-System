@@ -2,29 +2,30 @@
 using PdfSharp.Pdf;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SoftStocksData.Reports
 {
-    internal class StaffReport : Report
+    public class StaffReport : Report
     {
-        public int Title;
+        public string Title;
         public string FirstName;
         public string LastName;
         public string Role;
         public DateTime DateOfBirth;
         public float Salary;
 
-        public StaffReport(int Title, string FirstName, string LastName, string Role, DateTime DateOfBirth, float salary)
+        public StaffReport(string Title, string FirstName, string LastName, string Role, DateTime DateOfBirth, float Salary)
         {
             this.Title = Title;
             this.FirstName = FirstName;
             this.LastName = LastName;
             this.Role = Role;
             this.DateOfBirth = DateOfBirth;
-            Salary = salary;
+            this.Salary = Salary;
 
         }
 
@@ -33,7 +34,7 @@ namespace SoftStocksData.Reports
             throw new NotImplementedException();
         }
 
-        public override object Generate(ReportFormat format)
+        public override string Generate(ReportFormat format)
         {
             switch (format)
             {
@@ -49,12 +50,17 @@ namespace SoftStocksData.Reports
                     gfx.DrawString($"Staff member report, created on {CreationTimestamp.Date}", bodyFont, XBrushes.Black, new XRect(0, 0, page.Width, page.Height), XStringFormats.Center);
                     gfx.DrawString($"Id: {Id}\nTitle: {Title}\nFirst name: {FirstName}", bodyFont, XBrushes.Black, new XRect(0, 0, page.Width, page.Height), XStringFormats.Center);
 
-                    string fileName = $"staff_report_{CreationTimestamp}_{Id}";
+                    string fileName = "staff_report.pdf";
                     pdfReport.Save(fileName);
 
-                    return pdfReport;
+                    return fileName;
+                    
+                    Process p = new();
+
+                    
+
                 default:
-                    return true;
+                    return "";
             }
         }
     }

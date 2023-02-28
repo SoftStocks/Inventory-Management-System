@@ -1,3 +1,3 @@
-﻿enum ReportFormat{
+﻿public enum ReportFormat{
     Pdf, Email, Notification
 }

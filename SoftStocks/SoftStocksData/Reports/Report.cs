@@ -11,12 +11,12 @@ using System.Threading.Tasks;
 
 namespace SoftStocksData.Reports
 {
-    abstract class Report
+    public abstract class Report
     {
         public int Id;
         public DateTime CreationTimestamp;
 
-        public abstract object Generate(ReportFormat format);
+        public abstract string Generate(ReportFormat format);
         public abstract void Destroy();
     }
 }
