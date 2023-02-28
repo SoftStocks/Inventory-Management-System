@@ -54,10 +54,6 @@ namespace SoftStocksData.Reports
                     pdfReport.Save(fileName);
 
                     return fileName;
-                    
-                    Process p = new();
-
-                    
 
                 default:
                     return "";
