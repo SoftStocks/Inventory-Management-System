@@ -11,6 +11,7 @@ namespace SoftStocksData.Reports
 {
     public class StaffReport : Report
     {
+        // basic information
         public string Title;
         public string FirstName;
         public string LastName;
@@ -18,14 +19,28 @@ namespace SoftStocksData.Reports
         public DateTime DateOfBirth;
         public float Salary;
 
-        public StaffReport(string Title, string FirstName, string LastName, string Role, DateTime DateOfBirth, float Salary)
+        //derived information
+        public int NumberOfPurchaseRequests;
+        //public List<string> MostFrequentModelsPurchased;
+
+        public StaffReport(int id)
         {
-            this.Title = Title;
-            this.FirstName = FirstName;
-            this.LastName = LastName;
-            this.Role = Role;
-            this.DateOfBirth = DateOfBirth;
-            this.Salary = Salary;
+            using (var db = new SoftStocksDBContext()) 
+            {
+                var query = from s in db.Staff where s.Id == id select s;
+                var staff = query.FirstOrDefault();
+                
+                this.Title = staff.Title;
+                this.FirstName = staff.FirstName;
+                this.LastName = staff.LastName;
+                this.Role = staff.Role;
+                this.DateOfBirth = staff.DateOfBirth;
+                this.Salary = staff.Salary;
+
+                this.NumberOfPurchaseRequests = (from pr in db.PurchaseRequests where pr.StaffId == id select pr).Count();
+                //this.MostFrequentModelsPurchased = (from ;
+
+            }
 
         }
 
@@ -45,8 +60,12 @@ namespace SoftStocksData.Reports
 
                     XFont titleFont = new("Segoe UI", 24, XFontStyle.Bold);
                     XFont bodyFont = new("Segoe UI", 12, XFontStyle.Regular);
+                    XFont footerFont = new("Segoe UI", 11, XFontStyle.Italic);
 
+                    // title
                     gfx.DrawString($"Directory - {LastName}, {FirstName} ({Id})", titleFont, XBrushes.Black, new XRect(50, -350, page.Width, page.Height), XStringFormats.CenterLeft);
+                    
+                    // header
                     gfx.DrawString($"Staff member listing for SoftStocks employee {FirstName} {LastName}", bodyFont, XBrushes.Black, new XRect(50, -300, page.Width, page.Height), XStringFormats.CenterLeft);
                     gfx.DrawString($"Id: {Id}", bodyFont, XBrushes.Black, new XRect(50, -250, page.Width, page.Height), XStringFormats.CenterLeft);
                     gfx.DrawString($"Title: {Title}", bodyFont, XBrushes.Black, new XRect(50, -225, page.Width, page.Height), XStringFormats.CenterLeft);
@@ -55,6 +74,11 @@ namespace SoftStocksData.Reports
                     gfx.DrawString($"Role: {Role}", bodyFont, XBrushes.Black, new XRect(50, -150, page.Width, page.Height), XStringFormats.CenterLeft);
                     gfx.DrawString($"Date of birth: {DateOfBirth.Date:dd/MM/yyyy}", bodyFont, XBrushes.Black, new XRect(50, -125, page.Width, page.Height), XStringFormats.CenterLeft);
                     gfx.DrawString($"Salary: £{Salary:N2}", bodyFont, XBrushes.Black, new XRect(50, -100, page.Width, page.Height), XStringFormats.CenterLeft);
+                    gfx.DrawString($"Number of purchase requests: £{NumberOfPurchaseRequests}", bodyFont, XBrushes.Black, new XRect(50, -75, page.Width, page.Height), XStringFormats.CenterLeft);
+
+                    // footer
+                    gfx.DrawString($"Report id: {base.Id}", footerFont, XBrushes.Black, new XRect(50, 200, page.Width, page.Height), XStringFormats.CenterLeft);
+                    gfx.DrawString($"Creation date: {base.CreationTimestamp:f}", footerFont, XBrushes.Black, new XRect(50, 175, page.Width, page.Height), XStringFormats.CenterLeft);
 
 
                     string fileName = $"staff_report_{CreationTimestamp.Date.Year}{CreationTimestamp.Date.Month}{CreationTimestamp.Date.Day}{Id}.pdf";
