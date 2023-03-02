@@ -29,16 +29,29 @@ namespace SoftStocksData.Reports
             {
                 var query = from s in db.Staff where s.Id == id select s;
                 var staff = query.FirstOrDefault();
-                
-                this.Title = staff.Title;
-                this.FirstName = staff.FirstName;
-                this.LastName = staff.LastName;
-                this.Role = staff.Role;
-                this.DateOfBirth = staff.DateOfBirth;
-                this.Salary = staff.Salary;
 
-                this.NumberOfPurchaseRequests = (from pr in db.PurchaseRequests where pr.StaffId == id select pr).Count();
-                //this.MostFrequentModelsPurchased = (from ;
+                if (staff != null)
+                {
+                    Title = staff.Title;
+                    FirstName = staff.FirstName;
+                    LastName = staff.LastName;
+                    Role = staff.Role;
+                    DateOfBirth = staff.DateOfBirth;
+                    Salary = staff.Salary;
+
+                    NumberOfPurchaseRequests = (from pr in db.PurchaseRequests where pr.StaffId == id select pr).Count();
+                    //this.MostFrequentModelsPurchased = (from ;
+
+                }
+                else
+                {
+                    Title = "";
+                    FirstName = "";
+                    LastName = "";
+                    Role = "";
+                    DateOfBirth = DateTime.Now;
+                    Salary = 0.0f;
+                }
 
             }
 
@@ -74,7 +87,7 @@ namespace SoftStocksData.Reports
                     gfx.DrawString($"Role: {Role}", bodyFont, XBrushes.Black, new XRect(50, -150, page.Width, page.Height), XStringFormats.CenterLeft);
                     gfx.DrawString($"Date of birth: {DateOfBirth.Date:dd/MM/yyyy}", bodyFont, XBrushes.Black, new XRect(50, -125, page.Width, page.Height), XStringFormats.CenterLeft);
                     gfx.DrawString($"Salary: £{Salary:N2}", bodyFont, XBrushes.Black, new XRect(50, -100, page.Width, page.Height), XStringFormats.CenterLeft);
-                    gfx.DrawString($"Number of purchase requests: £{NumberOfPurchaseRequests}", bodyFont, XBrushes.Black, new XRect(50, -75, page.Width, page.Height), XStringFormats.CenterLeft);
+                    gfx.DrawString($"Number of purchase requests: {NumberOfPurchaseRequests}", bodyFont, XBrushes.Black, new XRect(50, -75, page.Width, page.Height), XStringFormats.CenterLeft);
 
                     // footer
                     gfx.DrawString($"Report id: {base.Id}", footerFont, XBrushes.Black, new XRect(50, 200, page.Width, page.Height), XStringFormats.CenterLeft);
