@@ -14,7 +14,7 @@ namespace SoftStocksData.Reports
     public abstract class Report
     {
         public int Id;
-        public DateTime CreationTimestamp;
+        public DateTime CreationTimestamp = DateTime.Now;
 
         public abstract string Generate(ReportFormat format);
         public abstract void Destroy();
