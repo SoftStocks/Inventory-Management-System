@@ -15,6 +15,7 @@ namespace SoftStocksData.Reports
     {
         public int Id;
         public DateTime CreationTimestamp = DateTime.Now;
+        public Admin requestor; //TODO: get Admin object created 
 
         public abstract string Generate(ReportFormat format);
         public abstract void Destroy();
