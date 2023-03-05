@@ -25,12 +25,12 @@ namespace SoftStocksData
                         string[] fields = parser.ReadFields();
 
                         // database fields
-                        string[] staffFields = {"title", "firstname", "lastname", "role", "dateofbirth", "salary"};
-                        string[] credentialsFields = { };
-                        string[] keyboardFields = { };
-                        string[] supplierFields = { };
-                        string[] purchaseRequestFields = { };
-                        string[] keyboardRequestFields = { };
+                        string[] staffFields = {"title", "first_name", "last_name", "role", "date_of_birth", "salary"};
+                        string[] credentialsFields = {"username", "staff_id", "password"};
+                        string[] keyboardFields = {"model_number", "supplier_id", "quantity", "description", "price"};
+                        string[] supplierFields = {"id", "name", "contact_number", "primary_contact", "business_address", "number_of_purchases"};
+                        string[] purchaseRequestFields = {"id", "keyboard_requestid", "quantity", "staff_id", "approved"};
+                        string[] keyboardRequestFields = {"id", "model_number", "purchase_request_id"};
 
                         // switch the table depending on which fields have been discovered
                         if (fields.SequenceEqual(staffFields))
