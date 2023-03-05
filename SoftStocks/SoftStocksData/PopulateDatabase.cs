@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SoftStocksData
 {
-    internal static class PopulateDatabase
+    public static class PopulateDatabase
     {
         public static void FromCSVFile(string fileName)
         {
@@ -21,15 +21,44 @@ namespace SoftStocksData
 
                     while (!parser.EndOfData)
                     {
+                        // what are the fields stored in the database?
                         string[] fields = parser.ReadFields();
 
-                        // what are the fields stored in the database?
-                        // switch the table depending on which fields have been discovered
+                        // database fields
+                        string[] staffFields = {"title", "firstname", "lastname", "role", "dateofbirth", "salary"};
+                        string[] credentialsFields = { };
+                        string[] keyboardFields = { };
+                        string[] supplierFields = { };
+                        string[] purchaseRequestFields = { };
+                        string[] keyboardRequestFields = { };
 
-                        //Read the file
-                        //Create dbContext record based on the parsed data
-                        db.Staff.Add(new Staff());
-                        //Save changes
+                        // switch the table depending on which fields have been discovered
+                        if (fields.SequenceEqual(staffFields))
+                        {
+                            db.Staff.Add(new Staff { });
+                        }
+                        else if (fields.SequenceEqual(credentialsFields))
+                        {
+                            db.Credentials.Add(new Credential { });
+                        }
+                        else if(fields.SequenceEqual(keyboardFields))
+                        {
+                            db.KeyboardRequests.Add(new KeyboardRequest { });
+                        }
+                        else if (fields.SequenceEqual(supplierFields))
+                        {
+                            db.Suppliers.Add(new Supplier { });
+                        }
+                        else if(fields.SequenceEqual(purchaseRequestFields))
+                        {
+                            db.PurchaseRequests.Add(new PurchaseRequest { });
+                        }
+                        else if(fields.SequenceEqual(keyboardRequestFields))
+                        {
+                            db.KeyboardRequests.Add(new KeyboardRequest { });
+                        }
+
+                        // Save changes
                         db.SaveChanges();
                     }
                 }
