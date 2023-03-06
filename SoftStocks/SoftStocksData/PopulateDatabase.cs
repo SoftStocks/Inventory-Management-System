@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace SoftStocksData
 {
@@ -19,43 +20,47 @@ namespace SoftStocksData
                     parser.TextFieldType = FieldType.Delimited;
                     parser.SetDelimiters(",");
 
+                    string[] header = parser.ReadFields();
+
+                    // database fields
+                    string[] staffHeader = { "title", "first_name", "last_name", "role", "date_of_birth", "salary" };
+                    string[] credentialsHeader = { "username", "staff_id", "password" };
+                    string[] keyboardHeader = { "model_number", "supplier_id", "quantity", "description", "price" };
+                    string[] supplierHeader = { "id", "name", "contact_number", "primary_contact", "business_address", "number_of_purchases" };
+                    string[] purchaseRequestHeader = { "id", "keyboard_requestid", "quantity", "staff_id", "approved" };
+                    string[] keyboardRequestHeader = { "id", "model_number", "purchase_request_id" };
+
+
                     while (!parser.EndOfData)
                     {
                         // what are the fields stored in the database?
                         string[] fields = parser.ReadFields();
 
-                        // database fields
-                        string[] staffFields = {"title", "first_name", "last_name", "role", "date_of_birth", "salary"};
-                        string[] credentialsFields = {"username", "staff_id", "password"};
-                        string[] keyboardFields = {"model_number", "supplier_id", "quantity", "description", "price"};
-                        string[] supplierFields = {"id", "name", "contact_number", "primary_contact", "business_address", "number_of_purchases"};
-                        string[] purchaseRequestFields = {"id", "keyboard_requestid", "quantity", "staff_id", "approved"};
-                        string[] keyboardRequestFields = {"id", "model_number", "purchase_request_id"};
-
+                        
                         // switch the table depending on which fields have been discovered
-                        if (fields.SequenceEqual(staffFields))
+                        if (header.SequenceEqual(staffHeader))
                         {
-                            db.Staff.Add(new Staff { });
+                            Console.WriteLine("STAFF");
                         }
-                        else if (fields.SequenceEqual(credentialsFields))
+                        else if (header.SequenceEqual(credentialsHeader))
                         {
-                            db.Credentials.Add(new Credential { });
+                            //db.Credentials.Add(new Credential { });
                         }
-                        else if(fields.SequenceEqual(keyboardFields))
+                        else if(header.SequenceEqual(staffHeader))
                         {
-                            db.KeyboardRequests.Add(new KeyboardRequest { });
+                            //db.KeyboardRequests.Add(new KeyboardRequest { });
                         }
-                        else if (fields.SequenceEqual(supplierFields))
+                        else if (header.SequenceEqual(staffHeader))
                         {
-                            db.Suppliers.Add(new Supplier { });
+                            //db.Suppliers.Add(new Supplier { });
                         }
-                        else if(fields.SequenceEqual(purchaseRequestFields))
+                        else if(header.SequenceEqual(staffHeader))
                         {
-                            db.PurchaseRequests.Add(new PurchaseRequest { });
+                            //db.PurchaseRequests.Add(new PurchaseRequest { });
                         }
-                        else if(fields.SequenceEqual(keyboardRequestFields))
+                        else if(header.SequenceEqual(staffHeader))
                         {
-                            db.KeyboardRequests.Add(new KeyboardRequest { });
+                            //db.KeyboardRequests.Add(new KeyboardRequest { });
                         }
 
                         // Save changes
