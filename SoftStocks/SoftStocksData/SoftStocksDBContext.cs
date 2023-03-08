@@ -16,8 +16,6 @@ namespace SoftStocksData
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<KeyboardRequest> KeyboardRequests { get; set; }
         public DbSet<PurchaseRequest> PurchaseRequests { get; set; }
-        public DbSet<PurchaseTransaction> PurchaseTransactions { get; set; }
-
     }
 
     public class SoftStocksDBConfiguration : DbConfiguration
@@ -71,7 +69,7 @@ namespace SoftStocksData
         [Key]
         public int Id { get; set; }
         public string ModelNumber { get; set; }
-        public string PurchaseRequestId { get; set; }
+        public int PurchaseRequestId { get; set; }
     }
 
     public class Supplier
@@ -92,12 +90,7 @@ namespace SoftStocksData
         public int KeyboardRequestId { get; set; }
         public int Quantity { get; set; }
         public int StaffId { get; set; }
+        public bool Approved { get; set; }
     }
 
-    public class PurchaseTransaction
-    {
-        [Key]
-        public int Id { get; set; }
-        public int PurchaseRequestId { get; set; }
-    }
 }
