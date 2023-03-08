@@ -14,6 +14,9 @@ namespace SoftStocksData
         public DbSet<Credential> Credentials { get; set; }
         public DbSet<Keyboard> Keyboards { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<KeyboardRequest> KeyboardRequests { get; set; }
+        public DbSet<PurchaseRequest> PurchaseRequests { get; set; }
+        public DbSet<PurchaseTransaction> PurchaseTransactions { get; set; }
 
     }
 
@@ -32,7 +35,7 @@ namespace SoftStocksData
         [Key]
         public int Id { get; set; }
         [Required]
-        public int Title { get; set; }
+        public string Title { get; set; }
         [Required]
         public string FirstName { get; set; }
         public string LastName { get; set; }
