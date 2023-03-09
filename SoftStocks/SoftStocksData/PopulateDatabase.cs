@@ -27,9 +27,9 @@ namespace SoftStocksData
                     string[] staffHeader = { "title", "first_name", "last_name", "role", "date_of_birth", "salary" };
                     string[] credentialsHeader = { "username", "staff_id", "password" };
                     string[] keyboardHeader = { "model_number", "supplier_id", "quantity", "description", "price" };
-                    string[] supplierHeader = { "id", "name", "contact_number", "primary_contact", "business_address", "number_of_purchases" };
-                    string[] purchaseRequestHeader = { "id", "keyboard_requestid", "quantity", "staff_id", "approved" };
-                    string[] keyboardRequestHeader = { "id", "model_number", "purchase_request_id" };
+                    string[] supplierHeader = { "name", "contact_number", "primary_contact", "business_address", "number_of_purchases" };
+                    string[] purchaseRequestHeader = {"keyboard_requestid", "quantity", "staff_id", "approved" };
+                    string[] keyboardRequestHeader = { "model_number", "purchase_request_id" };
 
 
                     while (!parser.EndOfData)
