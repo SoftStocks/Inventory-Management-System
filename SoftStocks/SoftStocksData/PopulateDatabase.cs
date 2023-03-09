@@ -117,8 +117,19 @@ namespace SoftStocksData
         {
             using (var context = new SoftStocksDBContext())
             {
-                context.Database.ExecuteSqlCommand($"TRUNCATE TABLE {table}");
+                context.Database.ExecuteSqlCommand($"DELETE FROM Staff");
                 context.SaveChanges();
+            }
+        }
+
+        public static void SetUp()
+        {
+            string[] tables = { "staff", "credentials", "keyboard", "supplier", "keyboardRequest", "purchaseRequest" };
+
+            foreach (var table in tables)
+            {
+                ClearFrom(table);
+                FromCSVFile($"C:\\Programming\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\CSV data\\{table}_data.csv");
             }
         }
     }
