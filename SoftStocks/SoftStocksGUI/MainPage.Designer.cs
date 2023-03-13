@@ -28,13 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            button1 = new Button();
             SuspendLayout();
+            // 
+            // button1
+            // 
+            button1.Location = new Point(118, 79);
+            button1.Name = "button1";
+            button1.Size = new Size(153, 71);
+            button1.TabIndex = 0;
+            button1.Text = "Send Email";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // MainPage
             // 
-            AutoScaleDimensions = new SizeF(17F, 41F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(992, 680);
+            ClientSize = new Size(408, 249);
+            Controls.Add(button1);
+            Margin = new Padding(1, 1, 1, 1);
             Name = "MainPage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "SoftStocks Inventory Management System";
@@ -42,5 +55,7 @@
         }
 
         #endregion
+
+        private Button button1;
     }
 }

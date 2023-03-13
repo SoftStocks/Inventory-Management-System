@@ -69,6 +69,14 @@ namespace SoftStocksGUI
         public LoginPage()
         {
             InitializeComponent();
+
+            /*using(var db = new SoftStocksDBContext())
+            {
+
+                db.Credentials.Add(new Credential { Username="Jack", Password="1234"});
+                db.SaveChanges();
+
+            }*/
         }
 
         private void btnSubmitLogin_Click(object sender, EventArgs e)
