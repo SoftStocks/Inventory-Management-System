@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jack.wallace\\Source\\Repos\\Inventory-Management-System\\SoftStocks\\SoftStocksGUI\\SoftStocksGUI.csproj": {}
+    "C:\\Users\\jack.wallace\\source\\repos\\Inventory-Management-System\\SoftStocks\\SoftStocksGUI\\SoftStocksGUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jack.wallace\\Source\\Repos\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\SoftStocksData.csproj": {
+    "C:\\Users\\jack.wallace\\source\\repos\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\SoftStocksData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jack.wallace\\Source\\Repos\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\SoftStocksData.csproj",
+        "projectUniqueName": "C:\\Users\\jack.wallace\\source\\repos\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\SoftStocksData.csproj",
         "projectName": "SoftStocksData",
-        "projectPath": "C:\\Users\\jack.wallace\\Source\\Repos\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\SoftStocksData.csproj",
+        "projectPath": "C:\\Users\\jack.wallace\\source\\repos\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\SoftStocksData.csproj",
         "packagesPath": "C:\\Users\\jack.wallace\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jack.wallace\\Source\\Repos\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\obj\\",
+        "outputPath": "C:\\Users\\jack.wallace\\source\\repos\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jack.wallace\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -77,14 +77,14 @@
         }
       }
     },
-    "C:\\Users\\jack.wallace\\Source\\Repos\\Inventory-Management-System\\SoftStocks\\SoftStocksGUI\\SoftStocksGUI.csproj": {
+    "C:\\Users\\jack.wallace\\source\\repos\\Inventory-Management-System\\SoftStocks\\SoftStocksGUI\\SoftStocksGUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jack.wallace\\Source\\Repos\\Inventory-Management-System\\SoftStocks\\SoftStocksGUI\\SoftStocksGUI.csproj",
+        "projectUniqueName": "C:\\Users\\jack.wallace\\source\\repos\\Inventory-Management-System\\SoftStocks\\SoftStocksGUI\\SoftStocksGUI.csproj",
         "projectName": "SoftStocksGUI",
-        "projectPath": "C:\\Users\\jack.wallace\\Source\\Repos\\Inventory-Management-System\\SoftStocks\\SoftStocksGUI\\SoftStocksGUI.csproj",
+        "projectPath": "C:\\Users\\jack.wallace\\source\\repos\\Inventory-Management-System\\SoftStocks\\SoftStocksGUI\\SoftStocksGUI.csproj",
         "packagesPath": "C:\\Users\\jack.wallace\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jack.wallace\\Source\\Repos\\Inventory-Management-System\\SoftStocks\\SoftStocksGUI\\obj\\",
+        "outputPath": "C:\\Users\\jack.wallace\\source\\repos\\Inventory-Management-System\\SoftStocks\\SoftStocksGUI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jack.wallace\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -101,8 +101,8 @@
           "net7.0-windows7.0": {
             "targetAlias": "net7.0-windows",
             "projectReferences": {
-              "C:\\Users\\jack.wallace\\Source\\Repos\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\SoftStocksData.csproj": {
-                "projectPath": "C:\\Users\\jack.wallace\\Source\\Repos\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\SoftStocksData.csproj"
+              "C:\\Users\\jack.wallace\\source\\repos\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\SoftStocksData.csproj": {
+                "projectPath": "C:\\Users\\jack.wallace\\source\\repos\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\SoftStocksData.csproj"
               }
             }
           }

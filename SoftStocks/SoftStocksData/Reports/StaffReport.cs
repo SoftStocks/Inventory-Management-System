@@ -99,6 +99,19 @@ namespace SoftStocksData.Reports
 
                     return fileName;
 
+                case ReportFormat.Email:
+                    string from = "FROM EMAIL";  //Variables to change
+                    string recipients = "FROM EMAIL";
+                    string subject = "Bonjourino";
+                    string body = "Bludclart email class";
+
+                    List<string> attachments = new List<string>();
+                    attachments.Add("PATH TO ATTACHMENT");  //Change to suit your own attachment
+
+                    EmailReport.SendEmail(from, recipients, subject, body, attachments, true);
+
+                    return "ok";
+
                 default:
                     return "";
             }

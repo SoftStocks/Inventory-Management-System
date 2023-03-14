@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NZJkQ8v5pTDyqzMqgANb5450FhMhz7Pmnmj0TKP6GOn/QLJVmYDX04S40jeueNpK48F71pSLAXvR9Yy4bQA8jA==",
+  "dgSpecHash": "m/H+xyfwJvUKOoT1OcShgV81LMjQzjkWAAq0akw9y7Xjnx5osWV8NEa5BL9vfmQNSQEkDIIomRKITREMsl78nA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jack.wallace\\Source\\Repos\\Inventory-Management-System\\SoftStocks\\SoftStocksGUI\\SoftStocksGUI.csproj",
+  "projectFilePath": "C:\\Users\\jack.wallace\\source\\repos\\Inventory-Management-System\\SoftStocks\\SoftStocksGUI\\SoftStocksGUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jack.wallace\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\jack.wallace\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
