@@ -113,11 +113,49 @@ namespace SoftStocksData
             }
         }
 
-        public static void ClearFrom(string table)
+        public static void Clear()
         {
             using (var context = new SoftStocksDBContext())
             {
-                context.Database.ExecuteSqlCommand($"DELETE FROM Staff");
+
+                var staff = context.Staff.ToList();
+                var credentials = context.Credentials.ToList();
+                var suppliers = context.Suppliers.ToList();
+                var keyboards = context.Keyboards.ToList();
+                var purchaseRequests = context.PurchaseRequests.ToList();
+                var keyboardRequests = context.KeyboardRequests.ToList();
+
+                foreach (var s in staff)
+                {
+                    context.Staff.Remove(s);
+                }
+
+                foreach (var c in credentials) 
+                {
+                    context.Credentials.Remove(c);
+                }
+
+                foreach (var s in suppliers)
+                {
+                    context.Suppliers.Remove(s);
+                }
+
+                foreach(var k in keyboards)
+                {
+                    context.Keyboards.Remove(k);
+                }
+
+                foreach (var pr in purchaseRequests)
+                {
+                    context.PurchaseRequests.Remove(pr);
+                }
+
+                foreach (var kr in keyboardRequests)
+                {
+                    context.KeyboardRequests.Remove(kr);
+                }
+                
+                //context.Staff.Remove();//context.Staff.SqlQuery($"TRUNCATE TABLE {table}");
                 context.SaveChanges();
             }
         }
@@ -126,9 +164,9 @@ namespace SoftStocksData
         {
             string[] tables = { "staff", "credentials", "keyboard", "supplier", "keyboardRequest", "purchaseRequest" };
 
+            Clear();
             foreach (var table in tables)
             {
-                ClearFrom(table);
                 FromCSVFile($"C:\\Programming\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\CSV data\\{table}_data.csv");
             }
         }
