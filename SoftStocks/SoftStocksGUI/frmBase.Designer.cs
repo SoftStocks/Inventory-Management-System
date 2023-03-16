@@ -115,7 +115,7 @@
             btnLogout.Image = Properties.Resources.logout;
             btnLogout.Location = new Point(626, 0);
             btnLogout.Name = "btnLogout";
-            btnLogout.Padding = new Padding(0, 30, 0, 0);
+            btnLogout.Padding = new Padding(0, 25, 0, 20);
             btnLogout.Size = new Size(139, 127);
             btnLogout.TabIndex = 1;
             btnLogout.Text = "Logout";
