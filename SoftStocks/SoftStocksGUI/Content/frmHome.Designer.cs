@@ -1,6 +1,6 @@
 ﻿namespace SoftStocksGUI
 {
-    partial class MainPage
+    partial class frmHome
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,15 @@
         {
             SuspendLayout();
             // 
-            // MainPage
+            // frmHome
             // 
-            AutoScaleDimensions = new SizeF(17F, 41F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(992, 680);
-            Name = "MainPage";
+            BackColor = Color.FromArgb(89, 89, 89);
+            ClientSize = new Size(765, 450);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(1, 1, 1, 1);
+            Name = "frmHome";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "SoftStocks Inventory Management System";
             ResumeLayout(false);

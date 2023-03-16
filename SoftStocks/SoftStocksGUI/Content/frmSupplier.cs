@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SoftStocksGUI
 {
-    public partial class MainPage : Form
+    public partial class frmSupplier : Form
     {
-        public MainPage()
+        public frmSupplier()
         {
             InitializeComponent();
         }
