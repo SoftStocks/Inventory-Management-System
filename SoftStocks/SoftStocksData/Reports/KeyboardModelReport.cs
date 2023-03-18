@@ -3,6 +3,7 @@ using PdfSharp.Pdf;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace SoftStocksData.Reports
         public Supplier Supplier;
         public int Quantity;
         public string? Description;
-        public float Price;
+        public SqlMoney Price;
 
         // advanced (derived) information
         public int TotalNumberOfTransactions;
@@ -36,6 +37,7 @@ namespace SoftStocksData.Reports
                 this.Price = keyboard.Price;
 
                 // TODO: write other methods
+                this.TotalNumberOfTransactions = dbContext.PurchaseRequests.Join(dbContext.KeyboardRequests, pr => pr.KeyboardRequestId, kr => kr.Id, (pr, kr) => kr.ModelNumber == modelNumber).ToList().Count();
             }
 
         }
