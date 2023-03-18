@@ -32,5 +32,15 @@
   
   <code>report.Destroy()</code>
   <p>The report's entry within persistent object storage will be removed, along with any associated files.</p>
-
+  
+  <h2>Configuration</h2>
+  <h3>Code-First Migrations</h3>
+  <p>When making changes to the database, such as by adding new tables, entities or changing data types, you will need to update the migrations. To do this:</p>
+  <ol>
+  <li>From the top bar, click <code>View</code></li>
+  <li>Click <code>Other Windows</code></li>
+  <li>Click <code>Package Manager Console</code></li>
+  <li>Change the default project to <code>SoftStocksGUI</code></li>
+  <li>Enter <code>Update-Database</code> into the command line. <i>You can optionally add <code>-Verbose</code> </i></li>
+  </ol>
 </html>  
