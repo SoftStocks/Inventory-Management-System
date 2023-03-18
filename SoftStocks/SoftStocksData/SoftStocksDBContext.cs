@@ -16,6 +16,7 @@ namespace SoftStocksData
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<KeyboardRequest> KeyboardRequests { get; set; }
         public DbSet<PurchaseRequest> PurchaseRequests { get; set; }
+
     }
 
     public class SoftStocksDBConfiguration : DbConfiguration
@@ -27,6 +28,14 @@ namespace SoftStocksData
         }
 
     }
+
+    public class SoftStocksDBInitialiser : DropCreateDatabaseIfModelChanges<DbContext> {
+        protected override void Seed(DbContext context)
+        {
+            context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('[Staff]', RESEED, 1);");
+        }
+    }
+
 
     public class Staff
     {
