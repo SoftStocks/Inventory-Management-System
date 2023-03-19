@@ -57,12 +57,12 @@ namespace SoftStocksData.Reports
 
         }
 
-        public override void Destroy()
+        public override void Delete()
         {
             throw new NotImplementedException();
         }
 
-        public override string Generate(ReportFormat format)
+        public override string Create(ReportFormat format)
         {
             switch (format)
             {
