@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SoftStocksData.Reports
 {
-    internal class KeyboardModelReport : Report
+    public class KeyboardModelReport : Report
     {
         // basic information
         public int ModelNumber;
@@ -21,7 +21,7 @@ namespace SoftStocksData.Reports
 
         // advanced (derived) information
         public int TotalNumberOfTransactions;
-        public List<Admin> PurchasedBy;
+        //public List<Admin> PurchasedBy;
         public List<KeyboardModelReport> SimilarModels;
         public List<float> PriceHistory;
 
@@ -37,16 +37,16 @@ namespace SoftStocksData.Reports
                 this.Price = keyboard.Price;
 
                 // TODO: write other methods
-                this.TotalNumberOfTransactions = dbContext.PurchaseRequests.Join(dbContext.KeyboardRequests, pr => pr.KeyboardRequestId, kr => kr.Id, (pr, kr) => kr.ModelNumber == modelNumber).ToList().Count();
+                //this.TotalNumberOfTransactions = dbContext.PurchaseRequests.Join(dbContext.KeyboardRequests, pr => pr.KeyboardRequestId, kr => kr.Id, (pr, kr) => kr.ModelNumber == modelNumber).ToList().Count();
             }
 
         }
-        public override void Destroy()
+        public override void Delete()
         {
             throw new NotImplementedException();
         }
 
-        public override string Generate(ReportFormat format)
+        public override string Create(ReportFormat format)
         {
             switch (format)
             {
@@ -67,9 +67,8 @@ namespace SoftStocksData.Reports
                     gfx.DrawString($"Quantity in stock: {Quantity}", bodyFont, XBrushes.Black, new XRect(50, -250, page.Width, page.Height), XStringFormats.CenterLeft);
                     gfx.DrawString($"Product description: {Description}", bodyFont, XBrushes.Black, new XRect(50, -225, page.Width, page.Height), XStringFormats.CenterLeft);
                     gfx.DrawString($"Price: £{Price:N2}", bodyFont, XBrushes.Black, new XRect(50, -200, page.Width, page.Height), XStringFormats.CenterLeft);
-                    //gfx.DrawString($"Last name: {LastName}", bodyFont, XBrushes.Black, new XRect(50, -175, page.Width, page.Height), XStringFormats.CenterLeft);
                     gfx.DrawString($"Total models sold: {TotalNumberOfTransactions}", bodyFont, XBrushes.Black, new XRect(50, -150, page.Width, page.Height), XStringFormats.CenterLeft);
-                    gfx.DrawString($"Purchasers: {PurchasedBy}", bodyFont, XBrushes.Black, new XRect(50, -125, page.Width, page.Height), XStringFormats.CenterLeft);
+                    //gfx.DrawString($"Purchasers: {PurchasedBy}", bodyFont, XBrushes.Black, new XRect(50, -125, page.Width, page.Height), XStringFormats.CenterLeft);
                     gfx.DrawString($"Similar models: {SimilarModels}", bodyFont, XBrushes.Black, new XRect(50, -100, page.Width, page.Height), XStringFormats.CenterLeft);
                     gfx.DrawString($"Price history: {PriceHistory}", bodyFont, XBrushes.Black, new XRect(50, -75, page.Width, page.Height), XStringFormats.CenterLeft);
 
@@ -83,12 +82,19 @@ namespace SoftStocksData.Reports
 
                     return fileName;
                 case ReportFormat.Email:
-                    break;
+                    return "";
                 case ReportFormat.Notification:
-                    break;
+                    return "";
                 default:
-                    break;
+                    return "";
             }
+        }
+
+        public override void Download()
+        {
+            string filename = this.Create(ReportFormat.Pdf);
+            System.Diagnostics.Process.Start(filename);
+
         }
     }
 }
