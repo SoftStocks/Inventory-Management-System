@@ -103,5 +103,10 @@ namespace SoftStocksData.Reports
                     return "";
             }
         }
+
+        public override void Download()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

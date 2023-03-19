@@ -19,6 +19,7 @@ namespace SoftStocksData.Reports
 
         public abstract string Create(ReportFormat format);
         public abstract void Delete();
+        public abstract void Download();
     }
 }
 
