@@ -4,7 +4,7 @@
     {
         public int Id;
         public DateTime CreationTimestamp = DateTime.Now;
-        public Admin requestor; //TODO: get Admin object created 
+        public Admin requestor; 
 
         public abstract string Create(ReportFormat format);
         public abstract void Delete();
