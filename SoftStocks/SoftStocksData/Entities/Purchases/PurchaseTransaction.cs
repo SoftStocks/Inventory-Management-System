@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace SoftStocksData.Entities.Purchases
 {
-    public class PurchaseRequest
+    public class PurchaseTransaction
     {
         [Key]
         public int Id { get; set; }
-        public int KeyboardRequestId { get; set; }
-        public int Quantity { get; set; }
-        public int StaffId { get; set; }
+        [Required]
+        public int PurchaseRequestId { get; set; }
+        [Required]
+        public string Type { get; set; }
     }
 }

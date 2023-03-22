@@ -18,13 +18,15 @@ namespace SoftStocksData
         public DbSet<KeyboardRequest> KeyboardRequests { get; set; }
         public DbSet<PurchaseRequest> PurchaseRequests { get; set; }
 
+        public DbSet<PurchaseTransaction> PurchaseTransactions { get; set;}
+
     }
 
     public class SoftStocksDBConfiguration : DbConfiguration
     {
         public SoftStocksDBConfiguration()
         {
-            this.SetDefaultConnectionFactory(new SqlConnectionFactory("Server=tcp:softstocks.database.windows.net,1433;Initial Catalog=softstocksdb;Persist Security Info=False;User ID=CloudSA45aa00f9;Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
+            this.SetDefaultConnectionFactory(new SqlConnectionFactory("Data Source=(LocalDB)\\MSSQLLocalDB;Integrated Security=True"));
             this.SetProviderServices("System.Data.SqlClient", System.Data.Entity.SqlServer.SqlProviderServices.Instance);
         }
 

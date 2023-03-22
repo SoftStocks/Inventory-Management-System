@@ -1,11 +1,11 @@
-model_number, purchase_request_id
-1,1
-2,2
-3,2
-3,3
-1,3
-1,4
-4,4
-8,5
-1,5
-2,5
+id,model_number, purchase_request_id
+1,1,1
+2,2,2
+3,3,2
+4,3,3
+5,1,3
+6,1,4
+7,4,4
+8,8,5
+9,1,5
+10,2,5
