@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using SoftStocksData.Entities.Keyboards;
+using SoftStocksData.Entities.Purchases;
+using SoftStocksData.Entities.StaffMember;
+using SoftStocksData.Entities.Supplier;
+using SoftStocksData.Keyboards;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
-using System.Data.SqlTypes;
-using System.Net;
 
 namespace SoftStocksData
 {
@@ -23,85 +24,10 @@ namespace SoftStocksData
     {
         public SoftStocksDBConfiguration()
         {
-            this.SetDefaultConnectionFactory(new SqlConnectionFactory("Data Source=(LocalDB)\\MSSQLLocalDB;Integrated Security=True")); //Data Source=(LocalDB)\\MSSQLLocalDB
+            this.SetDefaultConnectionFactory(new SqlConnectionFactory("Server=tcp:softstocks.database.windows.net,1433;Initial Catalog=softstocksdb;Persist Security Info=False;User ID=CloudSA45aa00f9;Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
             this.SetProviderServices("System.Data.SqlClient", System.Data.Entity.SqlServer.SqlProviderServices.Instance);
         }
 
-    }
-
-    public class SoftStocksDBInitialiser : DropCreateDatabaseIfModelChanges<DbContext> {
-        protected override void Seed(DbContext context)
-        {
-            context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('[Staff]', RESEED, 1);");
-        }
-    }
-
-
-    public class Staff
-    {
-        [Key]
-        public int Id { get; set; }
-        [Required]
-        public string Title { get; set; }
-        [Required]
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        [Required]
-        public string EmailAddress { get; set; }
-        [Required]
-        public string Role { get; set; }
-        [Required]
-        public DateTime DateOfBirth { get; set; }
-        public float Salary { get; set; }
-    }
-
-    public class Credential
-    {
-        [Key]
-        public string Username { get; set; }
-        [Required]
-        public int StaffId { get; set; }
-        [Required]
-        public string Password { get; set; }
-    }
-
-    public class Keyboard
-    {
-        [Key]
-        public int ModelNumber { get; set; }
-        public int SupplierId { get; set; }
-        public int Quantity { get; set; }
-        public string Description { get; set; }
-        public SqlMoney Price { get; set; }
-    }
-
-    public class KeyboardRequest
-    {
-        [Key]
-        public int Id { get; set; }
-        public string ModelNumber { get; set; }
-        public int PurchaseRequestId { get; set; }
-    }
-
-    public class Supplier
-    {
-        [Key]
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string ContactNumber { get; set; }
-        public string PrimaryContact { get; set; }
-        public string BusinessAddress { get; set; }
-        public int NumberOfPurchases { get; set; }
-    }
-
-    public class PurchaseRequest
-    {
-        [Key]
-        public int Id { get; set; }
-        public int KeyboardRequestId { get; set; }
-        public int Quantity { get; set; }
-        public int StaffId { get; set; }
-        public bool Approved { get; set; }
     }
 
 }
