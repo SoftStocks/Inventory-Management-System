@@ -22,7 +22,7 @@ namespace SoftStocksData
                     string[] header = parser.ReadFields();
 
                     // database fields
-                    string[] staffHeader = { "id", "title", "first_name", "last_name", "role", "date_of_birth", "salary" };
+                    string[] staffHeader = { "id", "title", "first_name", "last_name", "email_address", "role", "date_of_birth", "salary" };
                     string[] credentialsHeader = { "username", "staff_id", "password" };
                     string[] keyboardHeader = { "model_number", "supplier_id", "quantity", "description", "price" };
                     string[] supplierHeader = { "id", "name", "contact_number", "primary_contact", "business_address", "number_of_purchases" };
@@ -35,7 +35,6 @@ namespace SoftStocksData
                         // what are the fields stored in the database?
                         string[] fields = parser.ReadFields();
 
-                        
                         // switch the table depending on which fields have been discovered
                         if (header.SequenceEqual(staffHeader))
                         {
@@ -44,9 +43,10 @@ namespace SoftStocksData
                                 Title = fields[1],
                                 FirstName = fields[2],
                                 LastName = fields[3],
-                                Role = fields[4],
-                                DateOfBirth = DateTime.Parse(fields[5], new CultureInfo("en-GB")),
-                                Salary = float.Parse(fields[6], CultureInfo.InvariantCulture.NumberFormat)
+                                EmailAddress = fields[4],
+                                Role = fields[5],
+                                DateOfBirth = DateTime.Parse(fields[6], new CultureInfo("en-GB")),
+                                Salary = float.Parse(fields[7], CultureInfo.InvariantCulture.NumberFormat)
                             };
                             db.Staff.Add(newStaff);
                         }
@@ -125,9 +125,6 @@ namespace SoftStocksData
 
         private static void Clear()
         {
-            
-
-            
             using (var context = new SoftStocksDBContext())
             {
 
@@ -138,17 +135,13 @@ namespace SoftStocksData
                 context.PurchaseRequests.RemoveRange(context.PurchaseRequests.ToList());
                 context.KeyboardRequests.RemoveRange(context.KeyboardRequests.ToList());
 
-                //context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('Credentials', RESEED, 1)");
-                
-
-
                 context.SaveChanges();
             }
         }
 
         public static void SetUp()
         {
-            string[] tables = { "staff", "credentials", "keyboard", "supplier", "keyboardRequest", "purchaseRequest" };
+            string[] tables = { "staff", "credentials", "keyboard", "supplier", "keyboardRequest", "purchaseRequest", "purchaseTransaction" };
 
             Clear();
             foreach (var table in tables)

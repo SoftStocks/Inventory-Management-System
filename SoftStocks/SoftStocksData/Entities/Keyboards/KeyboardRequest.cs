@@ -11,7 +11,7 @@ namespace SoftStocksData.Keyboards
     {
         [Key]
         public int Id { get; set; }
-        public string ModelNumber { get; set; }
+        public int ModelNumber { get; set; }
         public int PurchaseRequestId { get; set; }
     }
 }
