@@ -40,7 +40,7 @@
   <li>From the top bar, click <code>View</code></li>
   <li>Click <code>Other Windows</code></li>
   <li>Click <code>Package Manager Console</code></li>
-  <li>Change the default project to <code>SoftStocksGUI</code></li>
+  <li>Change the default project to <code>SoftStocksData</code></li>
   <li>Enter <code>Update-Database</code> into the command line. <i>You can optionally add <code>-Verbose</code> </i></li>
   </ol>
   
