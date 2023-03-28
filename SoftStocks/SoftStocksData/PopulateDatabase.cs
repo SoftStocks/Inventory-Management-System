@@ -2,8 +2,9 @@
 using SoftStocksData.Entities.Keyboards;
 using SoftStocksData.Entities.Purchases;
 using SoftStocksData.Entities.StaffMember;
-using SoftStocksData.Entities.Supplier;
+using SoftStocksData.Entities.Suppliers;
 using SoftStocksData.Keyboards;
+using System.Data;
 using System.Globalization;
 
 namespace SoftStocksData
@@ -25,8 +26,8 @@ namespace SoftStocksData
                     string[] staffHeader = { "id", "title", "first_name", "last_name", "email_address", "role", "date_of_birth", "salary" };
                     string[] credentialsHeader = { "username", "staff_id", "password" };
                     string[] keyboardHeader = { "model_number", "supplier_id", "quantity", "description", "price" };
-                    string[] supplierHeader = { "id", "name", "contact_number", "primary_contact", "business_address", "number_of_purchases" };
-                    string[] purchaseRequestHeader = {"id", "keyboard_requestid", "quantity", "staff_id", "approved" };
+                    string[] supplierHeader = { "id", "name", "contact_number", "primary_contact", "business_address"};
+                    string[] purchaseRequestHeader = {"id", "keyboard_requestid", "quantity", "staff_id"};
                     string[] keyboardRequestHeader = { "id", "model_number", "purchase_request_id" };
                     string[] purchaseTransactionHeader = { "id", "purchase_requestid", "type" };
 
@@ -119,7 +120,6 @@ namespace SoftStocksData
                         db.SaveChanges();
                     }
                 }
-                
             }
         }
 
@@ -127,14 +127,21 @@ namespace SoftStocksData
         {
             using (var context = new SoftStocksDBContext())
             {
+                context.Staff.RemoveRange(context.Staff);
+                context.Credentials.RemoveRange(context.Credentials);
+                context.Suppliers.RemoveRange(context.Suppliers);
+                context.Keyboards.RemoveRange(context.Keyboards);
+                context.PurchaseRequests.RemoveRange(context.PurchaseRequests);
+                context.KeyboardRequests.RemoveRange(context.KeyboardRequests);
+                context.PurchaseTransactions.RemoveRange(context.PurchaseTransactions);
 
-                context.Staff.RemoveRange(context.Staff.ToList());
-                context.Credentials.RemoveRange(context.Credentials.ToList());
-                context.Suppliers.RemoveRange(context.Suppliers.ToList());
-                context.Keyboards.RemoveRange(context.Keyboards.ToList());
-                context.PurchaseRequests.RemoveRange(context.PurchaseRequests.ToList());
-                context.KeyboardRequests.RemoveRange(context.KeyboardRequests.ToList());
 
+                context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.Staffs', RESEED, 0)");
+                context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.Suppliers', RESEED, 0)");
+                context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.PurchaseRequests', RESEED, 0)");
+                context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.KeyboardRequests', RESEED, 0)");
+                context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.PurchaseTransactions', RESEED, 0)");
+                
                 context.SaveChanges();
             }
         }
