@@ -1,7 +1,7 @@
 ﻿using SoftStocksData.Entities.Keyboards;
 using SoftStocksData.Entities.Purchases;
 using SoftStocksData.Entities.StaffMember;
-using SoftStocksData.Entities.Supplier;
+using SoftStocksData.Entities.Suppliers;
 using SoftStocksData.Keyboards;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;

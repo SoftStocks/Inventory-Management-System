@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SoftStocksData.Entities.Supplier
+namespace SoftStocksData.Entities.Suppliers
 {
     public class Supplier
     {
