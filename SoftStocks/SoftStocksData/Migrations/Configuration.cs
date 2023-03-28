@@ -5,7 +5,7 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<SoftStocksData.SoftStocksDBContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<SoftStocksDBContext>
     {
         public Configuration()
         {
@@ -14,7 +14,7 @@
             ContextKey = "SoftStocksData.SoftStocksDBContext";
         }
 
-        protected override void Seed(SoftStocksData.SoftStocksDBContext context)
+        protected override void Seed(SoftStocksDBContext context)
         {
             //  This method will be called after migrating to the latest version.
 

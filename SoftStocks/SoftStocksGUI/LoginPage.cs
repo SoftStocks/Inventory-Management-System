@@ -1,4 +1,5 @@
 ﻿using SoftStocksData;
+using SoftStocksData.Entities.StaffMember;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,7 +49,6 @@ namespace SoftStocksGUI
 
             using (var db = new SoftStocksDBContext())
             {
-                db.Credentials.Load();
                 credential = db.Credentials.FirstOrDefault(c => c.Username == userName && c.Password == password);
             }
 
