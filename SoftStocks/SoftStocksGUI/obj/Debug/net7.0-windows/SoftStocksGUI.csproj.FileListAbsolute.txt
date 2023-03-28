@@ -131,3 +131,5 @@ C:\Users\jack.wallace\source\repos\Inventory-Management-System\SoftStocks\SoftSt
 C:\Users\jack.wallace\source\repos\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.frmReport.resources
 C:\Users\jack.wallace\source\repos\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.frmSupplier.resources
 C:\Users\jack.wallace\source\repos\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.frmTask.resources
+C:\Users\jack.wallace\source\repos\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.Widgets.frmSupplierEntry.resources
+C:\Users\jack.wallace\source\repos\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.Widgets.frmTaskEntry.resources
