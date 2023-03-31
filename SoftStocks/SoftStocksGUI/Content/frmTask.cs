@@ -26,5 +26,13 @@ namespace SoftStocksGUI
 				frmTaskEntry_Vrb.Show();
 			}
 		}
+
+		private void btnAddTask_Click(object sender, EventArgs e)
+		{
+			frmTaskEntry frmTaskEntry_Vrb = new frmTaskEntry() { TopLevel = false, TopMost = true };
+			frmTaskEntry_Vrb.FormBorderStyle = FormBorderStyle.None;
+			this.pnlScrollableTask.Controls.Add(frmTaskEntry_Vrb);
+			frmTaskEntry_Vrb.Show();
+		}
 	}
 }

@@ -107,6 +107,7 @@
 			btnAddTask.TabIndex = 0;
 			btnAddTask.Text = "Create New Task";
 			btnAddTask.UseVisualStyleBackColor = false;
+			btnAddTask.Click += btnAddTask_Click;
 			// 
 			// pnlScrollableTask
 			// 

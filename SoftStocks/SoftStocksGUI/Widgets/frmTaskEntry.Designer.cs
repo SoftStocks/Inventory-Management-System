@@ -32,7 +32,7 @@
 			lblTaskDateEntry = new Label();
 			lblTaskStatusEntry = new Label();
 			btnTaskDelete = new Button();
-			btnTaskEdit = new Button();
+			btnTaskDone = new Button();
 			SuspendLayout();
 			// 
 			// lblTaskNameEntry
@@ -83,19 +83,21 @@
 			btnTaskDelete.TabIndex = 3;
 			btnTaskDelete.Text = "Delete";
 			btnTaskDelete.UseVisualStyleBackColor = false;
+			btnTaskDelete.Click += btnTaskDelete_Click;
 			// 
-			// btnTaskEdit
+			// btnTaskDone
 			// 
-			btnTaskEdit.BackColor = Color.FromArgb(73, 221, 254);
-			btnTaskEdit.Dock = DockStyle.Right;
-			btnTaskEdit.Font = new Font("Verdana Pro Light", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-			btnTaskEdit.ForeColor = Color.White;
-			btnTaskEdit.Location = new Point(536, 0);
-			btnTaskEdit.Name = "btnTaskEdit";
-			btnTaskEdit.Size = new Size(102, 66);
-			btnTaskEdit.TabIndex = 4;
-			btnTaskEdit.Text = "Mark Done";
-			btnTaskEdit.UseVisualStyleBackColor = false;
+			btnTaskDone.BackColor = Color.FromArgb(73, 221, 254);
+			btnTaskDone.Dock = DockStyle.Right;
+			btnTaskDone.Font = new Font("Verdana Pro Light", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+			btnTaskDone.ForeColor = Color.White;
+			btnTaskDone.Location = new Point(536, 0);
+			btnTaskDone.Name = "btnTaskDone";
+			btnTaskDone.Size = new Size(102, 66);
+			btnTaskDone.TabIndex = 4;
+			btnTaskDone.Text = "Mark Done";
+			btnTaskDone.UseVisualStyleBackColor = false;
+			btnTaskDone.Click += btnTaskDone_Click;
 			// 
 			// frmTaskEntry
 			// 
@@ -103,7 +105,7 @@
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.FromArgb(89, 89, 89);
 			ClientSize = new Size(740, 66);
-			Controls.Add(btnTaskEdit);
+			Controls.Add(btnTaskDone);
 			Controls.Add(btnTaskDelete);
 			Controls.Add(lblTaskStatusEntry);
 			Controls.Add(lblTaskDateEntry);
@@ -120,6 +122,6 @@
 		private Label lblTaskDateEntry;
 		private Label lblTaskStatusEntry;
 		private Button btnTaskDelete;
-		private Button btnTaskEdit;
+		private Button btnTaskDone;
 	}
 }

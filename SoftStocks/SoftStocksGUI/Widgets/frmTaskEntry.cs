@@ -20,5 +20,17 @@ namespace SoftStocksGUI.Widgets
 			this.lblTaskDateEntry.Text = date;
 			this.lblTaskStatusEntry.Text = status;
 		}
+
+		private void btnTaskDelete_Click(object sender, EventArgs e)
+		{
+			//delete from database
+
+			this.Close();
+		}
+
+		private void btnTaskDone_Click(object sender, EventArgs e)
+		{
+			this.lblTaskStatusEntry.Text = "Done";
+		}
 	}
 }

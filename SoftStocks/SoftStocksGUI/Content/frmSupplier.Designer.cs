@@ -60,6 +60,7 @@
 			btnAddSupplier.TabIndex = 0;
 			btnAddSupplier.Text = "Create New Supplier";
 			btnAddSupplier.UseVisualStyleBackColor = false;
+			btnAddSupplier.Click += btnAddSupplier_Click;
 			// 
 			// pnlEntryLabels
 			// 
