@@ -35,5 +35,21 @@
   
   <code>report.Destroy()</code>
   <p>The report's entry within persistent object storage will be removed, along with any associated files.</p>
-
+  
+  <h2>Configuration</h2>
+  <h3>Code-First Migrations</h3>
+  <p>When making changes to the database, such as by adding new tables, entities or changing data types, you will need to update the migrations. To do this:</p>
+  <ol>
+  <li>From the top bar, click <code>View</code></li>
+  <li>Click <code>Other Windows</code></li>
+  <li>Click <code>Package Manager Console</code></li>
+  <li>Change the default project to <code>SoftStocksData</code></li>
+  <li>Enter <code>Update-Database</code> into the command line. <i>You can optionally add <code>-Verbose</code> </i></li>
+  </ol>
+  
+  <h3>Database population</h3>
+  <p>Data in the database is populated by using a script which extracts table records from CSV files. These CSV files are found within <code>CSV data</code> within the SoftStockData project.</p>
+  <p>Each of these CSV files corresponds to a table in the database. <em>Please do not change the name of the files as the script depends on the exact filenames to function!</em></p>
+  <p>To add data to the database, there is a static <code>PopulateDatabase</code> class. This class has one public method with no arguments, <code>SetUp()</code>. This method serves as a façade, abstracting the backend implementation detail. Specifically, <code>Setup()</code> will clear all existing records and then iterate through each CSV file and populate the database using the data stored within it.</p>
+  <p>Currently, there is a bug in which the addition of new records will not reset the identity value. This is crucial due to the use of foreign keys in the CSV files. This is captured in #40 and #54</p>
 </html>  

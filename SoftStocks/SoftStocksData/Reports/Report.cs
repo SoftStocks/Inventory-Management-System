@@ -1,13 +1,4 @@
-﻿using PdfSharp.Drawing;
-using PdfSharp.Pdf;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SoftStocksData.Entities.StaffMember;
 
 namespace SoftStocksData.Reports
 {
@@ -15,9 +6,11 @@ namespace SoftStocksData.Reports
     {
         public int Id;
         public DateTime CreationTimestamp = DateTime.Now;
+        public Admin requestor; 
 
-        public abstract string Generate(ReportFormat format);
-        public abstract void Destroy();
+        public abstract string Create(ReportFormat format);
+        public abstract void Delete();
+        public abstract void Download();
     }
 }
 
