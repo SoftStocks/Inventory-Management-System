@@ -2,7 +2,6 @@ using SoftStocksData;
 using SoftStocksGUI.Content;
 using System.Data.Entity;
 using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
 
 namespace SoftStocksGUI
 {
