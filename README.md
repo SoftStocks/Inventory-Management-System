@@ -1,6 +1,9 @@
 <!DOCTYPE html>
   <html>
+  <!--
   <img alt="SOFTSTOCKS-LOGO" src="https://user-images.githubusercontent.com/122273108/212332116-eb8fd1c3-b45f-4680-8995-93b7faf6610d.png">
+  -->
+  <img alt="SOFTSTOCKS-LOGO" src="SoftStocks/SoftStocksGUI/Resources/backpack.png" width=100 height=100>
   <hr>
   <h2>
     <em>SoftStocks</em>

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SoftStocksGUI
+namespace SoftStocksGUI.Content
 {
-    public partial class MainPage : Form
+    public partial class frmLogo : Form
     {
-        public MainPage()
+        public frmLogo()
         {
             InitializeComponent();
         }
