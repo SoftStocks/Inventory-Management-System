@@ -37,5 +37,15 @@ namespace SoftStocksData.Reports
 		{
 			reports.RemoveAll(r => r.Id == Id);
 		}
+
+		public static Report GetReportById(int Id)
+		{
+			return reports.FirstOrDefault(r => r.Id == Id);
+		}
+
+		public static List<Report> GetReports()
+		{
+			return reports;
+		}
 	}
 }
