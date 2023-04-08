@@ -13,19 +13,24 @@ namespace SoftStocksData.Reports
 
 		//Session data to be persisted
 		private static List<Report> reports = new List<Report>();
+
+		// Implements thread safety
+		private static readonly object SessionLock = new object();
+
 		private Session() {
 			reports = new List<Report>();
 		}
 
-		public static Session Instance
+		public static Session GetInstance()
 		{
-			get {
+			lock(SessionLock)  {
 				if (instance == null)
 				{
 					instance = new Session();
 				}
-				return instance;
+				
 			}
+			return instance;
 		}
 
 		public static void AddReport(Report report)
