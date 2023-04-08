@@ -47,5 +47,10 @@ namespace SoftStocksData.Reports
 		{
 			return reports;
 		}
+
+		public static void Clear()
+		{
+			reports = new List<Report>();
+		}
 	}
 }
