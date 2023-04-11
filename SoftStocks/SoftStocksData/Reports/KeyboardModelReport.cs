@@ -37,7 +37,7 @@ namespace SoftStocksData.Reports
                 this.Price = keyboard.Price;
 
                 // TODO: write other methods
-                //this.TotalNumberOfTransactions = dbContext.PurchaseRequests.Join(dbContext.KeyboardRequests, pr => pr.KeyboardRequestId, kr => kr.Id, (pr, kr) => kr.ModelNumber == modelNumber).ToList().Count();
+                this.TotalNumberOfTransactions = dbContext.PurchaseRequests.Join(dbContext.KeyboardRequests, pr => pr.KeyboardRequestId, kr => kr.Id, (pr, kr) => kr.ModelNumber == modelNumber).ToList().Count();
             }
 
         }
