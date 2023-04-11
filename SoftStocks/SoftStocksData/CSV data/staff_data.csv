@@ -1,0 +1,6 @@
+id,title,first_name,last_name,email_address,role,date_of_birth,salary
+1,Mr,David,Wakefield,d.wakefield@keyboardtech.com,Admin,17/02/1972,25000
+2,Ms,Joan,Bachen,j.bachen@keyboardtech.com,Admin,30/10/2001,25000
+3,Mr,Ruben,Paul-Peters,r.paulpeters@keyboardtech.com,Managing Director,16/05/1978,75000
+4,Dr,Patrick,Roundhosen,p.roundhosen@keyboardtech.com,Admin,05/06/1986,25000
+5,Mrs,Phaedra,Mayes,p.mayes@keyboardtech.com,Admin,01/01/1993,25000

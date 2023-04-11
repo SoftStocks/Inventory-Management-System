@@ -27,8 +27,7 @@ namespace SoftStocksData.Reports
         {
             using (var db = new SoftStocksDBContext()) 
             {
-                var query = from s in db.Staff where s.Id == id select s;
-                var staff = query.FirstOrDefault();
+                var staff = db.Staff.FirstOrDefault(s => s.Id == id);
 
                 if (staff != null)
                 {
@@ -59,12 +58,14 @@ namespace SoftStocksData.Reports
 
         public override void Delete()
         {
-            throw new NotImplementedException();
+			Session.RemoveReportById(Id);
         }
 
         public override string Create(ReportFormat format)
         {
-            switch (format)
+			Session.AddReport(this);
+
+			switch (format)
             {
                 case ReportFormat.Pdf:
                     PdfDocument pdfReport = new();
