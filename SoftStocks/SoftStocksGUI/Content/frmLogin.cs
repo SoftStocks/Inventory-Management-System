@@ -1,4 +1,5 @@
 ﻿using SoftStocksData;
+using SoftStocksData.Entities.StaffMember;
 using System.Data.Entity;
 
 namespace SoftStocksGUI
