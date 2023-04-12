@@ -1,6 +1,7 @@
 ﻿using PdfSharp.Drawing;
 using PdfSharp.Pdf;
 using SoftStocksData.Entities.Keyboards;
+using SoftStocksData.Entities.Purchases;
 using SoftStocksData.Entities.StaffMember;
 using SoftStocksData.Entities.Suppliers;
 using SoftStocksData.Keyboards;
@@ -100,13 +101,24 @@ namespace SoftStocksData.Reports
                     gfx.DrawString($"Product description: {Description}", bodyFont, XBrushes.Black, new XRect(50, -225, page.Width, page.Height), XStringFormats.CenterLeft);
                     gfx.DrawString($"Price: £{Price:N2}", bodyFont, XBrushes.Black, new XRect(50, -200, page.Width, page.Height), XStringFormats.CenterLeft);
                     gfx.DrawString($"Total models sold: {TotalNumberOfTransactions}", bodyFont, XBrushes.Black, new XRect(50, -150, page.Width, page.Height), XStringFormats.CenterLeft);
-                    //gfx.DrawString($"Purchasers: {PurchasedBy}", bodyFont, XBrushes.Black, new XRect(50, -125, page.Width, page.Height), XStringFormats.CenterLeft);
-                    gfx.DrawString($"Similar models: {SimilarModels}", bodyFont, XBrushes.Black, new XRect(50, -100, page.Width, page.Height), XStringFormats.CenterLeft);
-                    gfx.DrawString($"Price history: {PriceHistory}", bodyFont, XBrushes.Black, new XRect(50, -75, page.Width, page.Height), XStringFormats.CenterLeft);
+					
+					
+					gfx.DrawString("Purchasers", titleFont, XBrushes.Black, new XRect(50, -125, page.Width, page.Height), XStringFormats.CenterLeft);
+
+					var height = -100;
+
+					foreach(var purchaser in this.PurchasedBy)
+					{
+						gfx.DrawString($"ID: {purchaser} | Name: {purchaser.FirstName} {purchaser.LastName}", bodyFont, XBrushes.Black, new XRect(50, height, page.Width, page.Height), XStringFormats.CenterLeft);
+						height += 25;
+					}
+					
+					gfx.DrawString($"Similar models: {SimilarModels}", bodyFont, XBrushes.Black, new XRect(50, height + 25, page.Width, page.Height), XStringFormats.CenterLeft);
+                    gfx.DrawString($"Price history: {PriceHistory}", bodyFont, XBrushes.Black, new XRect(50, height + 50, page.Width, page.Height), XStringFormats.CenterLeft);
 
                     // footer
-                    gfx.DrawString($"Report id: {base.Id}", footerFont, XBrushes.Black, new XRect(50, 200, page.Width, page.Height), XStringFormats.CenterLeft);
-                    gfx.DrawString($"Creation date: {base.CreationTimestamp:f}", footerFont, XBrushes.Black, new XRect(50, 175, page.Width, page.Height), XStringFormats.CenterLeft);
+                    gfx.DrawString($"Report id: {base.Id}", footerFont, XBrushes.Black, new XRect(50, height + 75, page.Width, page.Height), XStringFormats.CenterLeft);
+                    gfx.DrawString($"Creation date: {base.CreationTimestamp:f}", footerFont, XBrushes.Black, new XRect(50, height + 100, page.Width, page.Height), XStringFormats.CenterLeft);
 
 
                     string fileName = $"staff_report_{CreationTimestamp.Date.Year}{CreationTimestamp.Date.Month}{CreationTimestamp.Date.Day}{Id}.pdf";
