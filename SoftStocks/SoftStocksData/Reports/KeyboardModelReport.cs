@@ -1,5 +1,8 @@
 ﻿using PdfSharp.Drawing;
 using PdfSharp.Pdf;
+using SoftStocksData.Entities.Keyboards;
+using SoftStocksData.Entities.StaffMember;
+using SoftStocksData.Entities.Suppliers;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -17,11 +20,11 @@ namespace SoftStocksData.Reports
         public Supplier Supplier;
         public int Quantity;
         public string? Description;
-        public SqlMoney Price;
+        public float Price;
 
         // advanced (derived) information
         public int TotalNumberOfTransactions;
-        //public List<Admin> PurchasedBy;
+        public List<Admin> PurchasedBy;
         public List<KeyboardModelReport> SimilarModels;
         public List<float> PriceHistory;
 
@@ -30,14 +33,21 @@ namespace SoftStocksData.Reports
             using(var dbContext = new SoftStocksDBContext())
             {
                 ModelNumber = modelNumber;
-                var keyboard = dbContext.Keyboards.FirstOrDefault(k => k.ModelNumber == modelNumber);
+                
+				Keyboard keyboard = dbContext.Keyboards.FirstOrDefault(k => k.ModelNumber == modelNumber);
+
                 this.Supplier = dbContext.Suppliers.FirstOrDefault(s => s.Id == keyboard.SupplierId);
                 this.Quantity = keyboard.Quantity;
                 this.Description = keyboard.Description;
                 this.Price = keyboard.Price;
 
-                // TODO: write other methods
-                this.TotalNumberOfTransactions = dbContext.PurchaseRequests.Join(dbContext.KeyboardRequests, pr => pr.KeyboardRequestId, kr => kr.Id, (pr, kr) => kr.ModelNumber == modelNumber).ToList().Count();
+				var transactions = dbContext.PurchaseRequests.Join(dbContext.KeyboardRequests, pr => pr.KeyboardRequestId, kr => kr.Id, (pr, kr) => kr.ModelNumber == modelNumber);
+
+
+				this.TotalNumberOfTransactions = transactions.ToList().Count();
+				this.PurchasedBy = dbContext.PurchaseRequests.Join(dbContext.Staff, pr => pr.StaffId, s => s.Id, (pr, s) => pr.KeyboardRequestId == );
+				this.SimilarModels = new List<KeyboardModelReport>();
+				this.PriceHistory = new List<float>();
             }
 
         }

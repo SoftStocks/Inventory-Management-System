@@ -1,4 +1,5 @@
 using SoftStocksData;
+using SoftStocksData.Reports;
 using SoftStocksGUI.Content;
 using System.Data.Entity;
 using System.Runtime.InteropServices;
@@ -39,7 +40,7 @@ namespace SoftStocksGUI
             this.pnlFormContent.Controls.Add(frmLogo_Vrb);
             frmLogo_Vrb.Show();
 
-        }
+		}
 
         private void btnLogout_Click(object sender, EventArgs e)
         {

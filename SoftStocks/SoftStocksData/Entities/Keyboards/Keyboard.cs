@@ -15,6 +15,6 @@ namespace SoftStocksData.Entities.Keyboards
         public int SupplierId { get; set; }
         public int Quantity { get; set; }
         public string Description { get; set; }
-        public SqlMoney Price { get; set; }
+        public float Price { get; set; }
     }
 }
