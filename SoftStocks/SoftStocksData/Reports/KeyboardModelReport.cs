@@ -3,6 +3,7 @@ using PdfSharp.Pdf;
 using SoftStocksData.Entities.Keyboards;
 using SoftStocksData.Entities.StaffMember;
 using SoftStocksData.Entities.Suppliers;
+using SoftStocksData.Keyboards;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -45,7 +46,28 @@ namespace SoftStocksData.Reports
 
 
 				this.TotalNumberOfTransactions = transactions.ToList().Count();
-				this.PurchasedBy = dbContext.PurchaseRequests.Join(dbContext.Staff, pr => pr.StaffId, s => s.Id, (pr, s) => pr.KeyboardRequestId == );
+
+				// Get the list of all staff members who have purchased a particular keyboard model
+				var staffMemberIds = dbContext.PurchaseRequests.Join(
+					dbContext.KeyboardRequests,
+					pr => pr.Id,
+					kr => kr.PurchaseRequestId,
+					(pr, kr) => new {pr.Id, kr.ModelNumber, pr.StaffId}
+					)
+					.Where(
+					prkr => prkr.ModelNumber == modelNumber
+					)
+					.Select(
+					prkr => prkr.StaffId
+					).ToList();
+
+				this.PurchasedBy = new List<Admin>();
+
+				foreach(var smid in staffMemberIds)
+				{
+					this.PurchasedBy.AddRange((IEnumerable<Admin>)dbContext.Staff.Where(s => s.Id == smid));
+				}
+				
 				this.SimilarModels = new List<KeyboardModelReport>();
 				this.PriceHistory = new List<float>();
             }
