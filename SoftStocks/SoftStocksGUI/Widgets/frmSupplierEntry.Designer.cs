@@ -29,10 +29,11 @@
 		private void InitializeComponent()
 		{
 			btnSupplierDelete = new Button();
-			btnSupplierEdit = new Button();
+			btnSupplierSave = new Button();
 			lblSupplierNameEntry = new TextBox();
-			lblSupplierContactEntry = new TextBox();
-			lblSupplierPurchasesEntry = new TextBox();
+			lblSupplierContactNumberEntry = new TextBox();
+			lblSupplierContactNameEntry = new TextBox();
+			lblSupplierAddressEntry = new TextBox();
 			SuspendLayout();
 			// 
 			// btnSupplierDelete
@@ -49,60 +50,76 @@
 			btnSupplierDelete.UseVisualStyleBackColor = false;
 			btnSupplierDelete.Click += btnSupplierDelete_Click;
 			// 
-			// btnSupplierEdit
+			// btnSupplierSave
 			// 
-			btnSupplierEdit.BackColor = Color.FromArgb(73, 221, 254);
-			btnSupplierEdit.Dock = DockStyle.Right;
-			btnSupplierEdit.Font = new Font("Verdana Pro Light", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-			btnSupplierEdit.ForeColor = Color.White;
-			btnSupplierEdit.Location = new Point(536, 0);
-			btnSupplierEdit.Name = "btnSupplierEdit";
-			btnSupplierEdit.Size = new Size(102, 66);
-			btnSupplierEdit.TabIndex = 4;
-			btnSupplierEdit.Text = "Edit";
-			btnSupplierEdit.UseVisualStyleBackColor = false;
+			btnSupplierSave.BackColor = Color.FromArgb(73, 221, 254);
+			btnSupplierSave.Dock = DockStyle.Right;
+			btnSupplierSave.Font = new Font("Verdana Pro Light", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+			btnSupplierSave.ForeColor = Color.White;
+			btnSupplierSave.Location = new Point(536, 0);
+			btnSupplierSave.Name = "btnSupplierSave";
+			btnSupplierSave.Size = new Size(102, 66);
+			btnSupplierSave.TabIndex = 4;
+			btnSupplierSave.Text = "Save";
+			btnSupplierSave.UseVisualStyleBackColor = false;
+			btnSupplierSave.Click += btnSupplierSave_Click;
 			// 
 			// lblSupplierNameEntry
 			// 
 			lblSupplierNameEntry.BackColor = Color.FromArgb(89, 89, 89);
-			lblSupplierNameEntry.ForeColor = Color.White;
-			lblSupplierNameEntry.Font = new Font("Verdana Pro Light", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
 			lblSupplierNameEntry.BorderStyle = BorderStyle.None;
 			lblSupplierNameEntry.Dock = DockStyle.Left;
+			lblSupplierNameEntry.Font = new Font("Verdana Pro Light", 10.75F, FontStyle.Regular, GraphicsUnit.Point);
+			lblSupplierNameEntry.ForeColor = Color.White;
 			lblSupplierNameEntry.Location = new Point(0, 0);
 			lblSupplierNameEntry.Name = "lblSupplierNameEntry";
-			lblSupplierNameEntry.Size = new Size(155, 66);
-			lblSupplierNameEntry.AutoSize = false;
+			lblSupplierNameEntry.PlaceholderText = "Name";
+			lblSupplierNameEntry.Size = new Size(100, 18);
 			lblSupplierNameEntry.TabIndex = 5;
 			lblSupplierNameEntry.TextAlign = HorizontalAlignment.Center;
+			lblSupplierNameEntry.TextChanged += lblSupplierNameEntry_TextChanged;
 			// 
-			// lblSupplierContactEntry
+			// lblSupplierContactNumberEntry
 			// 
-			lblSupplierContactEntry.BackColor = Color.FromArgb(89, 89, 89);
-			lblSupplierContactEntry.ForeColor = Color.White;
-			lblSupplierContactEntry.Font = new Font("Verdana Pro Light", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-			lblSupplierContactEntry.BorderStyle = BorderStyle.None;
-			lblSupplierContactEntry.Dock = DockStyle.Left;
-			lblSupplierContactEntry.Location = new Point(155, 0);
-			lblSupplierContactEntry.Name = "lblSupplierContactEntry";
-			lblSupplierContactEntry.Size = new Size(155, 66);
-			lblSupplierContactEntry.AutoSize = false;
-			lblSupplierContactEntry.TabIndex = 6;
-			lblSupplierContactEntry.TextAlign = HorizontalAlignment.Center;
+			lblSupplierContactNumberEntry.BackColor = Color.FromArgb(89, 89, 89);
+			lblSupplierContactNumberEntry.BorderStyle = BorderStyle.None;
+			lblSupplierContactNumberEntry.Dock = DockStyle.Left;
+			lblSupplierContactNumberEntry.Font = new Font("Verdana Pro Light", 10.75F, FontStyle.Regular, GraphicsUnit.Point);
+			lblSupplierContactNumberEntry.ForeColor = Color.White;
+			lblSupplierContactNumberEntry.Location = new Point(100, 0);
+			lblSupplierContactNumberEntry.Name = "lblSupplierContactNumberEntry";
+			lblSupplierContactNumberEntry.PlaceholderText = "Number";
+			lblSupplierContactNumberEntry.Size = new Size(100, 18);
+			lblSupplierContactNumberEntry.TabIndex = 6;
+			lblSupplierContactNumberEntry.TextAlign = HorizontalAlignment.Center;
 			// 
-			// lblSupplierPurchasesEntry
+			// lblSupplierContactNameEntry
 			// 
-			lblSupplierPurchasesEntry.BackColor = Color.FromArgb(89, 89, 89);
-			lblSupplierPurchasesEntry.ForeColor = Color.White;
-			lblSupplierPurchasesEntry.Font = new Font("Verdana Pro Light", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-			lblSupplierPurchasesEntry.BorderStyle = BorderStyle.None;
-			lblSupplierPurchasesEntry.Dock = DockStyle.Left;
-			lblSupplierPurchasesEntry.Location = new Point(310, 0);
-			lblSupplierPurchasesEntry.Name = "lblSupplierPurchasesEntry";
-			lblSupplierPurchasesEntry.Size = new Size(155, 66);
-			lblSupplierPurchasesEntry.AutoSize = false;
-			lblSupplierPurchasesEntry.TabIndex = 7;
-			lblSupplierPurchasesEntry.TextAlign = HorizontalAlignment.Center;
+			lblSupplierContactNameEntry.BackColor = Color.FromArgb(89, 89, 89);
+			lblSupplierContactNameEntry.BorderStyle = BorderStyle.None;
+			lblSupplierContactNameEntry.Dock = DockStyle.Left;
+			lblSupplierContactNameEntry.Font = new Font("Verdana Pro Light", 10.75F, FontStyle.Regular, GraphicsUnit.Point);
+			lblSupplierContactNameEntry.ForeColor = Color.White;
+			lblSupplierContactNameEntry.Location = new Point(200, 0);
+			lblSupplierContactNameEntry.Name = "lblSupplierContactNameEntry";
+			lblSupplierContactNameEntry.PlaceholderText = "Contact Name";
+			lblSupplierContactNameEntry.Size = new Size(100, 18);
+			lblSupplierContactNameEntry.TabIndex = 7;
+			lblSupplierContactNameEntry.TextAlign = HorizontalAlignment.Center;
+			// 
+			// lblSupplierAddressEntry
+			// 
+			lblSupplierAddressEntry.BackColor = Color.FromArgb(89, 89, 89);
+			lblSupplierAddressEntry.BorderStyle = BorderStyle.None;
+			lblSupplierAddressEntry.Dock = DockStyle.Left;
+			lblSupplierAddressEntry.Font = new Font("Verdana Pro Light", 10.75F, FontStyle.Regular, GraphicsUnit.Point);
+			lblSupplierAddressEntry.ForeColor = Color.White;
+			lblSupplierAddressEntry.Location = new Point(300, 0);
+			lblSupplierAddressEntry.Name = "lblSupplierAddressEntry";
+			lblSupplierAddressEntry.PlaceholderText = "Address";
+			lblSupplierAddressEntry.Size = new Size(100, 18);
+			lblSupplierAddressEntry.TabIndex = 8;
+			lblSupplierAddressEntry.TextAlign = HorizontalAlignment.Center;
 			// 
 			// frmSupplierEntry
 			// 
@@ -110,22 +127,25 @@
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.FromArgb(89, 89, 89);
 			ClientSize = new Size(740, 66);
-			Controls.Add(lblSupplierPurchasesEntry);
-			Controls.Add(lblSupplierContactEntry);
+			Controls.Add(lblSupplierAddressEntry);
+			Controls.Add(lblSupplierContactNameEntry);
+			Controls.Add(lblSupplierContactNumberEntry);
 			Controls.Add(lblSupplierNameEntry);
-			Controls.Add(btnSupplierEdit);
+			Controls.Add(btnSupplierSave);
 			Controls.Add(btnSupplierDelete);
 			FormBorderStyle = FormBorderStyle.None;
 			Name = "frmSupplierEntry";
 			Text = "frmSupplierEntry";
 			ResumeLayout(false);
+			PerformLayout();
 		}
 
 		#endregion
 		private Button btnSupplierDelete;
-		private Button btnSupplierEdit;
+		private Button btnSupplierSave;
 		private TextBox lblSupplierNameEntry;
-		private TextBox lblSupplierContactEntry;
-		private TextBox lblSupplierPurchasesEntry;
+		private TextBox lblSupplierContactNumberEntry;
+		private TextBox lblSupplierContactNameEntry;
+		private TextBox lblSupplierAddressEntry;
 	}
 }

@@ -153,7 +153,7 @@ namespace SoftStocksData
             Clear();
             foreach (var table in tables)
             {
-                FromCSVFile($"C:\\Programming\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\CSV data\\{table}_data.csv");
+                FromCSVFile($"C:\\Users\\jackw\\OneDrive\\Desktop\\SoftStocks\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\CSV data\\{table}_data.csv");
             }
         }
     }

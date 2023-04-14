@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jack.wallace\\source\\repos\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\SoftStocksData.csproj": {}
+    "C:\\Users\\jackw\\OneDrive\\Desktop\\SoftStocks\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\SoftStocksData.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jack.wallace\\source\\repos\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\SoftStocksData.csproj": {
+    "C:\\Users\\jackw\\OneDrive\\Desktop\\SoftStocks\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\SoftStocksData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jack.wallace\\source\\repos\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\SoftStocksData.csproj",
+        "projectUniqueName": "C:\\Users\\jackw\\OneDrive\\Desktop\\SoftStocks\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\SoftStocksData.csproj",
         "projectName": "SoftStocksData",
-        "projectPath": "C:\\Users\\jack.wallace\\source\\repos\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\SoftStocksData.csproj",
-        "packagesPath": "C:\\Users\\jack.wallace\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jack.wallace\\source\\repos\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\obj\\",
+        "projectPath": "C:\\Users\\jackw\\OneDrive\\Desktop\\SoftStocks\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\SoftStocksData.csproj",
+        "packagesPath": "C:\\Users\\jackw\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jackw\\OneDrive\\Desktop\\SoftStocks\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\jack.wallace\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jackw\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -73,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
