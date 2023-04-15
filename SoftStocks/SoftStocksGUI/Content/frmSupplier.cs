@@ -27,16 +27,18 @@ namespace SoftStocksGUI
 				supplierList = db.Suppliers.ToList();
 			}
 
+			int RowNo = 1;
+
 			foreach (Supplier supplierItem in supplierList)
 			{
-				frmSupplierEntry frmSupplierEntry_Vrb = new frmSupplierEntry(supplierItem.Name, supplierItem.ContactNumber, supplierItem.PrimaryContact, supplierItem.BusinessAddress) { TopLevel = false, TopMost = true };
+				frmSupplierEntry frmSupplierEntry_Vrb = new frmSupplierEntry(supplierItem.Name, supplierItem.ContactNumber, supplierItem.PrimaryContact, supplierItem.BusinessAddress, RowNo++) { TopLevel = false, TopMost = true };
 				frmSupplierEntry_Vrb.FormBorderStyle = FormBorderStyle.None;
 				this.pnlScrollableSupplier.Controls.Add(frmSupplierEntry_Vrb);
 				frmSupplierEntry_Vrb.Show();
 
 				MessageBox.Show(supplierItem.Name);
 			}
-	
+
 		}
 
 		private void btnAddSupplier_Click(object sender, EventArgs e)
@@ -46,6 +48,11 @@ namespace SoftStocksGUI
 			frmSupplierEntry_Vrb.FormBorderStyle = FormBorderStyle.None;
 			this.pnlScrollableSupplier.Controls.Add(frmSupplierEntry_Vrb);
 			frmSupplierEntry_Vrb.Show();
+
+		}
+
+		private void lblSupplierName_Click(object sender, EventArgs e)
+		{
 
 		}
 	}
