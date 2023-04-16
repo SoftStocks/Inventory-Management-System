@@ -17,7 +17,6 @@ namespace SoftStocksData
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<KeyboardRequest> KeyboardRequests { get; set; }
         public DbSet<PurchaseRequest> PurchaseRequests { get; set; }
-
         public DbSet<PurchaseTransaction> PurchaseTransactions { get; set;}
 
     }

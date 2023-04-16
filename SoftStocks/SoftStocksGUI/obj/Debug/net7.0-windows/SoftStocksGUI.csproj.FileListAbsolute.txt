@@ -186,3 +186,11 @@ C:\Users\jackw\OneDrive\Desktop\SoftStocks\Inventory-Management-System\SoftStock
 C:\Users\jackw\OneDrive\Desktop\SoftStocks\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.pdb
 C:\Users\jackw\OneDrive\Desktop\SoftStocks\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.genruntimeconfig.cache
 C:\Users\jackw\OneDrive\Desktop\SoftStocks\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\ref\SoftStocksGUI.dll
+C:\Users\jackw\OneDrive\Desktop\SoftStocks\Inventory-Management-System\SoftStocks\SoftStocksGUI\bin\Debug\net7.0-windows\CSV data\credentials_data.csv
+C:\Users\jackw\OneDrive\Desktop\SoftStocks\Inventory-Management-System\SoftStocks\SoftStocksGUI\bin\Debug\net7.0-windows\CSV data\keyboardRequest_data.csv
+C:\Users\jackw\OneDrive\Desktop\SoftStocks\Inventory-Management-System\SoftStocks\SoftStocksGUI\bin\Debug\net7.0-windows\CSV data\keyboard_data.csv
+C:\Users\jackw\OneDrive\Desktop\SoftStocks\Inventory-Management-System\SoftStocks\SoftStocksGUI\bin\Debug\net7.0-windows\CSV data\purchaseRequest_data.csv
+C:\Users\jackw\OneDrive\Desktop\SoftStocks\Inventory-Management-System\SoftStocks\SoftStocksGUI\bin\Debug\net7.0-windows\CSV data\purchaseTransaction_data.csv
+C:\Users\jackw\OneDrive\Desktop\SoftStocks\Inventory-Management-System\SoftStocks\SoftStocksGUI\bin\Debug\net7.0-windows\CSV data\staff_data.csv
+C:\Users\jackw\OneDrive\Desktop\SoftStocks\Inventory-Management-System\SoftStocks\SoftStocksGUI\bin\Debug\net7.0-windows\CSV data\supplier_data.csv
+C:\Users\jackw\OneDrive\Desktop\SoftStocks\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.Widgets.frmTaskCard.resources

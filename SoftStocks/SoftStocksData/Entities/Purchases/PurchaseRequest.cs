@@ -11,8 +11,12 @@ namespace SoftStocksData.Entities.Purchases
     {
         [Key]
         public int Id { get; set; }
-        public int KeyboardRequestId { get; set; }
-        public int Quantity { get; set; }
-        public int StaffId { get; set; }
-    }
+		[Required]
+        public int ModelNumber { get; set; }
+		[Required]
+		public int Quantity { get; set; }
+        public string Status { get; set; }
+		public int StaffId { get; set; }
+		public DateTime DateCreated { get; set; }
+	}
 }

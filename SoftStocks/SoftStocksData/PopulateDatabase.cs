@@ -27,7 +27,7 @@ namespace SoftStocksData
                     string[] credentialsHeader = { "username", "staff_id", "password" };
                     string[] keyboardHeader = { "model_number", "supplier_id", "quantity", "description", "price" };
                     string[] supplierHeader = { "id", "name", "contact_number", "primary_contact", "business_address"};
-                    string[] purchaseRequestHeader = {"id", "keyboard_requestid", "quantity", "staff_id"};
+                    string[] purchaseRequestHeader = {"id", "model_number", "quantity", "status", "staff_id", "date_created"};
                     string[] keyboardRequestHeader = { "id", "model_number", "purchase_request_id" };
                     string[] purchaseTransactionHeader = { "id", "purchase_requestid", "type" };
 
@@ -90,10 +90,12 @@ namespace SoftStocksData
                             PurchaseRequest newPurchaseRequest = new PurchaseRequest
                             {
                                 Id = int.Parse(fields[0]),
-                                KeyboardRequestId = int.Parse(fields[1]),
+                                ModelNumber = int.Parse(fields[1]),
                                 Quantity = int.Parse(fields[2]),
-                                StaffId = int.Parse(fields[3])
-                            };
+                                Status = fields[3],
+								StaffId = int.Parse(fields[4]),
+								DateCreated = DateTime.Parse(fields[5]),
+							};
                             db.PurchaseRequests.Add(newPurchaseRequest);
                         }
                         else if(header.SequenceEqual(keyboardRequestHeader))
