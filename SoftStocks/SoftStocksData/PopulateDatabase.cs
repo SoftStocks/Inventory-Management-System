@@ -153,8 +153,11 @@ namespace SoftStocksData
             Clear();
             foreach (var table in tables)
             {
-                FromCSVFile($"C:\\Users\\jackw\\OneDrive\\Desktop\\SoftStocks\\Inventory-Management-System\\SoftStocks\\SoftStocksData\\CSV data\\{table}_data.csv");
+				string path = Path.Combine(Directory.GetCurrentDirectory(), @$"CSV data\{table}_data.csv");
+				FromCSVFile(path);
+
             }
+
         }
     }
 }
