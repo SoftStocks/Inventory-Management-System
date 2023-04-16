@@ -35,8 +35,12 @@
 			pnlTaskBanner = new Panel();
 			btnAddTask = new Button();
 			pnlScrollableTask = new FlowLayoutPanel();
+			flowLayoutPanel1 = new FlowLayoutPanel();
+			panel1 = new Panel();
+			panel2 = new Panel();
 			pnlEntryLabels.SuspendLayout();
 			pnlTaskBanner.SuspendLayout();
+			pnlScrollableTask.SuspendLayout();
 			SuspendLayout();
 			// 
 			// pnlEntryLabels
@@ -112,13 +116,38 @@
 			// pnlScrollableTask
 			// 
 			pnlScrollableTask.AutoScroll = true;
-			pnlScrollableTask.Dock = DockStyle.Fill;
-			pnlScrollableTask.FlowDirection = FlowDirection.TopDown;
+			pnlScrollableTask.Controls.Add(panel2);
+			pnlScrollableTask.Controls.Add(panel1);
+			pnlScrollableTask.Dock = DockStyle.Left;
 			pnlScrollableTask.Location = new Point(0, 132);
 			pnlScrollableTask.Name = "pnlScrollableTask";
-			pnlScrollableTask.Size = new Size(765, 318);
+			pnlScrollableTask.Size = new Size(382, 318);
 			pnlScrollableTask.TabIndex = 4;
-			pnlScrollableTask.WrapContents = false;
+			// 
+			// flowLayoutPanel1
+			// 
+			flowLayoutPanel1.AutoScroll = true;
+			flowLayoutPanel1.Dock = DockStyle.Right;
+			flowLayoutPanel1.Location = new Point(383, 132);
+			flowLayoutPanel1.Name = "flowLayoutPanel1";
+			flowLayoutPanel1.Size = new Size(382, 318);
+			flowLayoutPanel1.TabIndex = 5;
+			// 
+			// panel1
+			// 
+			panel1.BackColor = Color.FromArgb(120, 120, 120);
+			panel1.Location = new Point(12, 11);
+			panel1.Name = "panel1";
+			panel1.Size = new Size(354, 146);
+			panel1.TabIndex = 0;
+			// 
+			// panel2
+			// 
+			panel2.BackColor = Color.FromArgb(120, 120, 120);
+			panel2.Location = new Point(12, 163);
+			panel2.Name = "panel2";
+			panel2.Size = new Size(354, 143);
+			panel2.TabIndex = 1;
 			// 
 			// frmTask
 			// 
@@ -126,6 +155,7 @@
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.FromArgb(89, 89, 89);
 			ClientSize = new Size(765, 450);
+			Controls.Add(flowLayoutPanel1);
 			Controls.Add(pnlScrollableTask);
 			Controls.Add(pnlEntryLabels);
 			Controls.Add(pnlTaskBanner);
@@ -136,6 +166,7 @@
 			Text = "SoftStocks Inventory Management System";
 			pnlEntryLabels.ResumeLayout(false);
 			pnlTaskBanner.ResumeLayout(false);
+			pnlScrollableTask.ResumeLayout(false);
 			ResumeLayout(false);
 		}
 
@@ -148,5 +179,8 @@
 		private Panel pnlTaskBanner;
 		private Button btnAddTask;
 		private FlowLayoutPanel pnlScrollableTask;
+		private FlowLayoutPanel flowLayoutPanel1;
+		private Panel panel2;
+		private Panel panel1;
 	}
 }
