@@ -33,8 +33,6 @@ namespace SoftStocksGUI
 				frmSupplierEntry_Vrb.FormBorderStyle = FormBorderStyle.None;
 				this.pnlScrollableSupplier.Controls.Add(frmSupplierEntry_Vrb);
 				frmSupplierEntry_Vrb.Show();
-
-				MessageBox.Show(supplierItem.Name);
 			}
 
 		}

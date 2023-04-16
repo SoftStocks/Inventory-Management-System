@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,9 +16,13 @@ namespace SoftStocksGUI.Widgets
 	public partial class frmSupplierEntry : Form
 	{
 
+		private int entryId;
+
 		public frmSupplierEntry(string name = "", string contact = "", string purchases = "", string address = "", int id = 0)
 		{
 			InitializeComponent();
+
+			entryId = id;
 
 			this.lblSupplierNameEntry.Text = name;
 			this.lblSupplierContactNumberEntry.Text = contact;
@@ -30,7 +35,18 @@ namespace SoftStocksGUI.Widgets
 		private void btnSupplierDelete_Click(object sender, EventArgs e)
 		{
 
-			//dlete from database
+			using (SoftStocksDBContext db = new SoftStocksDBContext())
+			{
+
+				var row = db.Suppliers.FirstOrDefault(s => s.Id == entryId);
+				if (row != null)
+				{
+
+					db.Suppliers.Remove(row);
+					db.SaveChanges();
+				}
+
+			}
 
 
 			this.Close();
@@ -43,18 +59,16 @@ namespace SoftStocksGUI.Widgets
 			using (SoftStocksDBContext db = new SoftStocksDBContext())
 			{
 
-				var queryResult = db.Suppliers.SqlQuery($"SELECT * FROM Supplier WHERE Name == {this.lblSupplierNameEntry.Text}");
-				//MessageBox.Show(queryResult);   //need fixing this just to test what query result is
-
-				Supplier newSupplier = new Supplier
+				var row = db.Suppliers.FirstOrDefault(s => s.Id == entryId);
+				if (row != null)
 				{
-					Name = this.lblSupplierNameEntry.Text,
-					ContactNumber = this.lblSupplierContactNumberEntry.Text,
-					PrimaryContact = this.lblSupplierContactNameEntry.Text,
-					BusinessAddress = this.lblSupplierAddressEntry.Text
-				};
-				db.Suppliers.Add(newSupplier);
-				db.SaveChanges();
+					row.Name = this.lblSupplierNameEntry.Text;
+					row.ContactNumber = this.lblSupplierContactNumberEntry.Text;
+					row.PrimaryContact = this.lblSupplierContactNameEntry.Text;
+					row.BusinessAddress = this.lblSupplierAddressEntry.Text;
+
+					db.SaveChanges();
+				}
 
 			}
 
@@ -109,11 +123,5 @@ namespace SoftStocksGUI.Widgets
 				btnSupplierDelete.Dispose();
 			}
 		}
-
-		private void label1_Click(object sender, EventArgs e)
-		{
-
-		}
 	}
-
 }
