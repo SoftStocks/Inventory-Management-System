@@ -28,101 +28,115 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			lblTaskId = new Label();
-			textBox1 = new TextBox();
-			textBox3 = new TextBox();
-			textBox5 = new TextBox();
+			txtTaskId = new Label();
+			txtKeyboardModel = new TextBox();
+			txtQuantity = new TextBox();
+			txtDateCreated = new TextBox();
 			btnSaveCard = new Button();
 			btnDeleteCard = new Button();
-			comboBox1 = new ComboBox();
+			cbbxStatus = new ComboBox();
 			SuspendLayout();
 			// 
-			// lblTaskId
+			// txtTaskId
 			// 
-			lblTaskId.Font = new Font("Verdana Pro Light", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-			lblTaskId.ForeColor = Color.White;
-			lblTaskId.Location = new Point(12, 9);
-			lblTaskId.Name = "lblTaskId";
-			lblTaskId.Size = new Size(172, 27);
-			lblTaskId.TabIndex = 0;
-			lblTaskId.Text = "Task Id 1";
-			lblTaskId.TextAlign = ContentAlignment.MiddleCenter;
+			txtTaskId.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+			txtTaskId.ForeColor = Color.White;
+			txtTaskId.Location = new Point(34, 29);
+			txtTaskId.Margin = new Padding(9, 0, 9, 0);
+			txtTaskId.Name = "txtTaskId";
+			txtTaskId.Size = new Size(491, 86);
+			txtTaskId.TabIndex = 0;
+			txtTaskId.Text = "Task Id 1";
+			txtTaskId.TextAlign = ContentAlignment.MiddleCenter;
 			// 
-			// textBox1
+			// txtKeyboardModel
 			// 
-			textBox1.BackColor = Color.FromArgb(89, 89, 89);
-			textBox1.Location = new Point(21, 61);
-			textBox1.Name = "textBox1";
-			textBox1.PlaceholderText = "Keyboard";
-			textBox1.Size = new Size(153, 23);
-			textBox1.TabIndex = 1;
+			txtKeyboardModel.BackColor = Color.FromArgb(89, 89, 89);
+			txtKeyboardModel.ForeColor = Color.White;
+			txtKeyboardModel.Location = new Point(60, 195);
+			txtKeyboardModel.Margin = new Padding(9, 10, 9, 10);
+			txtKeyboardModel.Name = "txtKeyboardModel";
+			txtKeyboardModel.PlaceholderText = "Keyboard";
+			txtKeyboardModel.Size = new Size(430, 55);
+			txtKeyboardModel.TabIndex = 1;
 			// 
-			// textBox3
+			// txtQuantity
 			// 
-			textBox3.BackColor = Color.FromArgb(89, 89, 89);
-			textBox3.Location = new Point(180, 61);
-			textBox3.Name = "textBox3";
-			textBox3.PlaceholderText = "Quantity";
-			textBox3.Size = new Size(146, 23);
-			textBox3.TabIndex = 3;
+			txtQuantity.BackColor = Color.FromArgb(89, 89, 89);
+			txtQuantity.ForeColor = Color.White;
+			txtQuantity.Location = new Point(514, 195);
+			txtQuantity.Margin = new Padding(9, 10, 9, 10);
+			txtQuantity.Name = "txtQuantity";
+			txtQuantity.PlaceholderText = "Quantity";
+			txtQuantity.Size = new Size(410, 55);
+			txtQuantity.TabIndex = 3;
 			// 
-			// textBox5
+			// txtDateCreated
 			// 
-			textBox5.BackColor = Color.FromArgb(89, 89, 89);
-			textBox5.Location = new Point(180, 111);
-			textBox5.Name = "textBox5";
-			textBox5.PlaceholderText = "Date Created";
-			textBox5.ReadOnly = true;
-			textBox5.Size = new Size(146, 23);
-			textBox5.TabIndex = 5;
+			txtDateCreated.BackColor = Color.FromArgb(89, 89, 89);
+			txtDateCreated.ForeColor = Color.White;
+			txtDateCreated.Location = new Point(514, 355);
+			txtDateCreated.Margin = new Padding(9, 10, 9, 10);
+			txtDateCreated.Name = "txtDateCreated";
+			txtDateCreated.PlaceholderText = "Date Created";
+			txtDateCreated.ReadOnly = true;
+			txtDateCreated.Size = new Size(410, 55);
+			txtDateCreated.TabIndex = 5;
 			// 
 			// btnSaveCard
 			// 
 			btnSaveCard.BackColor = Color.FromArgb(73, 221, 254);
 			btnSaveCard.FlatStyle = FlatStyle.Flat;
 			btnSaveCard.ForeColor = Color.White;
-			btnSaveCard.Location = new Point(190, 9);
+			btnSaveCard.Location = new Point(543, 29);
+			btnSaveCard.Margin = new Padding(9, 10, 9, 10);
 			btnSaveCard.Name = "btnSaveCard";
-			btnSaveCard.Size = new Size(67, 27);
+			btnSaveCard.Size = new Size(191, 86);
 			btnSaveCard.TabIndex = 6;
 			btnSaveCard.Text = "Save";
 			btnSaveCard.UseVisualStyleBackColor = false;
+			btnSaveCard.Click += btnSaveCard_Click;
 			// 
 			// btnDeleteCard
 			// 
 			btnDeleteCard.BackColor = Color.FromArgb(73, 221, 254);
 			btnDeleteCard.FlatStyle = FlatStyle.Flat;
 			btnDeleteCard.ForeColor = Color.White;
-			btnDeleteCard.Location = new Point(259, 9);
+			btnDeleteCard.Location = new Point(740, 29);
+			btnDeleteCard.Margin = new Padding(9, 10, 9, 10);
 			btnDeleteCard.Name = "btnDeleteCard";
-			btnDeleteCard.Size = new Size(67, 27);
+			btnDeleteCard.Size = new Size(191, 86);
 			btnDeleteCard.TabIndex = 7;
 			btnDeleteCard.Text = "Delete";
 			btnDeleteCard.UseVisualStyleBackColor = false;
+			btnDeleteCard.Click += btnDeleteCard_Click;
 			// 
-			// comboBox1
+			// cbbxStatus
 			// 
-			comboBox1.BackColor = Color.FromArgb(89, 89, 89);
-			comboBox1.FormattingEnabled = true;
-			comboBox1.Location = new Point(21, 111);
-			comboBox1.Name = "comboBox1";
-			comboBox1.Size = new Size(153, 23);
-			comboBox1.TabIndex = 8;
+			cbbxStatus.BackColor = Color.FromArgb(89, 89, 89);
+			cbbxStatus.ForeColor = Color.White;
+			cbbxStatus.FormattingEnabled = true;
+			cbbxStatus.Location = new Point(60, 355);
+			cbbxStatus.Margin = new Padding(9, 10, 9, 10);
+			cbbxStatus.Name = "cbbxStatus";
+			cbbxStatus.Size = new Size(430, 56);
+			cbbxStatus.TabIndex = 8;
 			// 
 			// frmTaskCard
 			// 
-			AutoScaleDimensions = new SizeF(7F, 15F);
+			AutoScaleDimensions = new SizeF(20F, 48F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.FromArgb(120, 120, 120);
-			ClientSize = new Size(354, 146);
-			Controls.Add(comboBox1);
+			ClientSize = new Size(1011, 467);
+			Controls.Add(cbbxStatus);
 			Controls.Add(btnDeleteCard);
 			Controls.Add(btnSaveCard);
-			Controls.Add(textBox5);
-			Controls.Add(textBox3);
-			Controls.Add(textBox1);
-			Controls.Add(lblTaskId);
+			Controls.Add(txtDateCreated);
+			Controls.Add(txtQuantity);
+			Controls.Add(txtKeyboardModel);
+			Controls.Add(txtTaskId);
 			FormBorderStyle = FormBorderStyle.None;
+			Margin = new Padding(9, 10, 9, 10);
 			Name = "frmTaskCard";
 			Text = "frmTaskCard";
 			ResumeLayout(false);
@@ -131,12 +145,12 @@
 
 		#endregion
 
-		private Label lblTaskId;
-		private TextBox textBox1;
-		private TextBox textBox3;
-		private TextBox textBox5;
+		private Label txtTaskId;
+		private TextBox txtKeyboardModel;
+		private TextBox txtQuantity;
+		private TextBox txtDateCreated;
 		private Button btnSaveCard;
 		private Button btnDeleteCard;
-		private ComboBox comboBox1;
+		private ComboBox cbbxStatus;
 	}
 }

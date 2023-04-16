@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace SoftStocksGUI.Widgets
 {
@@ -34,31 +35,14 @@ namespace SoftStocksGUI.Widgets
 
 		private void btnSupplierDelete_Click(object sender, EventArgs e)
 		{
-
-			using (SoftStocksDBContext db = new SoftStocksDBContext())
-			{
-
-				var row = db.Suppliers.FirstOrDefault(s => s.Id == entryId);
-				if (row != null)
-				{
-
-					db.Suppliers.Remove(row);
-					db.SaveChanges();
-				}
-
-			}
-
-
-			this.Close();
+			deleteRowFromDB();
 		}
 
 		private void btnSupplierSave_Click(object sender, EventArgs e)
 		{
 
-
 			using (SoftStocksDBContext db = new SoftStocksDBContext())
 			{
-
 				var row = db.Suppliers.FirstOrDefault(s => s.Id == entryId);
 				if (row != null)
 				{
@@ -66,10 +50,20 @@ namespace SoftStocksGUI.Widgets
 					row.ContactNumber = this.lblSupplierContactNumberEntry.Text;
 					row.PrimaryContact = this.lblSupplierContactNameEntry.Text;
 					row.BusinessAddress = this.lblSupplierAddressEntry.Text;
-
-					db.SaveChanges();
+				}
+				else
+				{
+					Supplier newSupplier = new Supplier
+					{
+						Name = this.lblSupplierNameEntry.Text,
+						ContactNumber = this.lblSupplierContactNumberEntry.Text,
+						PrimaryContact = this.lblSupplierContactNameEntry.Text,
+						BusinessAddress = this.lblSupplierAddressEntry.Text
+					};
+					db.Suppliers.Add(newSupplier);
 				}
 
+				db.SaveChanges();
 			}
 
 		}
@@ -100,28 +94,21 @@ namespace SoftStocksGUI.Widgets
 		{
 			if (lblSupplierNameEntry.Text == String.Empty && lblSupplierContactNumberEntry.Text == String.Empty && lblSupplierContactNameEntry.Text == String.Empty && lblSupplierAddressEntry.Text == String.Empty)
 			{
-				using (SoftStocksDBContext db = new SoftStocksDBContext())
-				{
-					var supplierRow = new Supplier { Id = Int32.Parse(lblSupplierId.Text) };
-					db.Suppliers.Attach(supplierRow);
-					db.Suppliers.Remove(supplierRow);
-					db.SaveChanges();
-				}
-
-				this.Controls.Remove(lblSupplierNameEntry);
-				lblSupplierNameEntry.Dispose();
-				this.Controls.Remove(lblSupplierContactNumberEntry);
-				lblSupplierContactNumberEntry.Dispose();
-				this.Controls.Remove(lblSupplierContactNameEntry);
-				lblSupplierContactNameEntry.Dispose();
-				this.Controls.Remove(lblSupplierAddressEntry);
-				lblSupplierAddressEntry.Dispose();
-
-				this.Controls.Remove(btnSupplierSave);
-				btnSupplierSave.Dispose();
-				this.Controls.Remove(btnSupplierDelete);
-				btnSupplierDelete.Dispose();
+				deleteRowFromDB();
 			}
+		}
+
+		private void deleteRowFromDB()
+		{
+			using (SoftStocksDBContext db = new SoftStocksDBContext())
+			{
+				var supplierRow = new Supplier { Id = entryId };
+				db.Suppliers.Attach(supplierRow);
+				db.Suppliers.Remove(supplierRow);
+				db.SaveChanges();
+			}
+
+			this.Close();
 		}
 	}
 }
