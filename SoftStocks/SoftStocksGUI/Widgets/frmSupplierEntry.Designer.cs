@@ -78,7 +78,7 @@
 			lblSupplierNameEntry.Size = new Size(100, 17);
 			lblSupplierNameEntry.TabIndex = 5;
 			lblSupplierNameEntry.TextAlign = HorizontalAlignment.Center;
-			lblSupplierNameEntry.TextChanged += lblSupplierNameEntry_TextChanged;
+			lblSupplierNameEntry.TextChanged += removeRowifBlank;
 			// 
 			// lblSupplierContactNumberEntry
 			// 
@@ -93,7 +93,7 @@
 			lblSupplierContactNumberEntry.Size = new Size(100, 17);
 			lblSupplierContactNumberEntry.TabIndex = 6;
 			lblSupplierContactNumberEntry.TextAlign = HorizontalAlignment.Center;
-			lblSupplierContactNumberEntry.TextChanged += lblSupplierContactNumberEntry_TextChanged;
+			lblSupplierContactNumberEntry.TextChanged += removeRowifBlank;
 			// 
 			// lblSupplierContactNameEntry
 			// 
@@ -108,7 +108,7 @@
 			lblSupplierContactNameEntry.Size = new Size(100, 17);
 			lblSupplierContactNameEntry.TabIndex = 7;
 			lblSupplierContactNameEntry.TextAlign = HorizontalAlignment.Center;
-			lblSupplierContactNameEntry.TextChanged += lblSupplierContactNameEntry_TextChanged;
+			lblSupplierContactNameEntry.TextChanged += removeRowifBlank;
 			// 
 			// lblSupplierAddressEntry
 			// 
@@ -124,7 +124,7 @@
 			lblSupplierAddressEntry.Size = new Size(100, 17);
 			lblSupplierAddressEntry.TabIndex = 8;
 			lblSupplierAddressEntry.TextAlign = HorizontalAlignment.Center;
-			lblSupplierAddressEntry.TextChanged += lblSupplierAddressEntry_TextChanged;
+			lblSupplierAddressEntry.TextChanged += removeRowifBlank;
 			// 
 			// lblSupplierId
 			// 

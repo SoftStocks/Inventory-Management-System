@@ -19,7 +19,6 @@ namespace SoftStocksGUI
 		public frmTask()
 		{
 			InitializeComponent();
-			//this.pnlScrollableTask.Controls.Clear();
 
 			List<PurchaseRequest> TaskList;
 
@@ -43,7 +42,11 @@ namespace SoftStocksGUI
 			frmTaskCard frmTaskCard_Vrb = new frmTaskCard() { TopLevel = false, TopMost = true };
 			frmTaskCard_Vrb.FormBorderStyle = FormBorderStyle.None;
 			this.pnlScrollableTask.Controls.Add(frmTaskCard_Vrb);
-			frmTaskCard_Vrb.Show();
+			try
+			{
+				frmTaskCard_Vrb.Show();
+			} catch (Exception ) { } //Just catches an exception if the form is deleted before it can show it
+			
 		}
 	}
 }

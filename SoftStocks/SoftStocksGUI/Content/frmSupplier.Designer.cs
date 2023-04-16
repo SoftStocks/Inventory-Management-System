@@ -129,7 +129,6 @@
 			lblSupplierName.TabIndex = 0;
 			lblSupplierName.Text = "Supplier Name";
 			lblSupplierName.TextAlign = ContentAlignment.MiddleCenter;
-			lblSupplierName.Click += lblSupplierName_Click;
 			// 
 			// pnlScrollableSupplier
 			// 

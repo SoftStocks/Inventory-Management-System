@@ -41,7 +41,6 @@ namespace SoftStocksGUI
             frmLogo frmLogo_Vrb = new frmLogo() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmLogo_Vrb.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormContent.Controls.Add(frmLogo_Vrb);
-
  
             frmLogo_Vrb.Show();
 

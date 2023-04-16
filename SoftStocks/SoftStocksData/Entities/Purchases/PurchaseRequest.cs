@@ -12,6 +12,8 @@ namespace SoftStocksData.Entities.Purchases
         [Key]
         public int Id { get; set; }
 		[Required]
+		public long Identifier { get; set; }
+		[Required]
         public int ModelNumber { get; set; }
 		[Required]
 		public int Quantity { get; set; }
