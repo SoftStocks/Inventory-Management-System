@@ -27,11 +27,9 @@ namespace SoftStocksGUI
 				supplierList = db.Suppliers.ToList();
 			}
 
-			int RowNo = 1;
-
 			foreach (Supplier supplierItem in supplierList)
 			{
-				frmSupplierEntry frmSupplierEntry_Vrb = new frmSupplierEntry(supplierItem.Name, supplierItem.ContactNumber, supplierItem.PrimaryContact, supplierItem.BusinessAddress, RowNo++) { TopLevel = false, TopMost = true };
+				frmSupplierEntry frmSupplierEntry_Vrb = new frmSupplierEntry(supplierItem.Name, supplierItem.ContactNumber, supplierItem.PrimaryContact, supplierItem.BusinessAddress, supplierItem.Id) { TopLevel = false, TopMost = true };
 				frmSupplierEntry_Vrb.FormBorderStyle = FormBorderStyle.None;
 				this.pnlScrollableSupplier.Controls.Add(frmSupplierEntry_Vrb);
 				frmSupplierEntry_Vrb.Show();

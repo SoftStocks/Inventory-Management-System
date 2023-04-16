@@ -34,7 +34,7 @@
 			lblSupplierContactNumberEntry = new TextBox();
 			lblSupplierContactNameEntry = new TextBox();
 			lblSupplierAddressEntry = new TextBox();
-			label1 = new Label();
+			lblSupplierId = new Label();
 			SuspendLayout();
 			// 
 			// btnSupplierDelete
@@ -132,15 +132,15 @@
 			lblSupplierAddressEntry.TextAlign = HorizontalAlignment.Center;
 			lblSupplierAddressEntry.TextChanged += lblSupplierAddressEntry_TextChanged;
 			// 
-			// label1
+			// lblSupplierId
 			// 
-			label1.AutoSize = true;
-			label1.Location = new Point(1165, 0);
-			label1.Name = "label1";
-			label1.Size = new Size(115, 48);
-			label1.TabIndex = 9;
-			label1.Text = "label1";
-			label1.Click += label1_Click;
+			lblSupplierId.AutoSize = true;
+			lblSupplierId.Location = new Point(1165, 0);
+			lblSupplierId.Name = "lblSupplierId";
+			lblSupplierId.Size = new Size(115, 48);
+			lblSupplierId.TabIndex = 9;
+			lblSupplierId.Text = "label1";
+			lblSupplierId.Click += label1_Click;
 			// 
 			// frmSupplierEntry
 			// 
@@ -148,7 +148,7 @@
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.FromArgb(89, 89, 89);
 			ClientSize = new Size(2114, 211);
-			Controls.Add(label1);
+			Controls.Add(lblSupplierId);
 			Controls.Add(lblSupplierAddressEntry);
 			Controls.Add(lblSupplierContactNameEntry);
 			Controls.Add(lblSupplierContactNumberEntry);
@@ -170,6 +170,6 @@
 		private TextBox lblSupplierContactNumberEntry;
 		private TextBox lblSupplierContactNameEntry;
 		private TextBox lblSupplierAddressEntry;
-		private Label label1;
+		private Label lblSupplierId;
 	}
 }

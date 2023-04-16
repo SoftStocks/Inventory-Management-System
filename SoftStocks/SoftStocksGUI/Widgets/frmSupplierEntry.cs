@@ -14,6 +14,7 @@ namespace SoftStocksGUI.Widgets
 {
 	public partial class frmSupplierEntry : Form
 	{
+
 		public frmSupplierEntry(string name = "", string contact = "", string purchases = "", string address = "", int id = 0)
 		{
 			InitializeComponent();
@@ -22,7 +23,7 @@ namespace SoftStocksGUI.Widgets
 			this.lblSupplierContactNumberEntry.Text = contact;
 			this.lblSupplierContactNameEntry.Text = purchases;
 			this.lblSupplierAddressEntry.Text = address;
-			this.label1.Text = $"{id}";
+			this.lblSupplierId.Text = $"{id}";
 
 		}
 
@@ -87,7 +88,7 @@ namespace SoftStocksGUI.Widgets
 			{
 				using (SoftStocksDBContext db = new SoftStocksDBContext())
 				{
-					var supplierRow = new Supplier { Id = 1 };
+					var supplierRow = new Supplier { Id = Int32.Parse(lblSupplierId.Text) };
 					db.Suppliers.Attach(supplierRow);
 					db.Suppliers.Remove(supplierRow);
 					db.SaveChanges();
