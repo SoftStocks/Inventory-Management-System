@@ -19,6 +19,8 @@
   <p>With an easy to use user interface, built around being clean and ituitive we believe that this system is very straight forward. Once run there will be a start up log in screen presented to the user where to access any other pages they will have to sign in with their credentials. After logged in you can access three different pages, Home, Edit and Advanced. The home page serves all supplier infomation and controls to be able to add, edit and delete different entries.
   </p>
   
+  ![image](https://user-images.githubusercontent.com/40577677/232230350-11da2522-dc0a-4811-98b4-a0c29a6311dd.png)
+  
   <h3>Report</h3>
   <p><code>Report</code> is the unit of information within SoftStocks. It is an object with which the client interacts via application logic.</p>
   <p>Architecturally, this is a read-only layer that makes use of Entity Framework, which in turn makes use of the database. The implementation details of connecting to the database and using <code>DbContext</code> are abstracted away from the client.</p>

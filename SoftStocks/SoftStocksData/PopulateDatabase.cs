@@ -155,7 +155,9 @@ namespace SoftStocksData
             {
 				string path = Path.Combine(Directory.GetCurrentDirectory(), @$"CSV data\{table}_data.csv");
 				FromCSVFile(path);
-			}
+
+            }
+
         }
     }
 }
