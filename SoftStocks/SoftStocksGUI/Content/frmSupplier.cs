@@ -46,11 +46,12 @@ namespace SoftStocksGUI
 			try
 			{
 				frmSupplierEntry_Vrb.Show();
-			} catch (Exception)
+			}
+			catch (Exception)
 			{
 				//MessageBox.Show($"{ex}");  //If entry is deleted before being able to be shown then hides error
 			}
-			
+
 
 		}
 	}

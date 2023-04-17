@@ -43,12 +43,11 @@
 			lblKeyboardModelNumberEntry.BorderStyle = BorderStyle.None;
 			lblKeyboardModelNumberEntry.Font = new Font("Microsoft Sans Serif", 10.75F, FontStyle.Regular, GraphicsUnit.Point);
 			lblKeyboardModelNumberEntry.ForeColor = Color.White;
-			lblKeyboardModelNumberEntry.Location = new Point(-1, 85);
-			lblKeyboardModelNumberEntry.Margin = new Padding(9, 10, 9, 10);
+			lblKeyboardModelNumberEntry.Location = new Point(-4, 26);
 			lblKeyboardModelNumberEntry.Name = "lblKeyboardModelNumberEntry";
 			lblKeyboardModelNumberEntry.PlaceholderText = "Model No.";
 			lblKeyboardModelNumberEntry.ReadOnly = true;
-			lblKeyboardModelNumberEntry.Size = new Size(286, 49);
+			lblKeyboardModelNumberEntry.Size = new Size(100, 17);
 			lblKeyboardModelNumberEntry.TabIndex = 6;
 			lblKeyboardModelNumberEntry.TextAlign = HorizontalAlignment.Center;
 			// 
@@ -58,11 +57,10 @@
 			lblKeyboardQuantityEntry.BorderStyle = BorderStyle.None;
 			lblKeyboardQuantityEntry.Font = new Font("Microsoft Sans Serif", 10.75F, FontStyle.Regular, GraphicsUnit.Point);
 			lblKeyboardQuantityEntry.ForeColor = Color.White;
-			lblKeyboardQuantityEntry.Location = new Point(293, 85);
-			lblKeyboardQuantityEntry.Margin = new Padding(9, 10, 9, 10);
+			lblKeyboardQuantityEntry.Location = new Point(102, 26);
 			lblKeyboardQuantityEntry.Name = "lblKeyboardQuantityEntry";
 			lblKeyboardQuantityEntry.PlaceholderText = "Quantity";
-			lblKeyboardQuantityEntry.Size = new Size(286, 49);
+			lblKeyboardQuantityEntry.Size = new Size(100, 17);
 			lblKeyboardQuantityEntry.TabIndex = 7;
 			lblKeyboardQuantityEntry.TextAlign = HorizontalAlignment.Center;
 			lblKeyboardQuantityEntry.TextChanged += removeRowifBlank;
@@ -73,11 +71,10 @@
 			lblKeyboardPriceEntry.BorderStyle = BorderStyle.None;
 			lblKeyboardPriceEntry.Font = new Font("Microsoft Sans Serif", 10.75F, FontStyle.Regular, GraphicsUnit.Point);
 			lblKeyboardPriceEntry.ForeColor = Color.White;
-			lblKeyboardPriceEntry.Location = new Point(569, 85);
-			lblKeyboardPriceEntry.Margin = new Padding(9, 10, 9, 10);
+			lblKeyboardPriceEntry.Location = new Point(208, 26);
 			lblKeyboardPriceEntry.Name = "lblKeyboardPriceEntry";
 			lblKeyboardPriceEntry.PlaceholderText = "Price";
-			lblKeyboardPriceEntry.Size = new Size(286, 49);
+			lblKeyboardPriceEntry.Size = new Size(100, 17);
 			lblKeyboardPriceEntry.TabIndex = 8;
 			lblKeyboardPriceEntry.TextAlign = HorizontalAlignment.Center;
 			lblKeyboardPriceEntry.TextChanged += removeRowifBlank;
@@ -88,12 +85,11 @@
 			lblKeyboardSupplierIdEntry.BorderStyle = BorderStyle.None;
 			lblKeyboardSupplierIdEntry.Font = new Font("Microsoft Sans Serif", 10.75F, FontStyle.Regular, GraphicsUnit.Point);
 			lblKeyboardSupplierIdEntry.ForeColor = Color.White;
-			lblKeyboardSupplierIdEntry.Location = new Point(864, 85);
-			lblKeyboardSupplierIdEntry.Margin = new Padding(9, 10, 9, 10);
+			lblKeyboardSupplierIdEntry.Location = new Point(314, 26);
 			lblKeyboardSupplierIdEntry.Name = "lblKeyboardSupplierIdEntry";
 			lblKeyboardSupplierIdEntry.PlaceholderText = "Supplier ID";
 			lblKeyboardSupplierIdEntry.ScrollBars = ScrollBars.Both;
-			lblKeyboardSupplierIdEntry.Size = new Size(286, 49);
+			lblKeyboardSupplierIdEntry.Size = new Size(100, 17);
 			lblKeyboardSupplierIdEntry.TabIndex = 9;
 			lblKeyboardSupplierIdEntry.TextAlign = HorizontalAlignment.Center;
 			lblKeyboardSupplierIdEntry.TextChanged += removeRowifBlank;
@@ -104,12 +100,11 @@
 			lblKeyboardDescriptionEntry.BorderStyle = BorderStyle.None;
 			lblKeyboardDescriptionEntry.Font = new Font("Microsoft Sans Serif", 10.75F, FontStyle.Regular, GraphicsUnit.Point);
 			lblKeyboardDescriptionEntry.ForeColor = Color.White;
-			lblKeyboardDescriptionEntry.Location = new Point(1141, 85);
-			lblKeyboardDescriptionEntry.Margin = new Padding(9, 10, 9, 10);
+			lblKeyboardDescriptionEntry.Location = new Point(420, 26);
 			lblKeyboardDescriptionEntry.Name = "lblKeyboardDescriptionEntry";
 			lblKeyboardDescriptionEntry.PlaceholderText = "Description";
 			lblKeyboardDescriptionEntry.ScrollBars = ScrollBars.Both;
-			lblKeyboardDescriptionEntry.Size = new Size(286, 49);
+			lblKeyboardDescriptionEntry.Size = new Size(100, 17);
 			lblKeyboardDescriptionEntry.TabIndex = 10;
 			lblKeyboardDescriptionEntry.TextAlign = HorizontalAlignment.Center;
 			lblKeyboardDescriptionEntry.TextChanged += removeRowifBlank;
@@ -120,10 +115,9 @@
 			btnKeyboardDelete.Dock = DockStyle.Right;
 			btnKeyboardDelete.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
 			btnKeyboardDelete.ForeColor = Color.White;
-			btnKeyboardDelete.Location = new Point(1795, 0);
-			btnKeyboardDelete.Margin = new Padding(9, 10, 9, 10);
+			btnKeyboardDelete.Location = new Point(638, 0);
 			btnKeyboardDelete.Name = "btnKeyboardDelete";
-			btnKeyboardDelete.Size = new Size(291, 211);
+			btnKeyboardDelete.Size = new Size(102, 66);
 			btnKeyboardDelete.TabIndex = 12;
 			btnKeyboardDelete.Text = "Delete";
 			btnKeyboardDelete.UseVisualStyleBackColor = false;
@@ -135,10 +129,9 @@
 			btnKeyboardSave.Dock = DockStyle.Right;
 			btnKeyboardSave.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
 			btnKeyboardSave.ForeColor = Color.White;
-			btnKeyboardSave.Location = new Point(1504, 0);
-			btnKeyboardSave.Margin = new Padding(9, 10, 9, 10);
+			btnKeyboardSave.Location = new Point(536, 0);
 			btnKeyboardSave.Name = "btnKeyboardSave";
-			btnKeyboardSave.Size = new Size(291, 211);
+			btnKeyboardSave.Size = new Size(102, 66);
 			btnKeyboardSave.TabIndex = 13;
 			btnKeyboardSave.Text = "Save";
 			btnKeyboardSave.UseVisualStyleBackColor = false;
@@ -146,10 +139,10 @@
 			// 
 			// frmKeyboardEntry
 			// 
-			AutoScaleDimensions = new SizeF(20F, 48F);
+			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.FromArgb(89, 89, 89);
-			ClientSize = new Size(2086, 211);
+			ClientSize = new Size(740, 66);
 			Controls.Add(btnKeyboardSave);
 			Controls.Add(btnKeyboardDelete);
 			Controls.Add(lblKeyboardDescriptionEntry);
@@ -158,6 +151,7 @@
 			Controls.Add(lblKeyboardQuantityEntry);
 			Controls.Add(lblKeyboardModelNumberEntry);
 			FormBorderStyle = FormBorderStyle.None;
+			Margin = new Padding(1);
 			Name = "frmKeyboardEntry";
 			Text = "frmKeyboardEntry";
 			ResumeLayout(false);
