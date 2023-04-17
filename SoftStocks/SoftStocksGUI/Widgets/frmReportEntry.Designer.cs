@@ -31,7 +31,6 @@
 			btnReportDelete = new Button();
 			btnReportView = new Button();
 			lblReportId = new TextBox();
-			lblReportType = new TextBox();
 			lblReportDateCreated = new TextBox();
 			SuspendLayout();
 			// 
@@ -69,27 +68,13 @@
 			lblReportId.BorderStyle = BorderStyle.None;
 			lblReportId.Font = new Font("Microsoft Sans Serif", 10.75F, FontStyle.Regular, GraphicsUnit.Point);
 			lblReportId.ForeColor = Color.White;
-			lblReportId.Location = new Point(-19, 85);
+			lblReportId.Location = new Point(262, 85);
 			lblReportId.Margin = new Padding(9, 10, 9, 10);
 			lblReportId.Name = "lblReportId";
 			lblReportId.PlaceholderText = "ReportId";
 			lblReportId.Size = new Size(400, 49);
 			lblReportId.TabIndex = 6;
 			lblReportId.TextAlign = HorizontalAlignment.Center;
-			// 
-			// lblReportType
-			// 
-			lblReportType.BackColor = Color.FromArgb(89, 89, 89);
-			lblReportType.BorderStyle = BorderStyle.None;
-			lblReportType.Font = new Font("Microsoft Sans Serif", 10.75F, FontStyle.Regular, GraphicsUnit.Point);
-			lblReportType.ForeColor = Color.White;
-			lblReportType.Location = new Point(450, 85);
-			lblReportType.Margin = new Padding(9, 10, 9, 10);
-			lblReportType.Name = "lblReportType";
-			lblReportType.PlaceholderText = "Type";
-			lblReportType.Size = new Size(286, 49);
-			lblReportType.TabIndex = 7;
-			lblReportType.TextAlign = HorizontalAlignment.Center;
 			// 
 			// lblReportDateCreated
 			// 
@@ -113,7 +98,6 @@
 			BackColor = Color.FromArgb(89, 89, 89);
 			ClientSize = new Size(2086, 211);
 			Controls.Add(lblReportDateCreated);
-			Controls.Add(lblReportType);
 			Controls.Add(lblReportId);
 			Controls.Add(btnReportView);
 			Controls.Add(btnReportDelete);
@@ -129,7 +113,6 @@
 		private Button btnReportDelete;
 		private Button btnReportView;
 		private TextBox lblReportId;
-		private TextBox lblReportType;
 		private TextBox lblReportDateCreated;
 	}
 }

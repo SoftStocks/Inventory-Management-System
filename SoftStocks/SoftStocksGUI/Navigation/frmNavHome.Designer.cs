@@ -144,7 +144,7 @@
 			btnNavKeyboards.FlatStyle = FlatStyle.Flat;
 			btnNavKeyboards.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
 			btnNavKeyboards.ForeColor = Color.White;
-			btnNavKeyboards.Image = Properties.Resources.documents;
+			btnNavKeyboards.Image = Properties.Resources.keyboard;
 			btnNavKeyboards.Location = new Point(0, 960);
 			btnNavKeyboards.Margin = new Padding(9, 10, 9, 10);
 			btnNavKeyboards.Name = "btnNavKeyboards";

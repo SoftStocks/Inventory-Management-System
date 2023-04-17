@@ -25,7 +25,7 @@ namespace SoftStocksGUI
 				keyboardList = db.Keyboards.ToList();
 			}*/
 
-			frmReportEntry frmReportEntry_Vrb = new frmReportEntry("StaffReport2", "Staff", DateTime.Now) { TopLevel = false, TopMost = true };
+			frmReportEntry frmReportEntry_Vrb = new frmReportEntry("StaffReport2", DateTime.Now) { TopLevel = false, TopMost = true };
 			frmReportEntry_Vrb.FormBorderStyle = FormBorderStyle.None;
 			this.pnlScrollableReport.Controls.Add(frmReportEntry_Vrb);
 			frmReportEntry_Vrb.Show();

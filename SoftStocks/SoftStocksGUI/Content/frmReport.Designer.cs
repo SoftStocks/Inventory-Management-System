@@ -30,7 +30,6 @@
 		{
 			pnlEntryLabels = new Panel();
 			lblDateCreated = new Label();
-			lblReportType = new Label();
 			lblReportId = new Label();
 			pnlScrollableReport = new FlowLayoutPanel();
 			pnlEntryLabels.SuspendLayout();
@@ -39,7 +38,6 @@
 			// pnlEntryLabels
 			// 
 			pnlEntryLabels.Controls.Add(lblDateCreated);
-			pnlEntryLabels.Controls.Add(lblReportType);
 			pnlEntryLabels.Controls.Add(lblReportId);
 			pnlEntryLabels.Dock = DockStyle.Top;
 			pnlEntryLabels.Location = new Point(0, 0);
@@ -52,7 +50,7 @@
 			// 
 			lblDateCreated.Font = new Font("Microsoft Sans Serif", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
 			lblDateCreated.ForeColor = Color.White;
-			lblDateCreated.Location = new Point(879, 0);
+			lblDateCreated.Location = new Point(826, 0);
 			lblDateCreated.Margin = new Padding(9, 0, 9, 0);
 			lblDateCreated.Name = "lblDateCreated";
 			lblDateCreated.Size = new Size(286, 211);
@@ -60,23 +58,11 @@
 			lblDateCreated.Text = "Date Created";
 			lblDateCreated.TextAlign = ContentAlignment.MiddleCenter;
 			// 
-			// lblReportType
-			// 
-			lblReportType.Font = new Font("Microsoft Sans Serif", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-			lblReportType.ForeColor = Color.White;
-			lblReportType.Location = new Point(455, 0);
-			lblReportType.Margin = new Padding(9, 0, 9, 0);
-			lblReportType.Name = "lblReportType";
-			lblReportType.Size = new Size(286, 211);
-			lblReportType.TabIndex = 1;
-			lblReportType.Text = "Report Type";
-			lblReportType.TextAlign = ContentAlignment.MiddleCenter;
-			// 
 			// lblReportId
 			// 
 			lblReportId.Font = new Font("Microsoft Sans Serif", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
 			lblReportId.ForeColor = Color.White;
-			lblReportId.Location = new Point(46, 0);
+			lblReportId.Location = new Point(342, 0);
 			lblReportId.Margin = new Padding(9, 0, 9, 0);
 			lblReportId.Name = "lblReportId";
 			lblReportId.Size = new Size(286, 211);
@@ -116,7 +102,6 @@
 
 		private Panel pnlEntryLabels;
 		private Label lblDateCreated;
-		private Label lblReportType;
 		private Label lblReportId;
 		private FlowLayoutPanel pnlScrollableReport;
 	}

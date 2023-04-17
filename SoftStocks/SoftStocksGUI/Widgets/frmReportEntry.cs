@@ -12,12 +12,11 @@ namespace SoftStocksGUI.Widgets
 {
 	public partial class frmReportEntry : Form
 	{
-		public frmReportEntry(string reportId = "", string reportType = "", DateTime creationDate = new DateTime())
+		public frmReportEntry(string reportId = "", DateTime creationDate = new DateTime())
 		{
 			InitializeComponent();
 
 			this.lblReportId.Text = reportId;
-			this.lblReportType.Text = reportType;
 			this.lblReportDateCreated.Text = creationDate.ToString();
 		}
 
