@@ -69,7 +69,7 @@ namespace SoftStocksData
                                 SupplierId = int.Parse(fields[1]),
                                 Quantity = int.Parse(fields[2]),
                                 Description = fields[3],
-                                Price = (System.Data.SqlTypes.SqlMoney)float.Parse(fields[4])
+                                Price = float.Parse(fields[4])
                             };
                             db.Keyboards.Add(newKeyboard);
                         }
