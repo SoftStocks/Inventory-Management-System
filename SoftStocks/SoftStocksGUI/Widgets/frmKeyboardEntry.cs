@@ -18,7 +18,7 @@ namespace SoftStocksGUI.Widgets
 	{
 		private int entryId;
 
-		public frmKeyboardEntry(int id = -1, int modelNo = 0, int quantity = 0, /*Decimal price = 0,*/ int supplierId = 0, string description = "Example Desc.")
+		public frmKeyboardEntry(int id = -1, int modelNo = 0, int quantity = 0, Decimal price = 0, int supplierId = 0, string description = "Example Desc.")
 		{
 			InitializeComponent();
 
@@ -26,7 +26,7 @@ namespace SoftStocksGUI.Widgets
 
 			this.lblKeyboardModelNumberEntry.Text = modelNo.ToString();
 			this.lblKeyboardQuantityEntry.Text = quantity.ToString();
-			//this.lblKeyboardPriceEntry.Text = price.ToString();
+			this.lblKeyboardPriceEntry.Text = $"£{price}";
 			this.lblKeyboardSupplierIdEntry.Text = supplierId.ToString();
 			this.lblKeyboardDescriptionEntry.Text = description;
 			this.lblKeyboardId.Text = $"{entryId}";
@@ -35,14 +35,16 @@ namespace SoftStocksGUI.Widgets
 			{
 				using (SoftStocksDBContext db = new SoftStocksDBContext())
 				{
-					var modelQuery = db.Keyboards.SingleOrDefault(s => s.ModelNumber == Convert.ToInt32(this.lblKeyboardModelNumberEntry.Text));
+					int ident = -1;
+					var modelQuery = db.Keyboards.SingleOrDefault(s => s.Ident == ident);
 					if (modelQuery == null)
 					{
 						Keyboard newKeyboard = new Keyboard
 						{
 							ModelNumber = Convert.ToInt32(this.lblKeyboardModelNumberEntry.Text),
+							Ident = ident,
 							Quantity = Convert.ToInt32(this.lblKeyboardQuantityEntry.Text),
-							Price = Convert.ToInt32(this.lblKeyboardPriceEntry.Text),
+							Price = Convert.ToDecimal(this.lblKeyboardPriceEntry.Text.Replace("£", "")),
 							SupplierId = Convert.ToInt32(this.lblKeyboardSupplierIdEntry.Text),
 							Description = this.lblKeyboardDescriptionEntry.Text
 						};
@@ -50,11 +52,11 @@ namespace SoftStocksGUI.Widgets
 						db.Keyboards.Add(newKeyboard);
 						db.SaveChanges();
 
-						var row = db.Keyboards.Single(s => s.ModelNumber == modelNo);
+						var row = db.Keyboards.Single(s => s.Ident == ident);
 						if (row != null)
 						{
-							entryId = row.Ident;
-							this.lblKeyboardId.Text = $"{entryId}";
+							entryId = row.ModelNumber;
+							this.lblKeyboardModelNumberEntry.Text = $"{entryId}";
 						}
 					}
 					else
@@ -74,10 +76,35 @@ namespace SoftStocksGUI.Widgets
 
 		private void btnKeyboardSave_Click(object sender, EventArgs e)
 		{
+			using (SoftStocksDBContext db = new SoftStocksDBContext())
+			{
 
+				//Check For Same Names
+
+				var row = db.Keyboards.FirstOrDefault(s => s.ModelNumber == entryId);
+				if (row == null)
+				{
+					row.ModelNumber = Convert.ToInt32(this.lblKeyboardModelNumberEntry.Text);
+					row.Ident = 1;
+					row.Quantity = Convert.ToInt32(this.lblKeyboardQuantityEntry.Text);
+					row.Price = Convert.ToDecimal(this.lblKeyboardPriceEntry.Text.Replace("£", ""));
+					row.Description = this.lblKeyboardDescriptionEntry.Text;
+
+					db.SaveChanges();
+				}
+				else
+				{
+					MessageBox.Show("Model Number already exists!");
+				}
+			}
 		}
 
 		private void btnKeyboardDelete_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void lblKeyboardPriceEntry_TextChanged(object sender, EventArgs e)
 		{
 
 		}

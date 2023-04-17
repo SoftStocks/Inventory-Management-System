@@ -25,7 +25,7 @@ namespace SoftStocksData
                     // database fields
                     string[] staffHeader = { "id", "title", "first_name", "last_name", "email_address", "role", "date_of_birth", "salary" };
                     string[] credentialsHeader = { "username", "staff_id", "password" };
-                    string[] keyboardHeader = { "id", "model_number", "supplier_id", "quantity", "description", "price" };
+                    string[] keyboardHeader = { "model_number", "ident", "supplier_id", "quantity", "description", "price" };
                     string[] supplierHeader = { "id", "name", "contact_number", "primary_contact", "business_address"};
                     string[] purchaseRequestHeader = {"id", "identifier", "model_number", "quantity", "status", "staff_id", "date_created"};
                     string[] keyboardRequestHeader = { "id", "model_number", "purchase_request_id" };
@@ -70,7 +70,7 @@ namespace SoftStocksData
                                 SupplierId = int.Parse(fields[2]),
                                 Quantity = int.Parse(fields[3]),
                                 Description = fields[4],
-                                Price = (System.Data.SqlTypes.SqlMoney)float.Parse(fields[5])
+                                Price = Decimal.Parse(fields[5])
                             };
                             db.Keyboards.Add(newKeyboard);
                         }

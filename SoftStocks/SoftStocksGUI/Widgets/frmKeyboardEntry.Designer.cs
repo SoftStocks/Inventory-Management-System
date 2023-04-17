@@ -82,6 +82,7 @@
 			lblKeyboardPriceEntry.Size = new Size(286, 49);
 			lblKeyboardPriceEntry.TabIndex = 8;
 			lblKeyboardPriceEntry.TextAlign = HorizontalAlignment.Center;
+			lblKeyboardPriceEntry.TextChanged += lblKeyboardPriceEntry_TextChanged;
 			// 
 			// lblKeyboardSupplierIdEntry
 			// 
@@ -118,7 +119,7 @@
 			// lblKeyboardId
 			// 
 			lblKeyboardId.AutoSize = true;
-			lblKeyboardId.Location = new Point(913, 81);
+			lblKeyboardId.Location = new Point(0, 6);
 			lblKeyboardId.Name = "lblKeyboardId";
 			lblKeyboardId.Size = new Size(115, 48);
 			lblKeyboardId.TabIndex = 11;
@@ -130,7 +131,7 @@
 			btnKeyboardDelete.Dock = DockStyle.Right;
 			btnKeyboardDelete.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
 			btnKeyboardDelete.ForeColor = Color.White;
-			btnKeyboardDelete.Location = new Point(1649, 0);
+			btnKeyboardDelete.Location = new Point(1795, 0);
 			btnKeyboardDelete.Margin = new Padding(9, 10, 9, 10);
 			btnKeyboardDelete.Name = "btnKeyboardDelete";
 			btnKeyboardDelete.Size = new Size(291, 211);
@@ -145,7 +146,7 @@
 			btnKeyboardSave.Dock = DockStyle.Right;
 			btnKeyboardSave.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
 			btnKeyboardSave.ForeColor = Color.White;
-			btnKeyboardSave.Location = new Point(1358, 0);
+			btnKeyboardSave.Location = new Point(1504, 0);
 			btnKeyboardSave.Margin = new Padding(9, 10, 9, 10);
 			btnKeyboardSave.Name = "btnKeyboardSave";
 			btnKeyboardSave.Size = new Size(291, 211);
@@ -159,7 +160,7 @@
 			AutoScaleDimensions = new SizeF(20F, 48F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.FromArgb(89, 89, 89);
-			ClientSize = new Size(1940, 211);
+			ClientSize = new Size(2086, 211);
 			Controls.Add(btnKeyboardSave);
 			Controls.Add(btnKeyboardDelete);
 			Controls.Add(lblKeyboardId);

@@ -1,11 +1,11 @@
 model_number,ident,supplier_id,quantity,description,price
-1646,1,1,50,Black QWERTY keyboard with matte finish and white embossed lettering,75
-278456,2,1,25,Gold DVORAK keyboard with gold embossed lettering and white backlight,150
-38345,3,1,50,,50
-478346,4,2,75,High-specification gaming keyboard with rainbow keyboard and built-in trackpad,100
-5537,5,2,10,Dell King Charles III Coronation Limited Edition,1000
-65348,6,3,100,Basic QWERTY keyboard with foldable stands (UK edition),20
-75348,7,3,100,Basic QWERTY keyboard with foldable stands (US edition),20
-8234,8,3,75,CheapNNasty-4000 red coloured with flat red lettering,5
-95398,9,4,50,Black QWERTY keyboard with durable kevlar finish,75
-110544,10,5,25,,75
+1,1,1,50,Black QWERTY keyboard with matte finish and white embossed lettering,75
+2,1,1,25,Gold DVORAK keyboard with gold embossed lettering and white backlight,150
+3,1,1,50,,50
+4,1,2,75,High-specification gaming keyboard with rainbow keyboard and built-in trackpad,100
+5,1,2,10,Dell King Charles III Coronation Limited Edition,1000
+6,1,3,100,Basic QWERTY keyboard with foldable stands (UK edition),20
+7,1,3,100,Basic QWERTY keyboard with foldable stands (US edition),20
+8,1,3,75,CheapNNasty-4000 red coloured with flat red lettering,5
+9,1,4,50,Black QWERTY keyboard with durable kevlar finish,75
+10,1,5,25,,75
