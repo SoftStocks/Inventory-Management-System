@@ -69,7 +69,7 @@ namespace SoftStocksData
                                 SupplierId = int.Parse(fields[1]),
                                 Quantity = int.Parse(fields[2]),
                                 Description = fields[3],
-                                Price = (System.Data.SqlTypes.SqlMoney)float.Parse(fields[4])
+                                Price = float.Parse(fields[4])
                             };
                             db.Keyboards.Add(newKeyboard);
                         }
@@ -138,6 +138,7 @@ namespace SoftStocksData
 
                 context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.Staffs', RESEED, 0)");
                 context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.Suppliers', RESEED, 0)");
+				context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.Keyboards', RESEED, 0)");
                 context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.PurchaseRequests', RESEED, 0)");
                 context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.KeyboardRequests', RESEED, 0)");
                 context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.PurchaseTransactions', RESEED, 0)");

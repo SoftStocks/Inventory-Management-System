@@ -63,8 +63,6 @@ C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\bin\Debug\ne
 C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\bin\Debug\net7.0-windows\SoftStocksData.dll
 C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\bin\Debug\net7.0-windows\SoftStocksData.pdb
 C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.csproj.AssemblyReference.cache
-C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.LoginPage.resources
-C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.MainPage.resources
 C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.csproj.GenerateResource.cache
 C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.GeneratedMSBuildEditorConfig.editorconfig
 C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.AssemblyInfoInputs.cache
@@ -133,3 +131,15 @@ C:\Users\jack.wallace\source\repos\Inventory-Management-System\SoftStocks\SoftSt
 C:\Users\jack.wallace\source\repos\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.frmTask.resources
 C:\Users\jack.wallace\source\repos\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.Widgets.frmSupplierEntry.resources
 C:\Users\jack.wallace\source\repos\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.Widgets.frmTaskEntry.resources
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.frmHome.resources
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.frmLogin.resources
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.Content.frmLogo.resources
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.frmReport.resources
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.frmSupplier.resources
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.frmTask.resources
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.frmBase.resources
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.frmNavHome.resources
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.frmNavLogin.resources
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.Properties.Resources.resources
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.Widgets.frmSupplierEntry.resources
+C:\Programming\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.Widgets.frmTaskEntry.resources

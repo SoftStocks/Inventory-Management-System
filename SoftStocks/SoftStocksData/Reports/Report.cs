@@ -1,6 +1,6 @@
-﻿using SoftStocksData.Entities.StaffMember;
-
+using SoftStocksData.Entities.StaffMember;
 namespace SoftStocksData.Reports
+
 {
     public abstract class Report
     {

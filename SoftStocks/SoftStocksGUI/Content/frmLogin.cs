@@ -1,5 +1,9 @@
 ﻿using SoftStocksData;
 using SoftStocksData.Entities.StaffMember;
+<<<<<<< HEAD
+using SoftStocksData.Reports;
+=======
+>>>>>>> develop
 using System.Data.Entity;
 
 namespace SoftStocksGUI
