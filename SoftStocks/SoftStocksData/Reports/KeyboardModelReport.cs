@@ -27,9 +27,7 @@ namespace SoftStocksData.Reports
         // advanced (derived) information
         public int TotalNumberOfTransactions;
         public List<Admin> PurchasedBy;
-        public List<KeyboardModelReport> SimilarModels;
-        public List<float> PriceHistory;
-
+        public List<Keyboard> SimilarModels;
 
         public KeyboardModelReport(int modelNumber) { 
             using(var dbContext = new SoftStocksDBContext())
@@ -68,9 +66,19 @@ namespace SoftStocksData.Reports
 				{
 					this.PurchasedBy.AddRange((IEnumerable<Admin>)dbContext.Staff.Where(s => s.Id == smid));
 				}
+
+				// recommendation logic
 				
-				this.SimilarModels = new List<KeyboardModelReport>();
-				this.PriceHistory = new List<float>();
+				var similarModelTrainingSet = new KeyboardRecommendationModel.ModelInput()
+				{
+					Supplier_id = keyboard.SupplierId,
+					Description = keyboard.Description
+				};
+
+				//Load model and predict output
+				var result = Math.Round(float.Parse(KeyboardRecommendationModel.Predict(similarModelTrainingSet).ToString()));
+
+				this.SimilarModels = dbContext.Keyboards.Where(k => k.ModelNumber == result).ToList();
             }
 
         }
