@@ -22,16 +22,15 @@ namespace SoftStocksGUI.Widgets
 		{
 			InitializeComponent();
 
-			entryId = id;
+			entryId = modelNo;
 
 			this.lblKeyboardModelNumberEntry.Text = modelNo.ToString();
 			this.lblKeyboardQuantityEntry.Text = quantity.ToString();
 			this.lblKeyboardPriceEntry.Text = $"£{price}";
 			this.lblKeyboardSupplierIdEntry.Text = supplierId.ToString();
 			this.lblKeyboardDescriptionEntry.Text = description;
-			this.lblKeyboardId.Text = $"{entryId}";
 
-			if (entryId == -1)
+			if (id == -1)
 			{
 				using (SoftStocksDBContext db = new SoftStocksDBContext())
 				{
@@ -41,7 +40,6 @@ namespace SoftStocksGUI.Widgets
 					{
 						Keyboard newKeyboard = new Keyboard
 						{
-							ModelNumber = Convert.ToInt32(this.lblKeyboardModelNumberEntry.Text),
 							Ident = ident,
 							Quantity = Convert.ToInt32(this.lblKeyboardQuantityEntry.Text),
 							Price = Convert.ToDecimal(this.lblKeyboardPriceEntry.Text.Replace("£", "")),
@@ -82,12 +80,12 @@ namespace SoftStocksGUI.Widgets
 				//Check For Same Names
 
 				var row = db.Keyboards.FirstOrDefault(s => s.ModelNumber == entryId);
-				if (row == null)
+				if (row != null)
 				{
-					row.ModelNumber = Convert.ToInt32(this.lblKeyboardModelNumberEntry.Text);
 					row.Ident = 1;
 					row.Quantity = Convert.ToInt32(this.lblKeyboardQuantityEntry.Text);
 					row.Price = Convert.ToDecimal(this.lblKeyboardPriceEntry.Text.Replace("£", ""));
+					row.SupplierId = Convert.ToInt32(this.lblKeyboardSupplierIdEntry.Text);
 					row.Description = this.lblKeyboardDescriptionEntry.Text;
 
 					db.SaveChanges();
@@ -101,12 +99,33 @@ namespace SoftStocksGUI.Widgets
 
 		private void btnKeyboardDelete_Click(object sender, EventArgs e)
 		{
-
+			deleteRowFromDB();
 		}
 
-		private void lblKeyboardPriceEntry_TextChanged(object sender, EventArgs e)
+		private void removeRowifBlank(object sender, EventArgs e)
 		{
+			if (lblKeyboardQuantityEntry.Text == String.Empty && lblKeyboardPriceEntry.Text == String.Empty && lblKeyboardSupplierIdEntry.Text == String.Empty && lblKeyboardDescriptionEntry.Text == String.Empty)
+			{
+				deleteRowFromDB();
+			}
+		}
 
+		private void deleteRowFromDB()
+		{
+			using (SoftStocksDBContext db = new SoftStocksDBContext())
+			{
+				Keyboard keyboardRow = db.Keyboards.Find(entryId);
+				if (keyboardRow != null)
+				{
+					db.Keyboards.Remove(keyboardRow);
+					db.SaveChanges();
+				}
+				else
+				{
+					MessageBox.Show($"Could not delete Supplier, could not find id: {entryId}");
+				}
+			}
+			this.Close();
 		}
 	}
 }

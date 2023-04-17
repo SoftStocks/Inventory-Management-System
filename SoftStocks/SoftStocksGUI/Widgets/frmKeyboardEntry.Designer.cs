@@ -33,7 +33,6 @@
 			lblKeyboardPriceEntry = new TextBox();
 			lblKeyboardSupplierIdEntry = new TextBox();
 			lblKeyboardDescriptionEntry = new TextBox();
-			lblKeyboardId = new Label();
 			btnKeyboardDelete = new Button();
 			btnKeyboardSave = new Button();
 			SuspendLayout();
@@ -49,6 +48,7 @@
 			lblKeyboardModelNumberEntry.Margin = new Padding(9, 10, 9, 10);
 			lblKeyboardModelNumberEntry.Name = "lblKeyboardModelNumberEntry";
 			lblKeyboardModelNumberEntry.PlaceholderText = "Model No.";
+			lblKeyboardModelNumberEntry.ReadOnly = true;
 			lblKeyboardModelNumberEntry.Size = new Size(286, 49);
 			lblKeyboardModelNumberEntry.TabIndex = 6;
 			lblKeyboardModelNumberEntry.TextAlign = HorizontalAlignment.Center;
@@ -67,6 +67,7 @@
 			lblKeyboardQuantityEntry.Size = new Size(286, 49);
 			lblKeyboardQuantityEntry.TabIndex = 7;
 			lblKeyboardQuantityEntry.TextAlign = HorizontalAlignment.Center;
+			lblKeyboardQuantityEntry.TextChanged += removeRowifBlank;
 			// 
 			// lblKeyboardPriceEntry
 			// 
@@ -82,7 +83,7 @@
 			lblKeyboardPriceEntry.Size = new Size(286, 49);
 			lblKeyboardPriceEntry.TabIndex = 8;
 			lblKeyboardPriceEntry.TextAlign = HorizontalAlignment.Center;
-			lblKeyboardPriceEntry.TextChanged += lblKeyboardPriceEntry_TextChanged;
+			lblKeyboardPriceEntry.TextChanged += removeRowifBlank;
 			// 
 			// lblKeyboardSupplierIdEntry
 			// 
@@ -99,6 +100,7 @@
 			lblKeyboardSupplierIdEntry.Size = new Size(286, 49);
 			lblKeyboardSupplierIdEntry.TabIndex = 9;
 			lblKeyboardSupplierIdEntry.TextAlign = HorizontalAlignment.Center;
+			lblKeyboardSupplierIdEntry.TextChanged += removeRowifBlank;
 			// 
 			// lblKeyboardDescriptionEntry
 			// 
@@ -115,15 +117,7 @@
 			lblKeyboardDescriptionEntry.Size = new Size(286, 49);
 			lblKeyboardDescriptionEntry.TabIndex = 10;
 			lblKeyboardDescriptionEntry.TextAlign = HorizontalAlignment.Center;
-			// 
-			// lblKeyboardId
-			// 
-			lblKeyboardId.AutoSize = true;
-			lblKeyboardId.Location = new Point(0, 6);
-			lblKeyboardId.Name = "lblKeyboardId";
-			lblKeyboardId.Size = new Size(115, 48);
-			lblKeyboardId.TabIndex = 11;
-			lblKeyboardId.Text = "label1";
+			lblKeyboardDescriptionEntry.TextChanged += removeRowifBlank;
 			// 
 			// btnKeyboardDelete
 			// 
@@ -163,7 +157,6 @@
 			ClientSize = new Size(2086, 211);
 			Controls.Add(btnKeyboardSave);
 			Controls.Add(btnKeyboardDelete);
-			Controls.Add(lblKeyboardId);
 			Controls.Add(lblKeyboardDescriptionEntry);
 			Controls.Add(lblKeyboardSupplierIdEntry);
 			Controls.Add(lblKeyboardPriceEntry);
@@ -183,7 +176,6 @@
 		private TextBox lblKeyboardPriceEntry;
 		private TextBox lblKeyboardSupplierIdEntry;
 		private TextBox lblKeyboardDescriptionEntry;
-		private Label lblKeyboardId;
 		private Button btnKeyboardDelete;
 		private Button btnKeyboardSave;
 	}

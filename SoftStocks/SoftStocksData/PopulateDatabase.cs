@@ -142,7 +142,8 @@ namespace SoftStocksData
 
                 context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.Staffs', RESEED, 0)");
                 context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.Suppliers', RESEED, 0)");
-                context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.PurchaseRequests', RESEED, 0)");
+				context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.Keyboards', RESEED, 0)");
+				context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.PurchaseRequests', RESEED, 0)");
                 context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.KeyboardRequests', RESEED, 0)");
                 context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.PurchaseTransactions', RESEED, 0)");
                 

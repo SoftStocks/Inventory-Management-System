@@ -30,7 +30,7 @@ namespace SoftStocksGUI.Content
 
 			foreach (Keyboard keyboardItem in keyboardList)
 			{
-				frmKeyboardEntry frmKeyboardEntry_Vrb = new frmKeyboardEntry(keyboardItem.Ident, keyboardItem.ModelNumber, keyboardItem.Quantity, keyboardItem.Price, keyboardItem.SupplierId, keyboardItem.Description) { TopLevel = false, TopMost = true };
+				frmKeyboardEntry frmKeyboardEntry_Vrb = new frmKeyboardEntry(1, keyboardItem.ModelNumber, keyboardItem.Quantity, keyboardItem.Price, keyboardItem.SupplierId, keyboardItem.Description) { TopLevel = false, TopMost = true };
 				frmKeyboardEntry_Vrb.FormBorderStyle = FormBorderStyle.None;
 				this.pnlScrollableKeyboard.Controls.Add(frmKeyboardEntry_Vrb);
 				frmKeyboardEntry_Vrb.Show();
