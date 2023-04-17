@@ -1,6 +1,9 @@
 ﻿using SoftStocksData;
 using SoftStocksData.Entities.StaffMember;
+<<<<<<< HEAD
 using SoftStocksData.Reports;
+=======
+>>>>>>> develop
 using System.Data.Entity;
 
 namespace SoftStocksGUI
@@ -82,21 +85,7 @@ namespace SoftStocksGUI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
-			PopulateDatabase.SetUp();
-			
-			using (var context = new SoftStocksDBContext())
-			{
-				foreach(var keyboard in context.Keyboards.ToList())
-				{
-					MessageBox.Show($"Keyboard model number: {keyboard.ModelNumber}\nKeyboard description: {keyboard.Description}");
-				}
-			}
-			
-			KeyboardModelReport kr = new KeyboardModelReport(1);
-			kr.Create(ReportFormat.Pdf);
-
-			if (Authenticate())
+            if (Authenticate())
             {
 
                 _frmBaseRef.lblProfile.Text = userName;
