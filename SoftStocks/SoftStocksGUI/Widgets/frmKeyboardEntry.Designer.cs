@@ -41,10 +41,9 @@
 			// 
 			lblKeyboardModelNumberEntry.BackColor = Color.FromArgb(89, 89, 89);
 			lblKeyboardModelNumberEntry.BorderStyle = BorderStyle.None;
-			lblKeyboardModelNumberEntry.Dock = DockStyle.Left;
 			lblKeyboardModelNumberEntry.Font = new Font("Microsoft Sans Serif", 10.75F, FontStyle.Regular, GraphicsUnit.Point);
 			lblKeyboardModelNumberEntry.ForeColor = Color.White;
-			lblKeyboardModelNumberEntry.Location = new Point(0, 0);
+			lblKeyboardModelNumberEntry.Location = new Point(-1, 85);
 			lblKeyboardModelNumberEntry.Margin = new Padding(9, 10, 9, 10);
 			lblKeyboardModelNumberEntry.Name = "lblKeyboardModelNumberEntry";
 			lblKeyboardModelNumberEntry.PlaceholderText = "Model No.";
@@ -57,10 +56,9 @@
 			// 
 			lblKeyboardQuantityEntry.BackColor = Color.FromArgb(89, 89, 89);
 			lblKeyboardQuantityEntry.BorderStyle = BorderStyle.None;
-			lblKeyboardQuantityEntry.Dock = DockStyle.Left;
 			lblKeyboardQuantityEntry.Font = new Font("Microsoft Sans Serif", 10.75F, FontStyle.Regular, GraphicsUnit.Point);
 			lblKeyboardQuantityEntry.ForeColor = Color.White;
-			lblKeyboardQuantityEntry.Location = new Point(286, 0);
+			lblKeyboardQuantityEntry.Location = new Point(293, 85);
 			lblKeyboardQuantityEntry.Margin = new Padding(9, 10, 9, 10);
 			lblKeyboardQuantityEntry.Name = "lblKeyboardQuantityEntry";
 			lblKeyboardQuantityEntry.PlaceholderText = "Quantity";
@@ -73,10 +71,9 @@
 			// 
 			lblKeyboardPriceEntry.BackColor = Color.FromArgb(89, 89, 89);
 			lblKeyboardPriceEntry.BorderStyle = BorderStyle.None;
-			lblKeyboardPriceEntry.Dock = DockStyle.Left;
 			lblKeyboardPriceEntry.Font = new Font("Microsoft Sans Serif", 10.75F, FontStyle.Regular, GraphicsUnit.Point);
 			lblKeyboardPriceEntry.ForeColor = Color.White;
-			lblKeyboardPriceEntry.Location = new Point(572, 0);
+			lblKeyboardPriceEntry.Location = new Point(569, 85);
 			lblKeyboardPriceEntry.Margin = new Padding(9, 10, 9, 10);
 			lblKeyboardPriceEntry.Name = "lblKeyboardPriceEntry";
 			lblKeyboardPriceEntry.PlaceholderText = "Price";
@@ -89,10 +86,9 @@
 			// 
 			lblKeyboardSupplierIdEntry.BackColor = Color.FromArgb(89, 89, 89);
 			lblKeyboardSupplierIdEntry.BorderStyle = BorderStyle.None;
-			lblKeyboardSupplierIdEntry.Dock = DockStyle.Left;
 			lblKeyboardSupplierIdEntry.Font = new Font("Microsoft Sans Serif", 10.75F, FontStyle.Regular, GraphicsUnit.Point);
 			lblKeyboardSupplierIdEntry.ForeColor = Color.White;
-			lblKeyboardSupplierIdEntry.Location = new Point(858, 0);
+			lblKeyboardSupplierIdEntry.Location = new Point(864, 85);
 			lblKeyboardSupplierIdEntry.Margin = new Padding(9, 10, 9, 10);
 			lblKeyboardSupplierIdEntry.Name = "lblKeyboardSupplierIdEntry";
 			lblKeyboardSupplierIdEntry.PlaceholderText = "Supplier ID";
@@ -106,10 +102,9 @@
 			// 
 			lblKeyboardDescriptionEntry.BackColor = Color.FromArgb(89, 89, 89);
 			lblKeyboardDescriptionEntry.BorderStyle = BorderStyle.None;
-			lblKeyboardDescriptionEntry.Dock = DockStyle.Left;
 			lblKeyboardDescriptionEntry.Font = new Font("Microsoft Sans Serif", 10.75F, FontStyle.Regular, GraphicsUnit.Point);
 			lblKeyboardDescriptionEntry.ForeColor = Color.White;
-			lblKeyboardDescriptionEntry.Location = new Point(1144, 0);
+			lblKeyboardDescriptionEntry.Location = new Point(1141, 85);
 			lblKeyboardDescriptionEntry.Margin = new Padding(9, 10, 9, 10);
 			lblKeyboardDescriptionEntry.Name = "lblKeyboardDescriptionEntry";
 			lblKeyboardDescriptionEntry.PlaceholderText = "Description";
