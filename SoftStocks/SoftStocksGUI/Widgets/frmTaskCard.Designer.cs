@@ -35,6 +35,7 @@
 			btnSaveCard = new Button();
 			btnDeleteCard = new Button();
 			cbbxStatus = new ComboBox();
+			label1 = new Label();
 			SuspendLayout();
 			// 
 			// txtTaskId
@@ -116,11 +117,22 @@
 			cbbxStatus.BackColor = Color.FromArgb(89, 89, 89);
 			cbbxStatus.ForeColor = Color.White;
 			cbbxStatus.FormattingEnabled = true;
+			cbbxStatus.Items.AddRange(new object[] { "New", "Pending", "In Progress", "Stalled", "Done" });
 			cbbxStatus.Location = new Point(60, 355);
 			cbbxStatus.Margin = new Padding(9, 10, 9, 10);
 			cbbxStatus.Name = "cbbxStatus";
 			cbbxStatus.Size = new Size(430, 56);
 			cbbxStatus.TabIndex = 8;
+			// 
+			// label1
+			// 
+			label1.AutoSize = true;
+			label1.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
+			label1.Location = new Point(60, 137);
+			label1.Name = "label1";
+			label1.Size = new Size(338, 48);
+			label1.TabIndex = 9;
+			label1.Text = "Keyboard Model No.";
 			// 
 			// frmTaskCard
 			// 
@@ -128,6 +140,7 @@
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.FromArgb(120, 120, 120);
 			ClientSize = new Size(1011, 467);
+			Controls.Add(label1);
 			Controls.Add(cbbxStatus);
 			Controls.Add(btnDeleteCard);
 			Controls.Add(btnSaveCard);
@@ -152,5 +165,6 @@
 		private Button btnSaveCard;
 		private Button btnDeleteCard;
 		private ComboBox cbbxStatus;
+		private Label label1;
 	}
 }

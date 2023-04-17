@@ -29,7 +29,6 @@ namespace SoftStocksGUI.Widgets
 			this.lblSupplierContactNumberEntry.Text = contact;
 			this.lblSupplierContactNameEntry.Text = purchases;
 			this.lblSupplierAddressEntry.Text = address;
-			this.lblSupplierId.Text = $"{entryId}";
 
 			if (entryId == -1)
 			{
@@ -53,7 +52,6 @@ namespace SoftStocksGUI.Widgets
 						if (row != null)
 						{
 							entryId = row.Id;
-							this.lblSupplierId.Text = $"{entryId}";
 						}
 					}
 					else
@@ -106,8 +104,6 @@ namespace SoftStocksGUI.Widgets
 				{
 					MessageBox.Show("Name Already In Use! Change Name And Try Again.");
 				}
-
-
 			}
 
 		}
