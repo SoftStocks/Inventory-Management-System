@@ -15,6 +15,21 @@
     <strong>SoftStocks</strong> makes looking after your Inventory Stock as easy as clicking a few buttons. SoftStocks will keep tabs on the stock levels and stock distributors so that you can always see all of your businesses data all in one place.
     We put our complete trust in our software to keep your data safe and secure, our authentication system will only allow registered and authenticated users from viewing, deleting and editing data.
   </p>
+  <h2>IMPORTANT - Usage before first run</h2>
+  <p>Please follow the instructions below for the proper running of SoftStocks.</p>
+  <ol>
+  <li>From the top bar, click <code>View</code></li>
+  <li>Click <code>Other Windows</code></li>
+  <li>Click <code>Package Manager Console</code></li>
+  <li>Change the default project to <code>SoftStocksData</code></li>
+  <li>Enter <code>Update-Database</code> into the command line. <i>You can optionally add <code>-Verbose</code> </i></li>
+  </ol>
+  <p>This will ensure that the database is setup to run correctly</p>
+  <h2>IMPORTANT - Usage after first run</h2>
+  <p>Please follow the instructions below for the proper running of SoftStocks.</p>
+  <p>Only after running the solution for the first time, access the Solution Explorer from 'View'. Expand 'SoftStocksGUI', then right-click on 'frmBase.cs', and click View Code. On line 32 of the code, there will be "PopulateDatabase.Setup();". Please comment out this line by using two forward slashes. It should now be "//PopulateDatabase.Setup();" with green font.
+  <p>This will ensure that the data entered into the program saves and loads the next time it is run.</p>
+  </p>
   <h2>Usage</h2>
   <p>With an easy to use user interface, built around being clean and ituitive we believe that this system is very straight forward. Once run there will be a start up log in screen presented to the user where to access any other pages they will have to sign in with their credentials. After logged in you can access three different pages, Home, Edit and Advanced. The home page serves all supplier infomation and controls to be able to add, edit and delete different entries.
   </p>
