@@ -1,4 +1,6 @@
-﻿using SoftStocksGUI.Content;
+﻿using SoftStocksData;
+using SoftStocksData.Entities.Suppliers;
+using SoftStocksGUI.Content;
 using SoftStocksGUI.Widgets;
 using System;
 using System.Collections.Generic;
@@ -17,15 +19,22 @@ namespace SoftStocksGUI
 		public frmSupplier()
 		{
 			InitializeComponent();
-			//this.pnlScrollableSupplier.Controls.Clear();
 
-			for (int i = 0; i < 10; i++)
+			List<Supplier> supplierList;
+
+			using (SoftStocksDBContext db = new SoftStocksDBContext())
 			{
-				frmSupplierEntry frmSupplierEntry_Vrb = new frmSupplierEntry() { TopLevel = false, TopMost = true };
+				supplierList = db.Suppliers.ToList();
+			}
+
+			foreach (Supplier supplierItem in supplierList)
+			{
+				frmSupplierEntry frmSupplierEntry_Vrb = new frmSupplierEntry(supplierItem.Id, supplierItem.Name, supplierItem.ContactNumber, supplierItem.PrimaryContact, supplierItem.BusinessAddress) { TopLevel = false, TopMost = true };
 				frmSupplierEntry_Vrb.FormBorderStyle = FormBorderStyle.None;
 				this.pnlScrollableSupplier.Controls.Add(frmSupplierEntry_Vrb);
 				frmSupplierEntry_Vrb.Show();
 			}
+
 		}
 
 		private void btnAddSupplier_Click(object sender, EventArgs e)
@@ -34,7 +43,15 @@ namespace SoftStocksGUI
 			frmSupplierEntry frmSupplierEntry_Vrb = new frmSupplierEntry() { TopLevel = false, TopMost = true };
 			frmSupplierEntry_Vrb.FormBorderStyle = FormBorderStyle.None;
 			this.pnlScrollableSupplier.Controls.Add(frmSupplierEntry_Vrb);
-			frmSupplierEntry_Vrb.Show();
+			try
+			{
+				frmSupplierEntry_Vrb.Show();
+			}
+			catch (Exception)
+			{
+				//MessageBox.Show($"{ex}");  //If entry is deleted before being able to be shown then hides error
+			}
+
 
 		}
 	}

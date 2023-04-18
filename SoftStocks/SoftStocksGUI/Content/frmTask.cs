@@ -1,4 +1,6 @@
-﻿using SoftStocksGUI.Widgets;
+﻿using SoftStocksData.Entities.Suppliers;
+using SoftStocksData;
+using SoftStocksGUI.Widgets;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SoftStocksData.Entities.Purchases;
 
 namespace SoftStocksGUI
 {
@@ -16,23 +19,34 @@ namespace SoftStocksGUI
 		public frmTask()
 		{
 			InitializeComponent();
-			//this.pnlScrollableTask.Controls.Clear();
 
-			for (int i = 0; i < 10; i++)
+			List<PurchaseRequest> TaskList;
+
+			using (SoftStocksDBContext db = new SoftStocksDBContext())
 			{
-				frmTaskEntry frmTaskEntry_Vrb = new frmTaskEntry() { TopLevel = false, TopMost = true };
-				frmTaskEntry_Vrb.FormBorderStyle = FormBorderStyle.None;
-				this.pnlScrollableTask.Controls.Add(frmTaskEntry_Vrb);
-				frmTaskEntry_Vrb.Show();
+				TaskList = db.PurchaseRequests.ToList();
+			}
+
+			foreach (PurchaseRequest TaskItem in TaskList)
+			{
+				frmTaskCard frmTaskCard_Vrb = new frmTaskCard(TaskItem.Id, TaskItem.ModelNumber, TaskItem.Quantity, TaskItem.Status, TaskItem.DateCreated.ToString())
+				{ TopLevel = false, TopMost = true };
+				frmTaskCard_Vrb.FormBorderStyle = FormBorderStyle.None;
+				this.pnlScrollableTask.Controls.Add(frmTaskCard_Vrb);
+				frmTaskCard_Vrb.Show();
 			}
 		}
 
 		private void btnAddTask_Click(object sender, EventArgs e)
 		{
-			frmTaskEntry frmTaskEntry_Vrb = new frmTaskEntry() { TopLevel = false, TopMost = true };
-			frmTaskEntry_Vrb.FormBorderStyle = FormBorderStyle.None;
-			this.pnlScrollableTask.Controls.Add(frmTaskEntry_Vrb);
-			frmTaskEntry_Vrb.Show();
+			frmTaskCard frmTaskCard_Vrb = new frmTaskCard() { TopLevel = false, TopMost = true };
+			frmTaskCard_Vrb.FormBorderStyle = FormBorderStyle.None;
+			this.pnlScrollableTask.Controls.Add(frmTaskCard_Vrb);
+			try
+			{
+				frmTaskCard_Vrb.Show();
+			} catch (Exception ) { } //Just catches an exception if the form is deleted before it can show it
+			
 		}
 	}
 }

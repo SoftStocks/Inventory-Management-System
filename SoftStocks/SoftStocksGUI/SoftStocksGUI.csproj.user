@@ -19,5 +19,8 @@
     <Compile Update="Widgets\frmSupplierEntry.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Widgets\frmTaskCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

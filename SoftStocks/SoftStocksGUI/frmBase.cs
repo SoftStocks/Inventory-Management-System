@@ -1,7 +1,10 @@
 using SoftStocksData;
+using SoftStocksData.Entities.Purchases;
+using SoftStocksData.Entities.StaffMember;
 using SoftStocksGUI.Content;
 using System.Data.Entity;
 using System.Runtime.InteropServices;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace SoftStocksGUI
 {
@@ -25,8 +28,9 @@ namespace SoftStocksGUI
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+			PopulateDatabase.SetUp();
 
-            this.pnlNavContent.Controls.Clear();
+			this.pnlNavContent.Controls.Clear();
             frmNavLogin frmNavLogin_Vrb = new frmNavLogin(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmNavLogin_Vrb.FormBorderStyle = FormBorderStyle.None;
             this.pnlNavContent.Controls.Add(frmNavLogin_Vrb);
@@ -37,6 +41,7 @@ namespace SoftStocksGUI
             frmLogo frmLogo_Vrb = new frmLogo() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmLogo_Vrb.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormContent.Controls.Add(frmLogo_Vrb);
+ 
             frmLogo_Vrb.Show();
 
         }

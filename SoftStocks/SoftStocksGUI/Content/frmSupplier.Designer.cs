@@ -31,7 +31,8 @@
 			pnlSupplierBanner = new Panel();
 			btnAddSupplier = new Button();
 			pnlEntryLabels = new Panel();
-			lblSupplierPurchases = new Label();
+			lblSupplierAddress = new Label();
+			lblSupplierPrimaryContact = new Label();
 			lblSupplierContact = new Label();
 			lblSupplierName = new Label();
 			pnlScrollableSupplier = new FlowLayoutPanel();
@@ -45,16 +46,16 @@
 			pnlSupplierBanner.Dock = DockStyle.Top;
 			pnlSupplierBanner.Location = new Point(0, 0);
 			pnlSupplierBanner.Name = "pnlSupplierBanner";
-			pnlSupplierBanner.Size = new Size(765, 66);
+			pnlSupplierBanner.Size = new Size(679, 66);
 			pnlSupplierBanner.TabIndex = 0;
 			// 
 			// btnAddSupplier
 			// 
 			btnAddSupplier.BackColor = Color.FromArgb(73, 221, 254);
 			btnAddSupplier.Dock = DockStyle.Right;
-			btnAddSupplier.Font = new Font("Verdana Pro Light", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+			btnAddSupplier.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
 			btnAddSupplier.ForeColor = Color.White;
-			btnAddSupplier.Location = new Point(570, 0);
+			btnAddSupplier.Location = new Point(484, 0);
 			btnAddSupplier.Name = "btnAddSupplier";
 			btnAddSupplier.Size = new Size(195, 66);
 			btnAddSupplier.TabIndex = 0;
@@ -64,49 +65,62 @@
 			// 
 			// pnlEntryLabels
 			// 
-			pnlEntryLabels.Controls.Add(lblSupplierPurchases);
+			pnlEntryLabels.Controls.Add(lblSupplierAddress);
+			pnlEntryLabels.Controls.Add(lblSupplierPrimaryContact);
 			pnlEntryLabels.Controls.Add(lblSupplierContact);
 			pnlEntryLabels.Controls.Add(lblSupplierName);
 			pnlEntryLabels.Dock = DockStyle.Top;
 			pnlEntryLabels.Location = new Point(0, 66);
 			pnlEntryLabels.Name = "pnlEntryLabels";
-			pnlEntryLabels.Size = new Size(765, 66);
+			pnlEntryLabels.Size = new Size(679, 66);
 			pnlEntryLabels.TabIndex = 1;
 			// 
-			// lblSupplierPurchases
+			// lblSupplierAddress
 			// 
-			lblSupplierPurchases.Dock = DockStyle.Left;
-			lblSupplierPurchases.Font = new Font("Verdana Pro Light", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-			lblSupplierPurchases.ForeColor = Color.White;
-			lblSupplierPurchases.Location = new Point(310, 0);
-			lblSupplierPurchases.Name = "lblSupplierPurchases";
-			lblSupplierPurchases.Size = new Size(155, 66);
-			lblSupplierPurchases.TabIndex = 2;
-			lblSupplierPurchases.Text = "Purchases";
-			lblSupplierPurchases.TextAlign = ContentAlignment.MiddleCenter;
+			lblSupplierAddress.Dock = DockStyle.Left;
+			lblSupplierAddress.Font = new Font("Microsoft Sans Serif", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+			lblSupplierAddress.ForeColor = Color.White;
+			lblSupplierAddress.Location = new Point(384, 0);
+			lblSupplierAddress.Name = "lblSupplierAddress";
+			lblSupplierAddress.Size = new Size(128, 66);
+			lblSupplierAddress.TabIndex = 3;
+			lblSupplierAddress.Text = "Business Address";
+			lblSupplierAddress.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// lblSupplierPrimaryContact
+			// 
+			lblSupplierPrimaryContact.Dock = DockStyle.Left;
+			lblSupplierPrimaryContact.Font = new Font("Microsoft Sans Serif", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+			lblSupplierPrimaryContact.ForeColor = Color.White;
+			lblSupplierPrimaryContact.Location = new Point(256, 0);
+			lblSupplierPrimaryContact.Name = "lblSupplierPrimaryContact";
+			lblSupplierPrimaryContact.Size = new Size(128, 66);
+			lblSupplierPrimaryContact.TabIndex = 2;
+			lblSupplierPrimaryContact.Text = "Primary Contact";
+			lblSupplierPrimaryContact.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// lblSupplierContact
 			// 
 			lblSupplierContact.Dock = DockStyle.Left;
-			lblSupplierContact.Font = new Font("Verdana Pro Light", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+			lblSupplierContact.Font = new Font("Microsoft Sans Serif", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
 			lblSupplierContact.ForeColor = Color.White;
-			lblSupplierContact.Location = new Point(155, 0);
+			lblSupplierContact.Location = new Point(128, 0);
 			lblSupplierContact.Name = "lblSupplierContact";
-			lblSupplierContact.Size = new Size(155, 66);
+			lblSupplierContact.Size = new Size(128, 66);
 			lblSupplierContact.TabIndex = 1;
-			lblSupplierContact.Text = "Contact";
+			lblSupplierContact.Text = "Contact Number";
 			lblSupplierContact.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// lblSupplierName
 			// 
 			lblSupplierName.Dock = DockStyle.Left;
-			lblSupplierName.Font = new Font("Verdana Pro Light", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+			lblSupplierName.Font = new Font("Microsoft Sans Serif", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
 			lblSupplierName.ForeColor = Color.White;
 			lblSupplierName.Location = new Point(0, 0);
 			lblSupplierName.Name = "lblSupplierName";
-			lblSupplierName.Size = new Size(155, 66);
+			lblSupplierName.Size = new Size(128, 66);
 			lblSupplierName.TabIndex = 0;
-			lblSupplierName.Text = "Name";
+			lblSupplierName.Text = "Supplier Name";
 			lblSupplierName.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// pnlScrollableSupplier
@@ -116,7 +130,7 @@
 			pnlScrollableSupplier.FlowDirection = FlowDirection.TopDown;
 			pnlScrollableSupplier.Location = new Point(0, 132);
 			pnlScrollableSupplier.Name = "pnlScrollableSupplier";
-			pnlScrollableSupplier.Size = new Size(765, 318);
+			pnlScrollableSupplier.Size = new Size(679, 212);
 			pnlScrollableSupplier.TabIndex = 2;
 			pnlScrollableSupplier.WrapContents = false;
 			// 
@@ -125,12 +139,12 @@
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.FromArgb(89, 89, 89);
-			ClientSize = new Size(765, 450);
+			ClientSize = new Size(679, 344);
 			Controls.Add(pnlScrollableSupplier);
 			Controls.Add(pnlEntryLabels);
 			Controls.Add(pnlSupplierBanner);
 			FormBorderStyle = FormBorderStyle.None;
-			Margin = new Padding(1);
+			Margin = new Padding(1, 1, 1, 1);
 			Name = "frmSupplier";
 			StartPosition = FormStartPosition.CenterScreen;
 			Text = "SoftStocks Inventory Management System";
@@ -145,8 +159,9 @@
 		private Button btnAddSupplier;
 		private Panel pnlEntryLabels;
 		private Label lblSupplierName;
-		private Label lblSupplierPurchases;
+		private Label lblSupplierPrimaryContact;
 		private Label lblSupplierContact;
 		private FlowLayoutPanel pnlScrollableSupplier;
+		private Label lblSupplierAddress;
 	}
 }

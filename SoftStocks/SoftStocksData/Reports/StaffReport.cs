@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -100,7 +102,69 @@ namespace SoftStocksData.Reports
 
                     return fileName;
 
-                default:
+				case ReportFormat.Email:
+
+					string recipients = "softstocks@outlook.com";
+					string fromAddress = "softstocks@outlook.com";
+
+					string subject = "Staff Report";
+					string body = "<span style=\"font-size: 24px; font-family: Arial, sans-serif; color: #222222;\" >" +
+						$"Soft Stocks Employee: {FirstName} {LastName}<br>" +
+						$"<br>" +
+						$"Id: {Id}<br>" +
+						$"Title: {Title}<br>" +
+						$"Role: {Role}<br>" +
+						$"Date Of Birth: {DateOfBirth.Date:dd/MM/yyyy}<br>" +
+						$"Salary: £{Salary:N2}<br>" +
+						$"Number Of Purchases: {NumberOfPurchaseRequests}<br>" +
+						$"<br>" +
+						$"Report Id: {base.Id}<br>" +
+						$"Send Date: {base.CreationTimestamp:f}<br>" +
+						"</span>";
+
+					List<string> attachments = new List<string>();
+
+					bool isHtml = true;
+
+					try
+					{
+						string[] recipientArray = recipients.Split(',');
+
+						MailMessage mail = new MailMessage();
+						mail.From = new MailAddress(fromAddress);
+
+						foreach (string recipient in recipientArray)
+						{
+							mail.To.Add(new MailAddress(recipient.Trim()));
+						}
+
+						mail.Subject = subject;
+						mail.Body = body;
+						mail.IsBodyHtml = isHtml;
+
+						if (attachments != null && attachments.Count > 0)
+						{
+							foreach (string attachmentPath in attachments)
+							{
+								Attachment attachment = new Attachment(attachmentPath);
+								mail.Attachments.Add(attachment);
+							}
+						}
+
+						SmtpClient client = new SmtpClient("smtp-mail.outlook.com", 587);   //smtp.gmail.com for gmail email account
+						client.UseDefaultCredentials = false;
+						NetworkCredential credentials = new NetworkCredential("softstocks@outlook.com", "zblniphjespgnprh");
+						client.EnableSsl = true;
+						client.Credentials = credentials;
+						client.Send(mail);
+						return $"Email Sent";
+					}
+					catch (Exception ex)
+					{
+						return $"{ex}";
+					}
+
+				default:
                     return "";
             }
         }

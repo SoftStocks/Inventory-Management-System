@@ -11,10 +11,13 @@ namespace SoftStocksData.Entities.Keyboards
     public class Keyboard
     {
         [Key]
-        public int ModelNumber { get; set; }
-        public int SupplierId { get; set; }
+		public int ModelNumber { get; set; }
+		[Required]
+		public int Ident { get; set; }
+		[Required]
+		public int SupplierId { get; set; }
         public int Quantity { get; set; }
         public string Description { get; set; }
-        public SqlMoney Price { get; set; }
+        public Decimal Price { get; set; }
     }
 }
