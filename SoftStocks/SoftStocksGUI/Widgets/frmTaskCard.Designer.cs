@@ -36,6 +36,9 @@
 			btnDeleteCard = new Button();
 			cbbxStatus = new ComboBox();
 			label1 = new Label();
+			label2 = new Label();
+			label3 = new Label();
+			label4 = new Label();
 			SuspendLayout();
 			// 
 			// txtTaskId
@@ -134,12 +137,45 @@
 			label1.TabIndex = 9;
 			label1.Text = "Keyboard Model No.";
 			// 
+			// label2
+			// 
+			label2.AutoSize = true;
+			label2.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
+			label2.Location = new Point(514, 137);
+			label2.Name = "label2";
+			label2.Size = new Size(157, 48);
+			label2.TabIndex = 10;
+			label2.Text = "Quantity";
+			// 
+			// label3
+			// 
+			label3.AutoSize = true;
+			label3.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
+			label3.Location = new Point(60, 297);
+			label3.Name = "label3";
+			label3.Size = new Size(116, 48);
+			label3.TabIndex = 11;
+			label3.Text = "Status";
+			// 
+			// label4
+			// 
+			label4.AutoSize = true;
+			label4.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
+			label4.Location = new Point(525, 297);
+			label4.Name = "label4";
+			label4.Size = new Size(230, 48);
+			label4.TabIndex = 12;
+			label4.Text = "Date Created";
+			// 
 			// frmTaskCard
 			// 
 			AutoScaleDimensions = new SizeF(20F, 48F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.FromArgb(120, 120, 120);
 			ClientSize = new Size(1011, 467);
+			Controls.Add(label4);
+			Controls.Add(label3);
+			Controls.Add(label2);
 			Controls.Add(label1);
 			Controls.Add(cbbxStatus);
 			Controls.Add(btnDeleteCard);
@@ -166,5 +202,8 @@
 		private Button btnDeleteCard;
 		private ComboBox cbbxStatus;
 		private Label label1;
+		private Label label2;
+		private Label label3;
+		private Label label4;
 	}
 }

@@ -81,7 +81,7 @@ namespace SoftStocksGUI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (true)
+            if (Authenticate())
             {
 
                 _frmBaseRef.lblProfile.Text = userName;

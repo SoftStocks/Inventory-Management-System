@@ -28,7 +28,6 @@ namespace SoftStocksGUI
 					string[] dateReportSplit = reportPathSplit[1].Split("-");
 					DateTime dateFromPath = DateTime.Parse($"{dateReportSplit[2]}-{dateReportSplit[1]}-{dateReportSplit[0]} {dateReportSplit[3]}:{dateReportSplit[4]}:{dateReportSplit[5]}");
 					int staffId = Int16.Parse(reportPathSplit[2].Split(".")[0]);
-					MessageBox.Show(staffId.ToString());
 					using (SoftStocksDBContext db = new SoftStocksDBContext())
 					{
 						staffObject = db.Staff.Single(c => c.Id == staffId);
