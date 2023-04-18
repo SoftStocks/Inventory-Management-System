@@ -34,6 +34,7 @@ namespace SoftStocksGUI
 			for (int x = 1; x <= 5; x++)
 			{
 				StaffReport myReport = new StaffReport(1);
+				myReport.Create(ReportFormat.Pdf);
 			}
 
 				this.pnlNavContent.Controls.Clear();
