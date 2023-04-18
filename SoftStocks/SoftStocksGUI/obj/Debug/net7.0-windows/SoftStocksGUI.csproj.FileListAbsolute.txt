@@ -174,7 +174,6 @@ C:\Users\jackw\OneDrive\Desktop\SoftStocks\Inventory-Management-System\SoftStock
 C:\Users\jackw\OneDrive\Desktop\SoftStocks\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.frmNavLogin.resources
 C:\Users\jackw\OneDrive\Desktop\SoftStocks\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.Properties.Resources.resources
 C:\Users\jackw\OneDrive\Desktop\SoftStocks\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.Widgets.frmSupplierEntry.resources
-C:\Users\jackw\OneDrive\Desktop\SoftStocks\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.Widgets.frmTaskEntry.resources
 C:\Users\jackw\OneDrive\Desktop\SoftStocks\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.csproj.GenerateResource.cache
 C:\Users\jackw\OneDrive\Desktop\SoftStocks\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\jackw\OneDrive\Desktop\SoftStocks\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.AssemblyInfoInputs.cache
@@ -194,3 +193,6 @@ C:\Users\jackw\OneDrive\Desktop\SoftStocks\Inventory-Management-System\SoftStock
 C:\Users\jackw\OneDrive\Desktop\SoftStocks\Inventory-Management-System\SoftStocks\SoftStocksGUI\bin\Debug\net7.0-windows\CSV data\staff_data.csv
 C:\Users\jackw\OneDrive\Desktop\SoftStocks\Inventory-Management-System\SoftStocks\SoftStocksGUI\bin\Debug\net7.0-windows\CSV data\supplier_data.csv
 C:\Users\jackw\OneDrive\Desktop\SoftStocks\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.Widgets.frmTaskCard.resources
+C:\Users\jackw\OneDrive\Desktop\SoftStocks\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.Content.frmKeyboard.resources
+C:\Users\jackw\OneDrive\Desktop\SoftStocks\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.Widgets.frmKeyboardEntry.resources
+C:\Users\jackw\OneDrive\Desktop\SoftStocks\Inventory-Management-System\SoftStocks\SoftStocksGUI\obj\Debug\net7.0-windows\SoftStocksGUI.Widgets.frmReportEntry.resources

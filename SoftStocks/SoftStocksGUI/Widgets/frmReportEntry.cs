@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,17 +13,34 @@ namespace SoftStocksGUI.Widgets
 {
 	public partial class frmReportEntry : Form
 	{
-		public frmReportEntry(string reportId = "", DateTime creationDate = new DateTime())
+
+		string processName = "";
+		public frmReportEntry(string reportId = "", DateTime creationDate = new DateTime(), string path="")
 		{
 			InitializeComponent();
 
-			this.lblReportId.Text = reportId;
+			processName = Directory.GetCurrentDirectory() + "\\" + path;
+
+			this.lblReportId.Text = reportId.Split("\\")[1];
 			this.lblReportDateCreated.Text = creationDate.ToString();
+
+
 		}
 
-		private void lblReportDateCreated_TextChanged(object sender, EventArgs e)
+		private void btnReportView_Click(object sender, EventArgs e)
 		{
+			//Process.Start(processName);
+			ProcessStartInfo startInfo = new ProcessStartInfo(processName)
+			{
+				UseShellExecute = true
+			};
+			Process.Start(startInfo);
+		}
 
+		private void btnReportDelete_Click(object sender, EventArgs e)
+		{
+			File.Delete(processName);
+			this.Close();
 		}
 	}
 }

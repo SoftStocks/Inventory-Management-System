@@ -1,6 +1,7 @@
 using SoftStocksData;
 using SoftStocksData.Entities.Purchases;
 using SoftStocksData.Entities.StaffMember;
+using SoftStocksData.Reports;
 using SoftStocksGUI.Content;
 using System.Data.Entity;
 using System.Runtime.InteropServices;
@@ -30,7 +31,13 @@ namespace SoftStocksGUI
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
 			PopulateDatabase.SetUp();
 
-			this.pnlNavContent.Controls.Clear();
+			for (int x = 1; x <= 5; x++)
+			{
+				StaffReport myReport = new StaffReport(1);
+				MessageBox.Show(myReport.Create(ReportFormat.Pdf));
+			}
+
+				this.pnlNavContent.Controls.Clear();
             frmNavLogin frmNavLogin_Vrb = new frmNavLogin(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmNavLogin_Vrb.FormBorderStyle = FormBorderStyle.None;
             this.pnlNavContent.Controls.Add(frmNavLogin_Vrb);

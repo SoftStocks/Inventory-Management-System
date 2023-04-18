@@ -40,13 +40,13 @@
 			btnReportDelete.Dock = DockStyle.Right;
 			btnReportDelete.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
 			btnReportDelete.ForeColor = Color.White;
-			btnReportDelete.Location = new Point(1795, 0);
-			btnReportDelete.Margin = new Padding(9, 10, 9, 10);
+			btnReportDelete.Location = new Point(577, 0);
 			btnReportDelete.Name = "btnReportDelete";
-			btnReportDelete.Size = new Size(291, 211);
+			btnReportDelete.Size = new Size(102, 66);
 			btnReportDelete.TabIndex = 4;
 			btnReportDelete.Text = "Delete";
 			btnReportDelete.UseVisualStyleBackColor = false;
+			btnReportDelete.Click += btnReportDelete_Click;
 			// 
 			// btnReportView
 			// 
@@ -54,13 +54,13 @@
 			btnReportView.Dock = DockStyle.Right;
 			btnReportView.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
 			btnReportView.ForeColor = Color.White;
-			btnReportView.Location = new Point(1504, 0);
-			btnReportView.Margin = new Padding(9, 10, 9, 10);
+			btnReportView.Location = new Point(475, 0);
 			btnReportView.Name = "btnReportView";
-			btnReportView.Size = new Size(291, 211);
+			btnReportView.Size = new Size(102, 66);
 			btnReportView.TabIndex = 5;
 			btnReportView.Text = "View";
 			btnReportView.UseVisualStyleBackColor = false;
+			btnReportView.Click += btnReportView_Click;
 			// 
 			// lblReportId
 			// 
@@ -68,11 +68,11 @@
 			lblReportId.BorderStyle = BorderStyle.None;
 			lblReportId.Font = new Font("Microsoft Sans Serif", 10.75F, FontStyle.Regular, GraphicsUnit.Point);
 			lblReportId.ForeColor = Color.White;
-			lblReportId.Location = new Point(262, 85);
-			lblReportId.Margin = new Padding(9, 10, 9, 10);
+			lblReportId.Location = new Point(12, 26);
 			lblReportId.Name = "lblReportId";
 			lblReportId.PlaceholderText = "ReportId";
-			lblReportId.Size = new Size(400, 49);
+			lblReportId.ReadOnly = true;
+			lblReportId.Size = new Size(240, 17);
 			lblReportId.TabIndex = 6;
 			lblReportId.TextAlign = HorizontalAlignment.Center;
 			// 
@@ -82,26 +82,26 @@
 			lblReportDateCreated.BorderStyle = BorderStyle.None;
 			lblReportDateCreated.Font = new Font("Microsoft Sans Serif", 10.75F, FontStyle.Regular, GraphicsUnit.Point);
 			lblReportDateCreated.ForeColor = Color.White;
-			lblReportDateCreated.Location = new Point(725, 85);
-			lblReportDateCreated.Margin = new Padding(9, 10, 9, 10);
+			lblReportDateCreated.Location = new Point(259, 26);
 			lblReportDateCreated.Name = "lblReportDateCreated";
 			lblReportDateCreated.PlaceholderText = "Date created";
-			lblReportDateCreated.Size = new Size(600, 49);
+			lblReportDateCreated.ReadOnly = true;
+			lblReportDateCreated.Size = new Size(210, 17);
 			lblReportDateCreated.TabIndex = 8;
 			lblReportDateCreated.TextAlign = HorizontalAlignment.Center;
-			lblReportDateCreated.TextChanged += lblReportDateCreated_TextChanged;
 			// 
 			// frmReportEntry
 			// 
-			AutoScaleDimensions = new SizeF(20F, 48F);
+			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.FromArgb(89, 89, 89);
-			ClientSize = new Size(2086, 211);
+			ClientSize = new Size(679, 66);
 			Controls.Add(lblReportDateCreated);
 			Controls.Add(lblReportId);
 			Controls.Add(btnReportView);
 			Controls.Add(btnReportDelete);
 			FormBorderStyle = FormBorderStyle.None;
+			Margin = new Padding(1);
 			Name = "frmReportEntry";
 			Text = "frmReportEntry";
 			ResumeLayout(false);

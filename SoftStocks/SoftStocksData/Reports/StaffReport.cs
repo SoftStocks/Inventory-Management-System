@@ -13,7 +13,8 @@ namespace SoftStocksData.Reports
 {
     public class StaffReport : Report
     {
-        // basic information
+		// basic information
+		string staffId;
         public string Title;
         public string FirstName;
         public string LastName;
@@ -21,12 +22,15 @@ namespace SoftStocksData.Reports
         public DateTime DateOfBirth;
         public float Salary;
 
+		DateTime creationDate = DateTime.Now;
+
         //derived information
         public int NumberOfPurchaseRequests;
         //public List<string> MostFrequentModelsPurchased;
 
         public StaffReport(int id)
         {
+			staffId = id.ToString();
             using (var db = new SoftStocksDBContext()) 
             {
                 var staff = db.Staff.FirstOrDefault(s => s.Id == id);
@@ -41,7 +45,6 @@ namespace SoftStocksData.Reports
                     Salary = staff.Salary;
 
                     NumberOfPurchaseRequests = (from pr in db.PurchaseRequests where pr.StaffId == id select pr).Count();
-                    //this.MostFrequentModelsPurchased = (from ;
 
                 }
                 else
@@ -83,7 +86,7 @@ namespace SoftStocksData.Reports
                     
                     // header
                     gfx.DrawString($"Staff member listing for SoftStocks employee {FirstName} {LastName}", bodyFont, XBrushes.Black, new XRect(50, -300, page.Width, page.Height), XStringFormats.CenterLeft);
-                    gfx.DrawString($"Id: {Id}", bodyFont, XBrushes.Black, new XRect(50, -250, page.Width, page.Height), XStringFormats.CenterLeft);
+                    gfx.DrawString($"Id: {staffId}", bodyFont, XBrushes.Black, new XRect(50, -250, page.Width, page.Height), XStringFormats.CenterLeft);
                     gfx.DrawString($"Title: {Title}", bodyFont, XBrushes.Black, new XRect(50, -225, page.Width, page.Height), XStringFormats.CenterLeft);
                     gfx.DrawString($"First name: {FirstName}", bodyFont, XBrushes.Black, new XRect(50, -200, page.Width, page.Height), XStringFormats.CenterLeft);
                     gfx.DrawString($"Last name: {LastName}", bodyFont, XBrushes.Black, new XRect(50, -175, page.Width, page.Height), XStringFormats.CenterLeft);
@@ -96,8 +99,10 @@ namespace SoftStocksData.Reports
                     gfx.DrawString($"Report id: {base.Id}", footerFont, XBrushes.Black, new XRect(50, 200, page.Width, page.Height), XStringFormats.CenterLeft);
                     gfx.DrawString($"Creation date: {base.CreationTimestamp:f}", footerFont, XBrushes.Black, new XRect(50, 175, page.Width, page.Height), XStringFormats.CenterLeft);
 
+					Directory.CreateDirectory("Reports");
+					string path = Path.Combine(Directory.GetCurrentDirectory(), @$"Reports\");
+					string fileName = path + $"staff-report_{creationDate.Year}-{creationDate.Month}-{creationDate.Day}-{creationDate.Hour}-{creationDate.Minute}-{creationDate.Second}_{staffId}.pdf";
 
-                    string fileName = $"staff_report_{CreationTimestamp.Date.Year}{CreationTimestamp.Date.Month}{CreationTimestamp.Date.Day}{Id}.pdf";
                     pdfReport.Save(fileName);
 
                     return fileName;
