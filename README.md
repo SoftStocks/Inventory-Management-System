@@ -17,7 +17,7 @@
   </p>
   <h2>IMPORTANT - Usage after first run</h2>
   <p>Please follow the instructions below for the proper running of SoftStocks.</p>
-  <p>After running the solution for the first time, access the Solution Explorer from 'View'. Expand 'SoftStocksGUI', then right-click on 'frmBase.cs', and click View Code. On line 32 of the code, there will be "PopulateDatabase.Setup();". Please comment out this line by using two forward slashes. It should now be "//PopulateDatabase.Setup();" with green font.
+  <p>Only after running the solution for the first time, access the Solution Explorer from 'View'. Expand 'SoftStocksGUI', then right-click on 'frmBase.cs', and click View Code. On line 32 of the code, there will be "PopulateDatabase.Setup();". Please comment out this line by using two forward slashes. It should now be "//PopulateDatabase.Setup();" with green font.
   <p>This will ensure that the data entered into the program saves and loads the next time it is run.</p>
   </p>
   <h2>Usage</h2>
